@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FilterControlBase } from '../filter-controls-base';
 
 @Component({
   selector: 'app-search-field',
@@ -6,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-field.component.scss'],
 })
 export class SearchFieldComponent implements OnInit {
-  constructor() {}
+  @Input() filter!: FilterControlBase;
+  @Input() form!: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.createForm(this.filter);
+  }
+
+  createForm(controls: FilterControlBase) {
+    this.form.addControl(controls.key, this._formBuilder.control(''));
+
+    console.log(this.form);
+  }
 }

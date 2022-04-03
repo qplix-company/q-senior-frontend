@@ -8,6 +8,14 @@
             <div class="title">Filter</div>
             <div class="clear">Clear</div>
         </div>
-        <app-search-field></app-search-field>
+        <form [formGroup]="filterForm">
+            <div *ngFor="let filterControl of filterData" class="form-row">
+                <div [ngSwitch]="filterControl.controlType">
+                    <app-search-field *ngSwitchCase="'searchField'" [filter]="filterControl" [form]="filterForm">
+                    </app-search-field>
+
+                </div>
+            </div>
+        </form>
     </ng-template>
 </div>

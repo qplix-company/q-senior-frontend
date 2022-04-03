@@ -1,6 +1,5 @@
-﻿<!-- Feel free to replace this placeholder with your filterbar -->
-<div class="layout-container">
-  <filter-bar></filter-bar>
+﻿<div class="layout-container">
+  <filter-bar [isLoading]="isFilterLoading" [filterData]="filterData"></filter-bar>
 
   <div class="table-wrapper">
     <div class="loading-indicator" *ngIf="isLoading">

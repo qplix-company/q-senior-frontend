@@ -16,6 +16,7 @@ import {
   MatTable,
 } from '@angular/material/table';
 import { Observable } from 'rxjs';
+import { FilterControlBase } from '../filter-bar/controls/filter-controls-base';
 
 @Component({
   selector: 'filterable-table',
@@ -34,6 +35,9 @@ export class FilterableTableComponent<T> implements AfterContentInit {
 
   @Input() dataSource: readonly T[] | DataSource<T> | Observable<readonly T[]>;
   @Input() isLoading: boolean;
+
+  @Input() isFilterLoading: boolean;
+  @Input() filterData: readonly FilterControlBase[];
 
   ngAfterContentInit() {
     this.columnDefs.forEach((columnDef) => this.table.addColumnDef(columnDef));
