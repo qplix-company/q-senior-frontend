@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { FilterableTableComponent } from './components/filterable-table/filterable-table.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from "@angular/material/table";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { SecuritiesListComponent } from './components/securities-list/securities-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterableTableComponent,
-    SecuritiesListComponent
+    SecuritiesListComponent,
+    FilterBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +24,6 @@ import { SecuritiesListComponent } from './components/securities-list/securities
     MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

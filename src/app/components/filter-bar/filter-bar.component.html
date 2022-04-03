@@ -1,0 +1,16 @@
+<div class="filter-bar">
+    <div *ngIf="isLoading; else showFilters">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <ng-template #showFilters>
+        <div class="header">
+            <div class="title">Filter</div>
+            <div class="clear">Clear</div>
+        </div>
+
+
+
+    </ng-template>
+
+</div>
