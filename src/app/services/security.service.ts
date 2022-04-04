@@ -36,7 +36,7 @@ export class SecurityService {
           securityFilter.currencies.some(
             (currency) => s.currency == currency
           )) &&
-        (securityFilter.isPrivate === null ||
+        (securityFilter.isPrivate === undefined ||
           securityFilter.isPrivate === s.isPrivate)
     );
   }
@@ -45,6 +45,6 @@ export class SecurityService {
    * Get the list of mock filters
    */
   getSecuritiesFilterMeta(): Observable<FilterControlBase[]> {
-    return of(SECURITIES_FILTER_CONTROLS).pipe(delay(1000));
+    return of(SECURITIES_FILTER_CONTROLS).pipe(delay(500));
   }
 }

@@ -38,12 +38,11 @@ export class FilterBarComponent implements OnInit {
     for (const prop in data) {
       const value = data[prop];
 
-      // invalidate empty data fields
+      // remove empty data fields
       if (typeof value === 'string' && value.trim() === '') {
-        data[prop] = null;
+        delete data[prop];
       }
     }
-
     this.formChanged.emit(data);
   }
 }
