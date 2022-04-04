@@ -3,13 +3,18 @@ table {
   width: 100%;
 }
 
-.filter-bar-placeholder {
-  height: 100px;
-  margin-bottom: 20px;
+.layout-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-bar {
+  flex-grow: 0;
 }
 
 .table-wrapper {
   position: relative;
+  flex-grow: 1;
 
   .loading-indicator {
     position: absolute;

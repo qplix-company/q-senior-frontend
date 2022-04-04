@@ -1,0 +1,23 @@
+<div class="filter-bar">
+    <div *ngIf="isLoading; else showFilters">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <ng-template #showFilters>
+        <div class="header">
+            <div class="title">Filter</div>
+            <button mat-button class="clear" (click)="resetForm()">Clear</button>
+        </div>
+        <form [formGroup]="filterForm">
+            <div *ngFor="let filterControl of filterData" class="form-row">
+                <div [ngSwitch]="filterControl.controlType">
+                    <app-search-field *ngSwitchCase="'searchField'" [filter]="filterControl" [form]="filterForm">
+                    </app-search-field>
+                    <app-radio-select *ngSwitchCase="'radioSelect'" [filter]="filterControl" [form]="filterForm">
+                    </app-radio-select>
+
+                </div>
+            </div>
+        </form>
+    </ng-template>
+</div>

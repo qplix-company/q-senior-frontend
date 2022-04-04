@@ -1,0 +1,15 @@
+[
+  {
+    "controlType": "searchField",
+    "key": "name"
+  },
+  {
+    "controlType": "radioSelect",
+    "key": "isPrivate",
+    "options": [
+      { "key": "", "value": "All" },
+      { "key": true, "value": "Private" },
+      { "key": false, "value": "Non private" }
+    ]
+  }
+]
