@@ -4,6 +4,34 @@
     "key": "name",
     "order": 0
   },
+
+  {
+    "controlType": "checkBoxSelect",
+    "key": "currencies",
+    "name": "Currencies",
+    "options": [
+      { "key": "EUR", "value": "€ Euro" },
+      { "key": "USD", "value": "$ US-Dollar" },
+      { "key": "GBP", "value": "£ Pound Sterling" }
+    ],
+    "order": 1
+  },
+  {
+    "controlType": "checkBoxSelect",
+    "key": "types",
+    "name": "Types",
+    "options": [
+      { "key": "BankAccount", "value": "Bank Account" },
+      { "key": "Closed-endFund", "value": "Closed-end Fund" },
+      { "key": "Collectible", "value": "Collectible" },
+      { "key": "DirectHolding", "value": "Direct Holding" },
+      { "key": "Generic", "value": "Generic" },
+      { "key": "Equity", "value": "Equity" },
+      { "key": "Loan", "value": "Loan" },
+      { "key": "RealEstate", "value": "Real Estate" }
+    ],
+    "order": 2
+  },
   {
     "controlType": "radioSelect",
     "key": "isPrivate",
@@ -13,6 +41,6 @@
       { "key": true, "value": "Private" },
       { "key": false, "value": "Non private" }
     ],
-    "order": 1
+    "order": 3
   }
 ]

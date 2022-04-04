@@ -32,7 +32,6 @@ export class FilterBarComponent {
 
   private createForm(filterControls: readonly FilterControlBase[]) {
     // sort by order ascending, e.g. 0, 1, 2..
-    console.log(filterControls);
     this.sortedFilterControls = [...filterControls].sort(
       (a, b) => a.order - b.order
     );
@@ -51,11 +50,28 @@ export class FilterBarComponent {
     for (const prop in data) {
       const value = data[prop];
 
+      if (Array.isArray(value)) {
+        // remove booleans from array, as they are inserted from the from controls
+        const sanitizedArray = [];
+        for (let entry of value) {
+          if (typeof entry === 'string') {
+            sanitizedArray.push(entry);
+          }
+        }
+        data[prop] = sanitizedArray;
+
+        // remove array, when there are no entries left
+        if (sanitizedArray.length === 0) {
+          delete data[prop];
+        }
+      }
+
       // remove empty data fields
-      if (typeof value === 'string' && value.trim() === '') {
+      else if (typeof value === 'string' && value.trim() === '') {
         delete data[prop];
       }
     }
+
     this.formChanged.emit(data);
   }
 }

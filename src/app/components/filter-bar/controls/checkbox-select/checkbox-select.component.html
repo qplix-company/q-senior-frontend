@@ -1,0 +1,9 @@
+<div [formGroup]="form">
+    <div class="title">
+        <app-filter-title *ngIf="filter.name" [title]="filter.name"></app-filter-title>
+    </div>
+    <div [formArrayName]="filter.key" *ngFor="let entry of filter.options; let i = index">
+        <mat-checkbox [formControlName]="i" [value]="entry.key" (change)="onCheckboxChange($event)">
+            {{ entry.value }} </mat-checkbox>
+    </div>
+</div>
