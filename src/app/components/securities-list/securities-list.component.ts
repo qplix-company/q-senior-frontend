@@ -16,7 +16,7 @@ export class SecuritiesListComponent implements OnInit {
 
   public securities$: Observable<Security[]>;
   public loadingSecurities$: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(false);
+    new BehaviorSubject<boolean>(true);
 
   public filters$: Observable<FilterControlBase[]>;
   public loadingFilters$: BehaviorSubject<boolean> =
@@ -25,17 +25,12 @@ export class SecuritiesListComponent implements OnInit {
   constructor(private securityService: SecurityService) {}
 
   ngOnInit(): void {
-    this.securities$ = this.securityService
-      .getSecurities({})
-      .pipe(indicate(this.loadingSecurities$));
-
     this.filters$ = this.securityService
       .getSecuritiesFilterMeta()
       .pipe(indicate(this.loadingFilters$));
   }
 
   onFilterChanged(filter: SecuritiesFilter) {
-    console.log(filter);
     this.securities$ = this.securityService
       .getSecurities(filter)
       .pipe(indicate(this.loadingSecurities$));
