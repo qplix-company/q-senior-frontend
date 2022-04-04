@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { SecuritiesFilter } from 'src/app/models/securitiesFilter';
@@ -13,22 +13,20 @@ export class FilterBarComponent implements OnInit {
   @Input() isLoading: boolean;
   @Input() filterData: readonly FilterControlBase[];
 
+  @Output() formChanged = new EventEmitter<SecuritiesFilter>();
+
   public filterForm: FormGroup = this._formBuilder.group({});
 
   constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.filterData != null) {
-      this.createForm(this.filterData);
-    }
-  }
-
-  private createForm(controls: readonly FilterControlBase[]) {
-    console.log(controls);
+  ngOnInit(): void {
     this.filterForm.valueChanges
       .pipe(debounceTime(500), distinctUntilChanged())
-      .subscribe((res: SecuritiesFilter) => {});
+      .subscribe((res: SecuritiesFilter) => this.formDataChanged(res));
+  }
+
+  private formDataChanged(data: SecuritiesFilter) {
+    // TODO clean up data, e.g. whitespaces
+    this.formChanged.emit(data);
   }
 }

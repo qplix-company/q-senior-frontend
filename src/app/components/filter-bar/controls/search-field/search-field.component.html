@@ -1,6 +1,6 @@
-<div>
+<div [formGroup]="form">
     <mat-form-field>
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput placeholder="Search">
+        <input matInput [formControlName]="filter.key" [id]="filter.key" placeholder="Search">
     </mat-form-field>
 </div>

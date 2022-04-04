@@ -1,5 +1,6 @@
 ﻿<div class="layout-container">
-  <filter-bar [isLoading]="isFilterLoading" [filterData]="filterData"></filter-bar>
+  <filter-bar [isLoading]="isFilterLoading" [filterData]="filterData" (formChanged)="onFormChanged($event)">
+  </filter-bar>
 
   <div class="table-wrapper">
     <div class="loading-indicator" *ngIf="isLoading">

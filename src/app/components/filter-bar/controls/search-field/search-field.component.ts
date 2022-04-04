@@ -19,7 +19,5 @@ export class SearchFieldComponent implements OnInit {
 
   createForm(controls: FilterControlBase) {
     this.form.addControl(controls.key, this._formBuilder.control(''));
-
-    console.log(this.form);
   }
 }

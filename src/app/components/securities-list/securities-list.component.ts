@@ -1,5 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { SecuritiesFilter } from 'src/app/models/securitiesFilter';
 import { Security } from '../../models/security';
 import { SecurityService } from '../../services/security.service';
 import { indicate } from '../../utils';
@@ -31,5 +32,12 @@ export class SecuritiesListComponent implements OnInit {
     this.filters$ = this.securityService
       .getSecuritiesFilterMeta()
       .pipe(indicate(this.loadingFilters$));
+  }
+
+  onFilterChanged(filter: SecuritiesFilter) {
+    console.log(filter);
+    this.securities$ = this.securityService
+      .getSecurities(filter)
+      .pipe(indicate(this.loadingSecurities$));
   }
 }

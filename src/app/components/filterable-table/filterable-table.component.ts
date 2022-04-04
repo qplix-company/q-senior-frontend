@@ -4,7 +4,9 @@ import {
   Component,
   ContentChild,
   ContentChildren,
+  EventEmitter,
   Input,
+  Output,
   QueryList,
   ViewChild,
 } from '@angular/core';
@@ -16,6 +18,7 @@ import {
   MatTable,
 } from '@angular/material/table';
 import { Observable } from 'rxjs';
+import { SecuritiesFilter } from 'src/app/models/securitiesFilter';
 import { FilterControlBase } from '../filter-bar/controls/filter-controls-base';
 
 @Component({
@@ -39,6 +42,8 @@ export class FilterableTableComponent<T> implements AfterContentInit {
   @Input() isFilterLoading: boolean;
   @Input() filterData: readonly FilterControlBase[];
 
+  @Output() filterChanged = new EventEmitter<SecuritiesFilter>();
+
   ngAfterContentInit() {
     this.columnDefs.forEach((columnDef) => this.table.addColumnDef(columnDef));
     this.rowDefs.forEach((rowDef) => this.table.addRowDef(rowDef));
@@ -46,5 +51,9 @@ export class FilterableTableComponent<T> implements AfterContentInit {
       this.table.addHeaderRowDef(headerRowDef)
     );
     this.table.setNoDataRow(this.noDataRow);
+  }
+
+  onFormChanged(filter: SecuritiesFilter) {
+    this.filterChanged.emit(filter);
   }
 }

@@ -1,5 +1,5 @@
 ﻿<filterable-table class="security-list" [dataSource]="securities$ | async" [isLoading]="loadingSecurities$ | async"
-  [filterData]="filters$ | async" [isFilterLoading]="loadingFilters$ | async">
+  [filterData]="filters$ | async" [isFilterLoading]="loadingFilters$ | async" (filterChanged)="onFilterChanged($event)">
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
