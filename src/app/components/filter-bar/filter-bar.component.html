@@ -6,7 +6,7 @@
     <ng-template #showFilters>
         <div class="header">
             <div class="title">Filter</div>
-            <div class="clear">Clear</div>
+            <button mat-button class="clear" (click)="resetForm()">Clear</button>
         </div>
         <form [formGroup]="filterForm">
             <div *ngFor="let filterControl of filterData" class="form-row">

@@ -25,6 +25,10 @@ export class FilterBarComponent implements OnInit {
       .subscribe((res: SecuritiesFilter) => this.formDataChanged(res));
   }
 
+  public resetForm() {
+    this.filterForm.reset({ isPrivate: '' });
+  }
+
   /**
    * Called when the form data was changed.
    * The form data is sanitized before being emitted

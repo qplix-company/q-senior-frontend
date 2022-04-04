@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -28,6 +29,7 @@ import { SecuritiesListComponent } from './components/securities-list/securities
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    MatButtonModule,
     MatIconModule,
     MatInputModule,
     MatTableModule,
