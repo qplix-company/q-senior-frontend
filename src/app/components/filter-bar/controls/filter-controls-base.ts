@@ -2,4 +2,5 @@
 export interface FilterControlBase {
   controlType: string;
   key: string;
+  order: number;
 }

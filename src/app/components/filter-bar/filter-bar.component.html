@@ -9,7 +9,7 @@
             <button mat-button class="clear" (click)="resetForm()">Clear</button>
         </div>
         <form [formGroup]="filterForm">
-            <div *ngFor="let filterControl of filterData" class="form-row">
+            <div *ngFor="let filterControl of sortedFilterControls" class="form-row">
                 <div [ngSwitch]="filterControl.controlType">
                     <app-search-field *ngSwitchCase="'searchField'" [filter]="filterControl" [form]="filterForm">
                     </app-search-field>
