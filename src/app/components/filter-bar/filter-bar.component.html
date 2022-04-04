@@ -13,6 +13,8 @@
                 <div [ngSwitch]="filterControl.controlType">
                     <app-search-field *ngSwitchCase="'searchField'" [filter]="filterControl" [form]="filterForm">
                     </app-search-field>
+                    <app-radio-select *ngSwitchCase="'radioSelect'" [filter]="filterControl" [form]="filterForm">
+                    </app-radio-select>
 
                 </div>
             </div>

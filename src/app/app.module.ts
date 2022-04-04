@@ -3,11 +3,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RadioSelectComponent } from './components/filter-bar/controls/radio-select/radio-select.component';
 import { SearchFieldComponent } from './components/filter-bar/controls/search-field/search-field.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { FilterableTableComponent } from './components/filterable-table/filterable-table.component';
@@ -20,6 +22,7 @@ import { SecuritiesListComponent } from './components/securities-list/securities
     SecuritiesListComponent,
     FilterBarComponent,
     SearchFieldComponent,
+    RadioSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { SecuritiesListComponent } from './components/securities-list/securities
     MatInputModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    MatRadioModule,
     ReactiveFormsModule,
   ],
   providers: [],

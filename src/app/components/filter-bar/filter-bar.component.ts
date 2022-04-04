@@ -25,8 +25,21 @@ export class FilterBarComponent implements OnInit {
       .subscribe((res: SecuritiesFilter) => this.formDataChanged(res));
   }
 
+  /**
+   * Called when the form data was changed.
+   * The form data is sanitized before being emitted
+   * @param data of form values
+   */
   private formDataChanged(data: SecuritiesFilter) {
-    // TODO clean up data, e.g. whitespaces
+    for (const prop in data) {
+      const value = data[prop];
+
+      // invalidate empty data fields
+      if (typeof value === 'string' && value.trim() === '') {
+        data[prop] = null;
+      }
+    }
+
     this.formChanged.emit(data);
   }
 }
