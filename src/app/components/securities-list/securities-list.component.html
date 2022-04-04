@@ -1,5 +1,8 @@
-﻿<filterable-table class="security-list" [dataSource]="securities$ | async" [isLoading]="loadingSecurities$ | async"
-  [filterData]="filters$ | async" [isFilterLoading]="loadingFilters$ | async" (filterChanged)="onFilterChanged($event)">
+﻿<filterable-table class="security-list" [dataSource]="(securities$ | async)?.filtered"
+  [isLoading]="loadingSecurities$ | async" [filterData]="filters$ | async" [isFilterLoading]="loadingFilters$ | async"
+  (filterChanged)="onFilterChanged($event)">
+
+
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -25,3 +28,5 @@
     <td class="mat-cell" colspan="3"><i>No data</i></td>
   </tr>
 </filterable-table>
+<mat-paginator [length]="securityCount" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+</mat-paginator>
