@@ -15,6 +15,7 @@ import { SearchFieldComponent } from './components/filter-bar/controls/search-fi
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { FilterableTableComponent } from './components/filterable-table/filterable-table.component';
 import { SecuritiesListComponent } from './components/securities-list/securities-list.component';
+import { FilterTitleComponent } from './components/filter-bar/controls/filter-title/filter-title.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SecuritiesListComponent } from './components/securities-list/securities
     FilterBarComponent,
     SearchFieldComponent,
     RadioSelectComponent,
+    FilterTitleComponent,
   ],
   imports: [
     BrowserModule,
