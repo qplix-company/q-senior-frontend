@@ -2,9 +2,9 @@
   {
     "controlType": "searchField",
     "key": "name",
-    "order": 0
+    "order": 0,
+    "placeholder": "Search name"
   },
-
   {
     "controlType": "checkBoxSelect",
     "key": "currencies",
