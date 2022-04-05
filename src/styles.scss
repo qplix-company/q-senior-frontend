@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use "sass:map";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -9,11 +10,58 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$qplix-mat-colors: (
+    50 : #e0f5fa,
+    100 : #b3e6f2,
+    200 : #80d6e9,
+    300 : #4dc5e0,
+    400 : #26b8d9,
+    500 : #00acd2,
+    600 : #00a5cd,
+    700 : #009bc7,
+    800 : #0092c1,
+    900 : #0082b6,
+    A100 : #dff4ff,
+    A200 : #ace4ff,
+    A400 : #79d3ff,
+    A700 : #5fcbff,
+    contrast: (
+        50 : #696c72,
+        100 : #696c72,
+        200 : #696c72,
+        300 : #696c72,
+        400 : #696c72,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #696c72,
+        A200 : #696c72,
+        A400 : #696c72,
+        A700 : #696c72,
+    )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$q-senior-frontend-primary: mat.define-palette(mat.$indigo-palette);
-$q-senior-frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$q-senior-frontend-primary: mat.define-palette($qplix-mat-colors);
+
+
+$mat-accent: (
+  main: map.get($qplix-mat-colors, 500),
+  lighter: map.get($qplix-mat-colors, 100),
+  darker: map.get($qplix-mat-colors, 800),
+  200: map.get($qplix-mat-colors, 500),  // For slide toggle
+  contrast : (
+    main: map.get($qplix-mat-colors, 500),
+    lighter: map.get($qplix-mat-colors, 100),
+    darker: map.get($qplix-mat-colors, 800),
+  )
+);
+$q-senior-frontend-accent: mat.define-palette($mat-accent, main, lighter, darker);
+// $q-senior-frontend-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $q-senior-frontend-warn: mat.define-palette(mat.$red-palette);
@@ -26,6 +74,7 @@ $q-senior-frontend-theme: mat.define-light-theme((
     accent: $q-senior-frontend-accent,
     warn: $q-senior-frontend-warn,
   )
+
 ));
 
 // Include theme styles for core and each component used in your app.
