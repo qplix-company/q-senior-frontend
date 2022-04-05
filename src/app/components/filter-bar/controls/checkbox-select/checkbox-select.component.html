@@ -1,5 +1,5 @@
 <div [formGroup]="form">
-    <div class="title">
+    <div>
         <app-filter-title *ngIf="filter.name" [title]="filter.name"></app-filter-title>
     </div>
     <div [formArrayName]="filter.key" *ngFor="let entry of filter.options; let i = index">

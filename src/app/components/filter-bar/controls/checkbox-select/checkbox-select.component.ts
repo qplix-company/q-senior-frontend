@@ -21,7 +21,7 @@ export class CheckboxSelectComponent implements OnInit {
   /**
    * Creates a form array containing each option provided
    */
-  createForm(controls: FilterControlsOptions) {
+  private createForm(controls: FilterControlsOptions) {
     let formEntries = this._formBuilder.array([]);
 
     for (let entry of controls.options) {
