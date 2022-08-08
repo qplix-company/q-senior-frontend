@@ -1,0 +1,15 @@
+mat-card {
+    margin-bottom: 1em;
+}
+
+.filterForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+}

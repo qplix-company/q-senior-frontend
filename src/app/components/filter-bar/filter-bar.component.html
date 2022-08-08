@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title>Filter table</mat-card-title>
+    <form *ngIf="filterForm" [formGroup]="filterForm" class="filterForm">
+        <ng-container
+            *ngFor="let filter of filterDefinitions"
+            [ngSwitch]="filter.type">
+                <mat-form-field *ngSwitchCase="filterType.input" appearance="fill">
+                    <mat-label>{{filter.label}}</mat-label>
+                    <input matInput [formControlName]="filter.filterKey" [id]="filter.filterKey" type="text">
+                </mat-form-field>
+
+                <mat-form-field *ngSwitchCase="filterType.selectMultiple" appearance="fill">
+                    <mat-label>{{filter.label}}</mat-label>
+                    <mat-select [formControlName]="filter.filterKey" multiple>
+                        <mat-option *ngFor="let opt of filter.options" [value]="opt">{{opt}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div *ngSwitchCase="filterType.checkbox" class="mat-form-field-wrapper">
+                    <mat-checkbox [formControlName]="filter.filterKey">{{filter.label}}</mat-checkbox>
+                </div>
+        </ng-container>
+    </form>
+</mat-card>
