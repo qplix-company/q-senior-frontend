@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SecuritiesListComponent } from './components/securities-list/securities-list.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [SecuritiesListComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void { }
-}
+export class AppComponent {}

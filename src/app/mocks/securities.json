@@ -1,2594 +1,2483 @@
 [
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5cb730e12c94de98b0520b60",
-		"currency": "USD",
-		"name": "Demo | Abbott Laboratories (ABT    3.400 11/30/23 '23)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "ABT    3.400 11/30/23 '23",
-		"key": "ISIN: US002824BE94",
-		"commentCount": 0,
-		"unassignedDocumentCount": 1,
-		"totalDocumentCount": 1,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "6000112bec34dd9d88d7b96f",
-		"currency": "GBP",
-		"name": "Demo | Accesso Technology Group PLC",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "ACCESSO TECHNOLOGY GROUP ORD",
-		"key": "ISIN: GB0001771426",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 1,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1131000.0,
-					"currency": "GBP",
-					"formattedValue": "1.131.000,00"
-				},
-				"investmentId": "5c9b8d202c94de0e5451a3ca",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5d511cef2c94dee42cd44116",
-		"currency": "EUR",
-		"name": "Demo | Adidas AG (ADSG   2.250 10/08/26 '26)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "ADSG   2.250 10/08/26 '26",
-		"key": "ISIN: XS1114159277",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 1,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 281879.93,
-					"currency": "EUR",
-					"formattedValue": "281.879,93"
-				},
-				"investmentId": "5d4c34aa2c94dea6242b1a28",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b51f12c94de0e5492b12f",
-		"currency": "EUR",
-		"name": "Demo | Allianz Global Investors Europe",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Allianz Disc Eur Strat-A-EUR",
-		"key": "ISIN: LU0384022694",
-		"commentCount": 0,
-		"unassignedDocumentCount": 1,
-		"totalDocumentCount": 3,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Aktienfonds",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b52422c94de0e549350fa",
-		"currency": "EUR",
-		"name": "Demo | Allianz SE",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": "ISIN: DE0008404005",
-		"commentCount": 0,
-		"unassignedDocumentCount": 3,
-		"totalDocumentCount": 3,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b54242c94de0e54963e41",
-		"currency": "USD",
-		"name": "Demo | Apple Inc",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "APPLE ORD",
-		"key": "ISIN: US0378331005",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 3,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1761437.37,
-					"currency": "USD",
-					"formattedValue": "1.761.437,37"
-				},
-				"investmentId": "5abb33302c94de192081a432",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Closed-endFund",
-		"moreEntities": 0,
-		"id": "60c0bcbeec34e0db1c29ebcf",
-		"currency": "EUR",
-		"name": "Demo | Ballington Capital Partners",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Ballington Capital Partners deckt verschiedene Marktsektoren ab, wobei der Schwerpunkt auf der Mobilitätsbranche liegt. Das regionale Exposure ist diversifiziert. Der asiatische Raum macht hier den größten Teil aus.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 1,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1250000.0,
-					"currency": "EUR",
-					"formattedValue": "1.250.000,00"
-				},
-				"investmentId": "5ad4b6f32c94de1644add51c",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Private Equity > Sonstige Private Equity",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "6086a2edec34dd729c3780e9",
-		"currency": "EUR",
-		"name": "Demo | Bankkonto - EUR",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 5043167.19,
-					"currency": "EUR",
-					"formattedValue": "5.043.167,19"
-				},
-				"investmentId": "5a533eea2c94de8d5c8444ec",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Kontokorrentkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "6086a418ec34dd729c3879ff",
-		"currency": "GBP",
-		"name": "Demo | Bankkonto - GBP",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 350800.2,
-					"currency": "GBP",
-					"formattedValue": "350.800,20"
-				},
-				"investmentId": "5a533f1a2c94de8d5c845792",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Kontokorrentkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "5f32fa492c94de51bc54de45",
-		"currency": "USD",
-		"name": "Demo | Bankkonto - USD",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": "IBAN: DE12 34756 8900",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 629283.86,
-					"currency": "USD",
-					"formattedValue": "629.283,86"
-				},
-				"investmentId": "5a533f672c94de8d5c848659",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Kontokorrentkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b998b2c94de0e54ac98da",
-		"currency": "GBP",
-		"name": "Demo | BASF SE (BASF 1.750 03/11/25)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "BASF   1.750 03/11/25",
-		"key": "ISIN: XS1548422846",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 2,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1424149.04,
-					"currency": "GBP",
-					"formattedValue": "1.424.149,04"
-				},
-				"investmentId": "5c9b93512c94de0e54722569",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "611a2979ec34ddf3741edddd",
-		"currency": "EUR",
-		"name": "Demo | BioNTech SE (BIONTECH SE ADR)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "BIONTECH SE ADR",
-		"key": "ISIN: US09075V1026",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60c0b9e1ec34e0db1c24fd3c",
-		"currency": "EUR",
-		"name": "Demo | BMW FINANCE NV (BMWG   2.625 01/17/24 MTN)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "BMWG   2.625 01/17/24 MTN",
-		"key": "ISIN: XS1015217703",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1058499.73,
-					"currency": "EUR",
-					"formattedValue": "1.058.499,73"
-				},
-				"investmentId": "60c0ae472c94dd594c08872b",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "DirectHolding",
-		"moreEntities": 0,
-		"id": "60d05631ec34dd3994103926",
-		"currency": "EUR",
-		"name": "Demo | Capitol GmbH",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 8075000.0,
-					"currency": "EUR",
-					"formattedValue": "8.075.000,00"
-				},
-				"investmentId": "60d08433ec34dd39942bf9ec",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": true
-			}
-		],
-		"classification": "Illiquides Vermögen > Beteiligungen > Growth",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "60ec0216ec34dde0207837c6"
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "5cb061262c94de7f202a65da",
-		"currency": "EUR",
-		"name": "Demo | Container AG",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Kauf von 120 Überseecontainern, 45 Fuss",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Illiquides Vermögen > Beteiligungen > Sonstige Beteiligungen",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60ee943eec34ddd7c4b10588",
-		"currency": "EUR",
-		"name": "Demo | DAIMLER AG (DAIG   2.250 01/24/22 MTN)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "DAIG   2.250 01/24/22 MTN",
-		"key": "ISIN: DE000A1R04X6",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "60c0b0d8ec34da0e943ac11f",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b5fff2c94de0e54be5136",
-		"currency": "EUR",
-		"name": "Demo | Deutsche Bank AG",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": "ISIN: DE0005140008",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 2,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1850888.0,
-					"currency": "EUR",
-					"formattedValue": "1.850.888,00"
-				},
-				"investmentId": "5d4d3d4d2c94de33c0f15475",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60bf6c27ec34dda7c0a80d2f",
-		"currency": "EUR",
-		"name": "Demo | Deutsche Bank AG (DBK XAU IXZT OE)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "DBK XAU IXZT OE",
-		"key": "ISIN: DE0007223737",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 13745.0,
-					"currency": "EUR",
-					"formattedValue": "13.745,00"
-				},
-				"investmentId": "60a659d4ec34dac1ec2a3686",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Rohstoffe > Zertifikate auf Rohstoffe",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b60422c94de0e54be939e",
-		"currency": "EUR",
-		"name": "Demo | Deutsche Bank Call (9,80)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "SOG DBK CAL 20C",
-		"key": "ISIN: DE000ST2LKN1",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.02,
-					"currency": "EUR",
-					"formattedValue": "0,02"
-				},
-				"investmentId": "5b3356b02c94de543c471a0a",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Optionen auf Aktien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b605e2c94de0e54bef15b",
-		"currency": "EUR",
-		"name": "Demo | Deutsche Bank Put (8,80)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "BNP DBK PUT 18P",
-		"key": "ISIN: DE000PP9QM32",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.09,
-					"currency": "EUR",
-					"formattedValue": "0,09"
-				},
-				"investmentId": "5b3634a02c94dec39c96e243",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Optionen auf Aktien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b60ac2c94de0e54bf69ea",
-		"currency": "EUR",
-		"name": "Demo | Deutsche Pfandbriefbank Anleihe",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "PBBG   1.500 09/17/19",
-		"key": "ISIN: DE000A12UAR2",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5df8d1b02c94de6bd40c2bea",
-		"currency": "USD",
-		"name": "Demo | Devisentermingeschäft USD 1,1499 03/19",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Sonstiges > Devisentermingeschäfte",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b61942c94de0e54bfb3e6",
-		"currency": "EUR",
-		"name": "Demo | ESTX 50 MAR8",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "ESTX 50 MAR8",
-		"key": "ISIN: DE000C0NSEN6",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Futures auf Aktien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Collectible",
-		"moreEntities": 0,
-		"id": "60d2f4c1ec34dd2ed8305e31",
-		"currency": "EUR",
-		"name": "Demo | Ferrari F12 - 2017",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der Ferrari F12 ist ein Gran Turismo des italienischen Sportwagenherstellers Ferrari, der seit 2012 als Nachfolgemodell des Ferrari 599 verkauft wird. \nDer F12 Berlinetta war nach Werksangaben bis zur Einführung des LaFerrari der schnellste für den öffentlichen Straßenverkehr zugelassene Wagen der Marke.\nDieses Modell ist seit 2017 in Familienbesitz.\nDer Ferrari hat Oldtimerstatus und hat bereits an 3 Oldtimer Rallyes teilgenommen.\nDie Farbe dieses Modells ist eine limitierte Edition, von der es weltweit nur 25 Exemplare gibt.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 220000.0,
-					"currency": "EUR",
-					"formattedValue": "220.000,00"
-				},
-				"investmentId": "5ad72d522c94de2620633a62",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Fahrzeuge",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5ad72cde2c94de2620633397"
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "6086a620ec34dd729c388f10",
-		"currency": "EUR",
-		"name": "Demo | Festgeld VB 01.05.2020",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1670357.5,
-					"currency": "EUR",
-					"formattedValue": "1.670.357,50"
-				},
-				"investmentId": "5c8fcf932c94dee4e81a8521",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Festgeldkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "60c0a236ec34e0db1c04f2c9",
-		"currency": "EUR",
-		"name": "Demo | Festgeld VB 01.05.2021",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 80000.0,
-					"currency": "EUR",
-					"formattedValue": "80.000,00"
-				},
-				"investmentId": "60c0a2bbec34da0e943784f3",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Festgeldkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "6086a691ec34dd729c3899ee",
-		"currency": "EUR",
-		"name": "Demo | Festgeld VB 20.12.2018",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Liquidität > Festgeldkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Loan",
-		"moreEntities": 0,
-		"id": "60127abaec34ddc62428ca54",
-		"currency": "EUR",
-		"name": "Demo | Finanzierungskredit für Lagerhalle am Anger 17",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": -418176.66,
-					"currency": "EUR",
-					"formattedValue": "-418.176,66"
-				},
-				"investmentId": "60127afdec34dadd64f4baee",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Verbindlichkeiten > Finanzierungskredite",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "DirectHolding",
-		"moreEntities": 0,
-		"id": "5c9b62712c94de0e54c0d3d4",
-		"currency": "EUR",
-		"name": "Demo | Foodguide GmbH",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 101000.0,
-					"currency": "EUR",
-					"formattedValue": "101.000,00"
-				},
-				"investmentId": "60d09106ec34dd3994386a4a",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": true
-			}
-		],
-		"classification": "Illiquides Vermögen > Beteiligungen > Bridge",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5c9361082c94de88185afcb3"
-	},
-	{
-		"type": "Closed-endFund",
-		"moreEntities": 0,
-		"id": "60c0bdacec34e0db1c2b1f4a",
-		"currency": "EUR",
-		"name": "Demo | Galaxia Capital III",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Galaxia Capital ist spezialisiert auf kleine und mittlere Unternehmen, vorwiegend aus dem europäischen Raum (Anteil von 50% am regionalen Exposure). Im Fonds sind viele verschiedene Marktsektoren abgebildet.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1900000.0,
-					"currency": "EUR",
-					"formattedValue": "1.900.000,00"
-				},
-				"investmentId": "5ad4bff82c94de1644b63443",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Private Equity > Sonstige Private Equity",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "RealEstate",
-		"moreEntities": 0,
-		"id": "60a65700ec34dda1ac7e1106",
-		"currency": "EUR",
-		"name": "Demo | Geschäftssitz",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Die Immobilie wird von der Gesellschaft als Firmensitz eigengenutzt.",
-		"key": "Address: Hauptstr. 1, 80634 München",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 1,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 8845000.0,
-					"currency": "EUR",
-					"formattedValue": "8.845.000,00"
-				},
-				"investmentId": "5a2943702c94dec264ca38d5",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Immobilien > Eigengenutzte Immobilien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5f34317f2c94de76640975d7"
-	},
-	{
-		"type": "Loan",
-		"moreEntities": 0,
-		"id": "5c9b67652c94de0e54c32ffd",
-		"currency": "EUR",
-		"name": "Demo | Gesellschaftsdarlehen",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1000000.0,
-					"currency": "EUR",
-					"formattedValue": "1.000.000,00"
-				},
-				"investmentId": "5a95102c2c94dec1a4f5de58",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Forderungen > Darlehensforderungen",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b67882c94de0e54c36268",
-		"currency": "EUR",
-		"name": "Demo | Gold",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Gold/Euro FX Cross Rate",
-		"key": "Ticker: XAUEUR=R",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 38655.5,
-					"currency": "EUR",
-					"formattedValue": "38.655,50"
-				},
-				"investmentId": "5b4dedd22c94deb330f4e5d0",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5d9d805a2c94de7b6c453deb",
-		"currency": "USD",
-		"name": "Demo | Gold Unze USD",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Gold Unze USD",
-		"key": "Ticker: XAU=",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Closed-endFund",
-		"moreEntities": 0,
-		"id": "5c9b67b82c94de0e54c3ae07",
-		"currency": "EUR",
-		"name": "Demo | Growth Equity Fund A-I",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der Growth Capital Fund A-I soll das beschleunigte Wachstum der Zielunternehmen durch die Ausweitung von Aktivitäten, die Erschließung neuer Märkte oder den Abschluss strategischer Akquisitionen ermöglichen. Geografisch konzentriert sich der Fonds hauptsächlich auf europäische Länder.",
-		"key": null,
-		"commentCount": 1,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 130000.0,
-					"currency": "EUR",
-					"formattedValue": "130.000,00"
-				},
-				"investmentId": "5a1bdd552c94de48c4cd7314",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Private Equity > Growth / Buyout",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5a1c09912c94de48c4d18543"
-	},
-	{
-		"type": "Collectible",
-		"moreEntities": 0,
-		"id": "5c9b67d72c94de0e54c5219e",
-		"currency": "EUR",
-		"name": "Demo | Henri Matisse Gemälde",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Henri Matisse (French, 1869–1954);\nOil on canvas\n\nFramed Dimensions: 71.1 x 62.2 x 5.1 cm \nCollioure - 55.3 x 46 cm - 1905 - 55.3 x 46 cm - 1905",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1900000.0,
-					"currency": "EUR",
-					"formattedValue": "1.900.000,00"
-				},
-				"investmentId": "5a96a16d2c94dec9bc4fd008",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Kunst",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5a969baf2c94dec9bc4e0a3e"
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b90562c94de0e54645ccf",
-		"currency": "EUR",
-		"name": "Demo | Hugo Boss AG",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "HUGO BOSS N ORD",
-		"key": "ISIN: DE000A1PHFF7",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 2,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 2413160.0,
-					"currency": "EUR",
-					"formattedValue": "2.413.160,00"
-				},
-				"investmentId": "5c9b903e2c94de0e54633ba5",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60dddb69ec34dde7bcd3b4e2",
-		"currency": "USD",
-		"name": "Demo | iShares",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "iS Core S&P 500 UCITS ETF",
-		"key": "ISIN: IE00B5BMR087",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 44303.51,
-					"currency": "USD",
-					"formattedValue": "44.303,51"
-				},
-				"investmentId": "60016f192c94dd1f804ad348",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktienfonds",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9cdf0c2c94def414d49f30",
-		"currency": "EUR",
-		"name": "Demo | iShares MSCI World",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "IS MSCI WORLD UCITS USD (DIST) ETF",
-		"key": "ISIN: IE00B0M62Q58",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 2783.6,
-					"currency": "EUR",
-					"formattedValue": "2.783,60"
-				},
-				"investmentId": "602be295ec34da650cac0589",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktienfonds",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "RealEstate",
-		"moreEntities": 0,
-		"id": "5c9b68452c94de0e54c64644",
-		"currency": "EUR",
-		"name": "Demo | Kindergarten Laubweg 10a",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der Kindergarten im Laubweg 10a verfügt über Räumlichkeiten mit einer Größe von 537qm. Der Garten ist weitere 67qm groß.",
-		"key": "Address: Laubweg 10a, 06108 Halle (Saale)",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1300000.0,
-					"currency": "EUR",
-					"formattedValue": "1.300.000,00"
-				},
-				"investmentId": "5a295d2e2c94dec264cb1f04",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Immobilien > Vermietete Immobilien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5a295d4c2c94dec264cb28cd"
-	},
-	{
-		"type": "RealEstate",
-		"moreEntities": 0,
-		"id": "5c9b687b2c94de0e54c65271",
-		"currency": "EUR",
-		"name": "Demo | Lagerhalle Am Anger 17",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Die Lagerhalle besteht aus zwei separaten Lagerhallen",
-		"key": "Address: Am Anger 17, 72075 Tübingen",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 1700000.0,
-					"currency": "EUR",
-					"formattedValue": "1.700.000,00"
-				},
-				"investmentId": "5a28f4ac2c94dec264c51f89",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Immobilien > Vermietete Immobilien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5a28f39c2c94dec264c50f76"
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60bdf96eec34dd3da4442603",
-		"currency": "USD",
-		"name": "Demo | Lantern Structured Asset Management Limited",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "UBS ETF CCSF UCITS ETF USD Aa",
-		"key": "ISIN: IE00B53H0131",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 8618.12,
-					"currency": "USD",
-					"formattedValue": "8.618,12"
-				},
-				"investmentId": "60a65b7d2c94dd2a88a43def",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Rohstoffe > Rohstofffonds",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5e6fbd012c94debcb86a5e51",
-		"currency": "EUR",
-		"name": "Demo | Lyxor",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "",
-		"key": "ISIN: FR0010251744",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Aktienfonds",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b68f72c94de0e54c72838",
-		"currency": "EUR",
-		"name": "Demo | Münchner Rück Call (175)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "CGM MUV2 CAL 18C",
-		"key": "ISIN: DE000CX2PV49",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 237500.0,
-					"currency": "EUR",
-					"formattedValue": "237.500,00"
-				},
-				"investmentId": "5ab8e52e2c94de3724087ae4",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Optionen auf Aktien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60bf945eec34dda7c0b3ee49",
-		"currency": "EUR",
-		"name": "Demo | Platin",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Platinum/Euro FX Cross Rate",
-		"key": "Ticker: XPTEUR=R",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 17586.97,
-					"currency": "EUR",
-					"formattedValue": "17.586,97"
-				},
-				"investmentId": "60a65c0c2c94dd5094dd0144",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Collectible",
-		"moreEntities": 0,
-		"id": "5c9b69142c94de0e54c7663c",
-		"currency": "EUR",
-		"name": "Demo | Porsche 911 Speedster",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Privatfahrzeug Hr. Müller",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 270000.0,
-					"currency": "EUR",
-					"formattedValue": "270.000,00"
-				},
-				"investmentId": "5c0002a32c94de25dc39813d",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Fahrzeuge",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5c5837192c94de7ca49e82ca"
-	},
-	{
-		"type": "Loan",
-		"moreEntities": 0,
-		"id": "5de6273e2c94de22f8cac8d6",
-		"currency": "EUR",
-		"name": "Demo | Privatkredit an Start Up",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Gewährter Privatkredit an Start Up",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 2439.47,
-					"currency": "EUR",
-					"formattedValue": "2.439,47"
-				},
-				"investmentId": "5de624fc2c94de22f8c785d3",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Verbindlichkeiten > Privatkredite",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Collectible",
-		"moreEntities": 0,
-		"id": "5c9b692d2c94de0e54c76d68",
-		"currency": "EUR",
-		"name": "Demo | Rolex Oyster Perpetual",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 5000.0,
-					"currency": "EUR",
-					"formattedValue": "5.000,00"
-				},
-				"investmentId": "5c580d732c94de7ca49a4115",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Schmuck",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5c580d162c94de7ca49a36ce"
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60bdf911ec34dd3da443e71a",
-		"currency": "EUR",
-		"name": "Demo | Silber",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Silver/Euro FX Cross Rate",
-		"key": "Ticker: XAGEUR=R",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 12933.83,
-					"currency": "EUR",
-					"formattedValue": "12.933,83"
-				},
-				"investmentId": "60a659322c94dd5094dc49b9",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "5c9b8ea02c94de0e545581d0",
-		"currency": "EUR",
-		"name": "Demo | Sodexo SA",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "SODEXO ORD",
-		"key": "ISIN: FR0000121220",
-		"commentCount": 0,
-		"unassignedDocumentCount": 2,
-		"totalDocumentCount": 2,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 767200.0,
-					"currency": "EUR",
-					"formattedValue": "767.200,00"
-				},
-				"investmentId": "60c0b3e22c94dd594c0b1926",
-				"custodianName": "MM | VBANK | 9.841.750.00",
-				"custodianId": "5c7e4b442c94de3a1cda9f78",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "60900f71ec34ddd668fda091",
-		"currency": "EUR",
-		"name": "Demo | Sonnenberg Forst (DE)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der Sonnenbergforst liegt im Ostallgäu (Bayern) nördlich des Sonnenbergs. Der Wald besteht aus einem Mix aus Fichten, Buchen, sonstigen Nadelbäumen und sonstigen Laubbäumen. Hauptsächlich wird das Holz zu Sägeholz weiterverarbeitet.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 6023000.0,
-					"currency": "EUR",
-					"formattedValue": "6.023.000,00"
-				},
-				"investmentId": "5c90bcc92c94de35383eff99",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Agrar- und Forstwirtschaft > Forstwirtschaft",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5c90b8ea2c94de35383eba45"
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "60900edeec34ddd668fd90e2",
-		"currency": "USD",
-		"name": "Demo | Texas Hill Forrest (USA)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der Texas Hill Forrest liegt im Süden des Bundesstaats Texas in den USA. Der Wald besteht aus einem Mix aus Fichten, Buchen, sonstigen Nadelbäumen und sonstigen Laubbäumen. Hauptsächlich wird das Holz zu Sägeholz weiterverarbeitet.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 8349602.5,
-					"currency": "USD",
-					"formattedValue": "8.349.602,50"
-				},
-				"investmentId": "60901162ec34daeacc900ab3",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Agrar- und Forstwirtschaft > Forstwirtschaft",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": "6090147fec34ddd668007338"
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "6086a6aeec34dd729c389c21",
-		"currency": "EUR",
-		"name": "Demo | Transitkonto - EUR",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 48016.9,
-					"currency": "EUR",
-					"formattedValue": "48.016,90"
-				},
-				"investmentId": "5a5339712c94de8d5c8219ff",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Transferkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "BankAccount",
-		"moreEntities": 0,
-		"id": "6086a6c3ec34dd729c389ea0",
-		"currency": "GBP",
-		"name": "Demo | Transitkonto - GBP",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "GBP",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "5bcdbd882c94de27f43b8c06",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Liquidität > Transferkonten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60bf9331ec34dda7c0b3a739",
-		"currency": "EUR",
-		"name": "Demo | Unilever PLC (EUR)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "UNILEVER ORD",
-		"key": "ISIN: GB00B10RZP78",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "6005c5b02c94dd5f083e9de9",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60ee9459ec34ddd7c4b12478",
-		"currency": "USD",
-		"name": "Demo | United States Treasury (UST    3.375 11/15/48)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "UST    3.375 11/15/48",
-		"key": "ISIN: US912810SE91",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 2,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 3324432.07,
-					"currency": "USD",
-					"formattedValue": "3.324.432,07"
-				},
-				"investmentId": "5c9b92822c94de0e546b375d",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60925ee2ec34ddf3101113ed",
-		"currency": "EUR",
-		"name": "Demo | US Tech Fund",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": "ISIN: LU0159053015",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Aktienfonds",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60bf6c4aec34dda7c0a849dd",
-		"currency": "EUR",
-		"name": "Demo | VanEck ETP AG (VANECK VECTORS ETHEREUM ETN)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "VANECK VECTORS ETHEREUM ETN",
-		"key": "ISIN: DE000A3GPSP7",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Noch nicht spezifiziert",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Closed-endFund",
-		"moreEntities": 0,
-		"id": "60c23752ec34dd3d58be133d",
-		"currency": "EUR",
-		"name": "Demo | VC Equity Fund I",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der VC Equity Fund I ist ein Fonds, der in Minderheitsbeteiligungen an Start-up-Unternehmen investiert. Das Hauptaugenmerk liegt hierbei auf Bio- und Gesundheitstechnologie. Das regionale Exposure des Fonds beschränkt sich hauptsächlich auf den europäischen Raum.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [],
-		"classification": "Illiquides Vermögen > Private Equity > Venture",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Closed-endFund",
-		"moreEntities": 0,
-		"id": "60c23802ec34dd3d58be360e",
-		"currency": "EUR",
-		"name": "Demo | VC Equity Fund II",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "VC Equity Fund II beinhaltet Beteiligungen an wachstumsstarken Unternehmen aus dem Bereich der Internet- und Kommunikationstechnik. Der Fonds ist regional stark diversifiziert.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 60000.0,
-					"currency": "EUR",
-					"formattedValue": "60.000,00"
-				},
-				"investmentId": "5c9e34752c94de15b421bbeb",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Private Equity > Venture",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Closed-endFund",
-		"moreEntities": 0,
-		"id": "5c9b6a022c94de0e54c8f1f4",
-		"currency": "EUR",
-		"name": "Demo | VC Fund CAPITAL B-I",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Der VC-Fonds CAPITAL B-I ist ein Frühphasenfonds, der in Minderheitsbeteiligungen an Startup-Unternehmen investiert, hauptsächlich in wachstumsstarken Sektoren wie Internet- und Verbrauchertechnologie, Biotechnologie und Gesundheitstechnologie sowie Energie. Der Fonds hat keinen dominierenden geografischen Schwerpunkt.",
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 279000.0,
-					"currency": "EUR",
-					"formattedValue": "279.000,00"
-				},
-				"investmentId": "5a1c11cd2c94de48c4d1bade",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Private Equity > Venture",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": "5a1c15432c94de48c4d2f8d5"
-	},
-	{
-		"type": "RealEstate",
-		"moreEntities": 0,
-		"id": "60d203e5ec34dd64c4ac6438",
-		"currency": "EUR",
-		"name": "Demo | Villa Sonnenstraße",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "Hochwertige Apartments in bester Lage.",
-		"key": "Address: Sonnenstraße 800, 80331 München",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 16000000.0,
-					"currency": "EUR",
-					"formattedValue": "16.000.000,00"
-				},
-				"investmentId": "60a66a98ec34dda1ac86d42f",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Illiquides Vermögen > Immobilien > Vermietete Immobilien",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": "60a66a43ec34dda1ac86cfab"
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "60c073b5ec34dddb1cb49b18",
-		"currency": "GBP",
-		"name": "Demo | Vodafone Group PLC",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "VODAFONE GROUP ORD",
-		"key": "ISIN: GB00BH4HKS39",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 110140.0,
-					"currency": "GBP",
-					"formattedValue": "110.140,00"
-				},
-				"investmentId": "60c0aac52c94dd5bbcf5cf7a",
-				"custodianName": "MM | DAB | 5.043.210.00",
-				"custodianId": "5a05a1622c94dee914d24503",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "5c9b6a192c94de0e54c8f99c",
-		"currency": "EUR",
-		"name": "Kostenträger | Depotgebühren",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo",
-			"Kostenträger"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "5c617bac2c94de888c8ec346",
-				"custodianName": "MM | DAB | 3.041.250.00",
-				"custodianId": "5c7e4ab92c94de3a1cda8e88",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": true
-			}
-		],
-		"classification": "Allgemeines > Kosten > Depotgebühren",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "5c9b6a3b2c94de0e54c9190b",
-		"currency": "EUR",
-		"name": "Kostenträger | Sonstige Gebühren",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo",
-			"Kostenträger"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "5c8b696e2c94de5238afae37",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Allgemeines > Kosten > Sonstige Kosten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "5c9b6a612c94de0e54c9d97e",
-		"currency": "EUR",
-		"name": "Kostenträger | Steuern",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo",
-			"Kostenträger"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "5c8b69842c94de5238afc453",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Allgemeines > Steuern > Sonstige Steuern",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "5c9b6a752c94de0e54c9ddca",
-		"currency": "EUR",
-		"name": "Kostenträger | Transaktionskostenpauschale",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo",
-			"Kostenträger"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "5c8b69982c94de5238afdd11",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Allgemeines > Kosten > Transaktionskosten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Generic",
-		"moreEntities": 0,
-		"id": "5c9b6a912c94de0e54c9fe7b",
-		"currency": "EUR",
-		"name": "Kostenträger | Vermögensverwaltungsgebühren",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": null,
-		"key": null,
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [
-			"Demo",
-			"Kostenträger"
-		],
-		"investments": [
-			{
-				"legalEntity": "Maximilian Schneider",
-				"currentNAV": {
-					"value": 0.0,
-					"currency": "EUR",
-					"formattedValue": "0,00"
-				},
-				"investmentId": "5c617b272c94de888c8c9868",
-				"custodianName": null,
-				"custodianId": "000000000000000000000000",
-				"legalEntityId": "59fc36692c94deb008877387",
-				"isAggregatedInvestment": false
-			}
-		],
-		"classification": "Allgemeines > Kosten > Verwaltungskosten",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": true,
-		"defaultImageId": null
-	},
-	{
-		"type": "Equity",
-		"moreEntities": 0,
-		"id": "6123c371a358320fbdb75be5",
-		"currency": "EUR",
-		"name": "VANGUARD GROUP (IRELAND) LIMITED (FTSE Dev Europe UCITS ETF)",
-		"namePrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"description": "FTSE Dev Europe UCITS ETF",
-		"key": "ISIN: IE00B945VV12",
-		"commentCount": 0,
-		"unassignedDocumentCount": 0,
-		"totalDocumentCount": 0,
-		"tags": [],
-		"investments": [],
-		"classification": "Liquides Vermögen > Aktien > Noch nicht spezifiziert",
-		"classificationPrivatisationState": {
-			"isOverride": false,
-			"overridingClients": []
-		},
-		"isPrivate": false,
-		"defaultImageId": null
-	}
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5cb730e12c94de98b0520b60",
+    "currency": "USD",
+    "name": "Demo | Abbott Laboratories (ABT    3.400 11/30/23 '23)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "ABT    3.400 11/30/23 '23",
+    "key": "ISIN: US002824BE94",
+    "commentCount": 0,
+    "unassignedDocumentCount": 1,
+    "totalDocumentCount": 1,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "6000112bec34dd9d88d7b96f",
+    "currency": "GBP",
+    "name": "Demo | Accesso Technology Group PLC",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "ACCESSO TECHNOLOGY GROUP ORD",
+    "key": "ISIN: GB0001771426",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 1,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1131000.0,
+          "currency": "GBP",
+          "formattedValue": "1.131.000,00"
+        },
+        "investmentId": "5c9b8d202c94de0e5451a3ca",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5d511cef2c94dee42cd44116",
+    "currency": "EUR",
+    "name": "Demo | Adidas AG (ADSG   2.250 10/08/26 '26)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "ADSG   2.250 10/08/26 '26",
+    "key": "ISIN: XS1114159277",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 1,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 281879.93,
+          "currency": "EUR",
+          "formattedValue": "281.879,93"
+        },
+        "investmentId": "5d4c34aa2c94dea6242b1a28",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b51f12c94de0e5492b12f",
+    "currency": "EUR",
+    "name": "Demo | Allianz Global Investors Europe",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Allianz Disc Eur Strat-A-EUR",
+    "key": "ISIN: LU0384022694",
+    "commentCount": 0,
+    "unassignedDocumentCount": 1,
+    "totalDocumentCount": 3,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Aktienfonds",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b52422c94de0e549350fa",
+    "currency": "EUR",
+    "name": "Demo | Allianz SE",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": "ISIN: DE0008404005",
+    "commentCount": 0,
+    "unassignedDocumentCount": 3,
+    "totalDocumentCount": 3,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b54242c94de0e54963e41",
+    "currency": "USD",
+    "name": "Demo | Apple Inc",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "APPLE ORD",
+    "key": "ISIN: US0378331005",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 3,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1761437.37,
+          "currency": "USD",
+          "formattedValue": "1.761.437,37"
+        },
+        "investmentId": "5abb33302c94de192081a432",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Closed-endFund",
+    "moreEntities": 0,
+    "id": "60c0bcbeec34e0db1c29ebcf",
+    "currency": "EUR",
+    "name": "Demo | Ballington Capital Partners",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Ballington Capital Partners deckt verschiedene Marktsektoren ab, wobei der Schwerpunkt auf der Mobilitätsbranche liegt. Das regionale Exposure ist diversifiziert. Der asiatische Raum macht hier den größten Teil aus.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 1,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1250000.0,
+          "currency": "EUR",
+          "formattedValue": "1.250.000,00"
+        },
+        "investmentId": "5ad4b6f32c94de1644add51c",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Private Equity > Sonstige Private Equity",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "6086a2edec34dd729c3780e9",
+    "currency": "EUR",
+    "name": "Demo | Bankkonto - EUR",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 5043167.19,
+          "currency": "EUR",
+          "formattedValue": "5.043.167,19"
+        },
+        "investmentId": "5a533eea2c94de8d5c8444ec",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Kontokorrentkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "6086a418ec34dd729c3879ff",
+    "currency": "GBP",
+    "name": "Demo | Bankkonto - GBP",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 350800.2,
+          "currency": "GBP",
+          "formattedValue": "350.800,20"
+        },
+        "investmentId": "5a533f1a2c94de8d5c845792",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Kontokorrentkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "5f32fa492c94de51bc54de45",
+    "currency": "USD",
+    "name": "Demo | Bankkonto - USD",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": "IBAN: DE12 34756 8900",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 629283.86,
+          "currency": "USD",
+          "formattedValue": "629.283,86"
+        },
+        "investmentId": "5a533f672c94de8d5c848659",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Kontokorrentkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b998b2c94de0e54ac98da",
+    "currency": "GBP",
+    "name": "Demo | BASF SE (BASF 1.750 03/11/25)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "BASF   1.750 03/11/25",
+    "key": "ISIN: XS1548422846",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 2,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1424149.04,
+          "currency": "GBP",
+          "formattedValue": "1.424.149,04"
+        },
+        "investmentId": "5c9b93512c94de0e54722569",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "611a2979ec34ddf3741edddd",
+    "currency": "EUR",
+    "name": "Demo | BioNTech SE (BIONTECH SE ADR)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "BIONTECH SE ADR",
+    "key": "ISIN: US09075V1026",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60c0b9e1ec34e0db1c24fd3c",
+    "currency": "EUR",
+    "name": "Demo | BMW FINANCE NV (BMWG   2.625 01/17/24 MTN)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "BMWG   2.625 01/17/24 MTN",
+    "key": "ISIN: XS1015217703",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1058499.73,
+          "currency": "EUR",
+          "formattedValue": "1.058.499,73"
+        },
+        "investmentId": "60c0ae472c94dd594c08872b",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "DirectHolding",
+    "moreEntities": 0,
+    "id": "60d05631ec34dd3994103926",
+    "currency": "EUR",
+    "name": "Demo | Capitol GmbH",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 8075000.0,
+          "currency": "EUR",
+          "formattedValue": "8.075.000,00"
+        },
+        "investmentId": "60d08433ec34dd39942bf9ec",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": true
+      }
+    ],
+    "classification": "Illiquides Vermögen > Beteiligungen > Growth",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "60ec0216ec34dde0207837c6"
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "5cb061262c94de7f202a65da",
+    "currency": "EUR",
+    "name": "Demo | Container AG",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Kauf von 120 Überseecontainern, 45 Fuss",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Illiquides Vermögen > Beteiligungen > Sonstige Beteiligungen",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60ee943eec34ddd7c4b10588",
+    "currency": "EUR",
+    "name": "Demo | DAIMLER AG (DAIG   2.250 01/24/22 MTN)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "DAIG   2.250 01/24/22 MTN",
+    "key": "ISIN: DE000A1R04X6",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "60c0b0d8ec34da0e943ac11f",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b5fff2c94de0e54be5136",
+    "currency": "EUR",
+    "name": "Demo | Deutsche Bank AG",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": "ISIN: DE0005140008",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 2,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1850888.0,
+          "currency": "EUR",
+          "formattedValue": "1.850.888,00"
+        },
+        "investmentId": "5d4d3d4d2c94de33c0f15475",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60bf6c27ec34dda7c0a80d2f",
+    "currency": "EUR",
+    "name": "Demo | Deutsche Bank AG (DBK XAU IXZT OE)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "DBK XAU IXZT OE",
+    "key": "ISIN: DE0007223737",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 13745.0,
+          "currency": "EUR",
+          "formattedValue": "13.745,00"
+        },
+        "investmentId": "60a659d4ec34dac1ec2a3686",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Rohstoffe > Zertifikate auf Rohstoffe",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b60422c94de0e54be939e",
+    "currency": "EUR",
+    "name": "Demo | Deutsche Bank Call (9,80)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "SOG DBK CAL 20C",
+    "key": "ISIN: DE000ST2LKN1",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.02,
+          "currency": "EUR",
+          "formattedValue": "0,02"
+        },
+        "investmentId": "5b3356b02c94de543c471a0a",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Optionen auf Aktien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b605e2c94de0e54bef15b",
+    "currency": "EUR",
+    "name": "Demo | Deutsche Bank Put (8,80)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "BNP DBK PUT 18P",
+    "key": "ISIN: DE000PP9QM32",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.09,
+          "currency": "EUR",
+          "formattedValue": "0,09"
+        },
+        "investmentId": "5b3634a02c94dec39c96e243",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Optionen auf Aktien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b60ac2c94de0e54bf69ea",
+    "currency": "EUR",
+    "name": "Demo | Deutsche Pfandbriefbank Anleihe",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "PBBG   1.500 09/17/19",
+    "key": "ISIN: DE000A12UAR2",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5df8d1b02c94de6bd40c2bea",
+    "currency": "USD",
+    "name": "Demo | Devisentermingeschäft USD 1,1499 03/19",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Sonstiges > Devisentermingeschäfte",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b61942c94de0e54bfb3e6",
+    "currency": "EUR",
+    "name": "Demo | ESTX 50 MAR8",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "ESTX 50 MAR8",
+    "key": "ISIN: DE000C0NSEN6",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Futures auf Aktien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Collectible",
+    "moreEntities": 0,
+    "id": "60d2f4c1ec34dd2ed8305e31",
+    "currency": "EUR",
+    "name": "Demo | Ferrari F12 - 2017",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der Ferrari F12 ist ein Gran Turismo des italienischen Sportwagenherstellers Ferrari, der seit 2012 als Nachfolgemodell des Ferrari 599 verkauft wird. \nDer F12 Berlinetta war nach Werksangaben bis zur Einführung des LaFerrari der schnellste für den öffentlichen Straßenverkehr zugelassene Wagen der Marke.\nDieses Modell ist seit 2017 in Familienbesitz.\nDer Ferrari hat Oldtimerstatus und hat bereits an 3 Oldtimer Rallyes teilgenommen.\nDie Farbe dieses Modells ist eine limitierte Edition, von der es weltweit nur 25 Exemplare gibt.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 220000.0,
+          "currency": "EUR",
+          "formattedValue": "220.000,00"
+        },
+        "investmentId": "5ad72d522c94de2620633a62",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Fahrzeuge",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5ad72cde2c94de2620633397"
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "6086a620ec34dd729c388f10",
+    "currency": "EUR",
+    "name": "Demo | Festgeld VB 01.05.2020",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1670357.5,
+          "currency": "EUR",
+          "formattedValue": "1.670.357,50"
+        },
+        "investmentId": "5c8fcf932c94dee4e81a8521",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Festgeldkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "60c0a236ec34e0db1c04f2c9",
+    "currency": "EUR",
+    "name": "Demo | Festgeld VB 01.05.2021",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 80000.0,
+          "currency": "EUR",
+          "formattedValue": "80.000,00"
+        },
+        "investmentId": "60c0a2bbec34da0e943784f3",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Festgeldkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "6086a691ec34dd729c3899ee",
+    "currency": "EUR",
+    "name": "Demo | Festgeld VB 20.12.2018",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Liquidität > Festgeldkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Loan",
+    "moreEntities": 0,
+    "id": "60127abaec34ddc62428ca54",
+    "currency": "EUR",
+    "name": "Demo | Finanzierungskredit für Lagerhalle am Anger 17",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": -418176.66,
+          "currency": "EUR",
+          "formattedValue": "-418.176,66"
+        },
+        "investmentId": "60127afdec34dadd64f4baee",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Verbindlichkeiten > Finanzierungskredite",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "DirectHolding",
+    "moreEntities": 0,
+    "id": "5c9b62712c94de0e54c0d3d4",
+    "currency": "EUR",
+    "name": "Demo | Foodguide GmbH",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 101000.0,
+          "currency": "EUR",
+          "formattedValue": "101.000,00"
+        },
+        "investmentId": "60d09106ec34dd3994386a4a",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": true
+      }
+    ],
+    "classification": "Illiquides Vermögen > Beteiligungen > Bridge",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5c9361082c94de88185afcb3"
+  },
+  {
+    "type": "Closed-endFund",
+    "moreEntities": 0,
+    "id": "60c0bdacec34e0db1c2b1f4a",
+    "currency": "EUR",
+    "name": "Demo | Galaxia Capital III",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Galaxia Capital ist spezialisiert auf kleine und mittlere Unternehmen, vorwiegend aus dem europäischen Raum (Anteil von 50% am regionalen Exposure). Im Fonds sind viele verschiedene Marktsektoren abgebildet.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1900000.0,
+          "currency": "EUR",
+          "formattedValue": "1.900.000,00"
+        },
+        "investmentId": "5ad4bff82c94de1644b63443",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Private Equity > Sonstige Private Equity",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "RealEstate",
+    "moreEntities": 0,
+    "id": "60a65700ec34dda1ac7e1106",
+    "currency": "EUR",
+    "name": "Demo | Geschäftssitz",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Die Immobilie wird von der Gesellschaft als Firmensitz eigengenutzt.",
+    "key": "Address: Hauptstr. 1, 80634 München",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 1,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 8845000.0,
+          "currency": "EUR",
+          "formattedValue": "8.845.000,00"
+        },
+        "investmentId": "5a2943702c94dec264ca38d5",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Immobilien > Eigengenutzte Immobilien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5f34317f2c94de76640975d7"
+  },
+  {
+    "type": "Loan",
+    "moreEntities": 0,
+    "id": "5c9b67652c94de0e54c32ffd",
+    "currency": "EUR",
+    "name": "Demo | Gesellschaftsdarlehen",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1000000.0,
+          "currency": "EUR",
+          "formattedValue": "1.000.000,00"
+        },
+        "investmentId": "5a95102c2c94dec1a4f5de58",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Forderungen > Darlehensforderungen",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b67882c94de0e54c36268",
+    "currency": "EUR",
+    "name": "Demo | Gold",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Gold/Euro FX Cross Rate",
+    "key": "Ticker: XAUEUR=R",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 38655.5,
+          "currency": "EUR",
+          "formattedValue": "38.655,50"
+        },
+        "investmentId": "5b4dedd22c94deb330f4e5d0",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5d9d805a2c94de7b6c453deb",
+    "currency": "USD",
+    "name": "Demo | Gold Unze USD",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Gold Unze USD",
+    "key": "Ticker: XAU=",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Closed-endFund",
+    "moreEntities": 0,
+    "id": "5c9b67b82c94de0e54c3ae07",
+    "currency": "EUR",
+    "name": "Demo | Growth Equity Fund A-I",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der Growth Capital Fund A-I soll das beschleunigte Wachstum der Zielunternehmen durch die Ausweitung von Aktivitäten, die Erschließung neuer Märkte oder den Abschluss strategischer Akquisitionen ermöglichen. Geografisch konzentriert sich der Fonds hauptsächlich auf europäische Länder.",
+    "key": null,
+    "commentCount": 1,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 130000.0,
+          "currency": "EUR",
+          "formattedValue": "130.000,00"
+        },
+        "investmentId": "5a1bdd552c94de48c4cd7314",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Private Equity > Growth / Buyout",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5a1c09912c94de48c4d18543"
+  },
+  {
+    "type": "Collectible",
+    "moreEntities": 0,
+    "id": "5c9b67d72c94de0e54c5219e",
+    "currency": "EUR",
+    "name": "Demo | Henri Matisse Gemälde",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Henri Matisse (French, 1869–1954);\nOil on canvas\n\nFramed Dimensions: 71.1 x 62.2 x 5.1 cm \nCollioure - 55.3 x 46 cm - 1905 - 55.3 x 46 cm - 1905",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1900000.0,
+          "currency": "EUR",
+          "formattedValue": "1.900.000,00"
+        },
+        "investmentId": "5a96a16d2c94dec9bc4fd008",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Kunst",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5a969baf2c94dec9bc4e0a3e"
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b90562c94de0e54645ccf",
+    "currency": "EUR",
+    "name": "Demo | Hugo Boss AG",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "HUGO BOSS N ORD",
+    "key": "ISIN: DE000A1PHFF7",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 2,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 2413160.0,
+          "currency": "EUR",
+          "formattedValue": "2.413.160,00"
+        },
+        "investmentId": "5c9b903e2c94de0e54633ba5",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60dddb69ec34dde7bcd3b4e2",
+    "currency": "USD",
+    "name": "Demo | iShares",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "iS Core S&P 500 UCITS ETF",
+    "key": "ISIN: IE00B5BMR087",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 44303.51,
+          "currency": "USD",
+          "formattedValue": "44.303,51"
+        },
+        "investmentId": "60016f192c94dd1f804ad348",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktienfonds",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9cdf0c2c94def414d49f30",
+    "currency": "EUR",
+    "name": "Demo | iShares MSCI World",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "IS MSCI WORLD UCITS USD (DIST) ETF",
+    "key": "ISIN: IE00B0M62Q58",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 2783.6,
+          "currency": "EUR",
+          "formattedValue": "2.783,60"
+        },
+        "investmentId": "602be295ec34da650cac0589",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktienfonds",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "RealEstate",
+    "moreEntities": 0,
+    "id": "5c9b68452c94de0e54c64644",
+    "currency": "EUR",
+    "name": "Demo | Kindergarten Laubweg 10a",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der Kindergarten im Laubweg 10a verfügt über Räumlichkeiten mit einer Größe von 537qm. Der Garten ist weitere 67qm groß.",
+    "key": "Address: Laubweg 10a, 06108 Halle (Saale)",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1300000.0,
+          "currency": "EUR",
+          "formattedValue": "1.300.000,00"
+        },
+        "investmentId": "5a295d2e2c94dec264cb1f04",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Immobilien > Vermietete Immobilien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5a295d4c2c94dec264cb28cd"
+  },
+  {
+    "type": "RealEstate",
+    "moreEntities": 0,
+    "id": "5c9b687b2c94de0e54c65271",
+    "currency": "EUR",
+    "name": "Demo | Lagerhalle Am Anger 17",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Die Lagerhalle besteht aus zwei separaten Lagerhallen",
+    "key": "Address: Am Anger 17, 72075 Tübingen",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 1700000.0,
+          "currency": "EUR",
+          "formattedValue": "1.700.000,00"
+        },
+        "investmentId": "5a28f4ac2c94dec264c51f89",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Immobilien > Vermietete Immobilien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5a28f39c2c94dec264c50f76"
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60bdf96eec34dd3da4442603",
+    "currency": "USD",
+    "name": "Demo | Lantern Structured Asset Management Limited",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "UBS ETF CCSF UCITS ETF USD Aa",
+    "key": "ISIN: IE00B53H0131",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 8618.12,
+          "currency": "USD",
+          "formattedValue": "8.618,12"
+        },
+        "investmentId": "60a65b7d2c94dd2a88a43def",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Rohstoffe > Rohstofffonds",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5e6fbd012c94debcb86a5e51",
+    "currency": "EUR",
+    "name": "Demo | Lyxor",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "",
+    "key": "ISIN: FR0010251744",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Aktienfonds",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b68f72c94de0e54c72838",
+    "currency": "EUR",
+    "name": "Demo | Münchner Rück Call (175)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "CGM MUV2 CAL 18C",
+    "key": "ISIN: DE000CX2PV49",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 237500.0,
+          "currency": "EUR",
+          "formattedValue": "237.500,00"
+        },
+        "investmentId": "5ab8e52e2c94de3724087ae4",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Optionen auf Aktien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60bf945eec34dda7c0b3ee49",
+    "currency": "EUR",
+    "name": "Demo | Platin",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Platinum/Euro FX Cross Rate",
+    "key": "Ticker: XPTEUR=R",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 17586.97,
+          "currency": "EUR",
+          "formattedValue": "17.586,97"
+        },
+        "investmentId": "60a65c0c2c94dd5094dd0144",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Collectible",
+    "moreEntities": 0,
+    "id": "5c9b69142c94de0e54c7663c",
+    "currency": "EUR",
+    "name": "Demo | Porsche 911 Speedster",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Privatfahrzeug Hr. Müller",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 270000.0,
+          "currency": "EUR",
+          "formattedValue": "270.000,00"
+        },
+        "investmentId": "5c0002a32c94de25dc39813d",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Fahrzeuge",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5c5837192c94de7ca49e82ca"
+  },
+  {
+    "type": "Loan",
+    "moreEntities": 0,
+    "id": "5de6273e2c94de22f8cac8d6",
+    "currency": "EUR",
+    "name": "Demo | Privatkredit an Start Up",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Gewährter Privatkredit an Start Up",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 2439.47,
+          "currency": "EUR",
+          "formattedValue": "2.439,47"
+        },
+        "investmentId": "5de624fc2c94de22f8c785d3",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Verbindlichkeiten > Privatkredite",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Collectible",
+    "moreEntities": 0,
+    "id": "5c9b692d2c94de0e54c76d68",
+    "currency": "EUR",
+    "name": "Demo | Rolex Oyster Perpetual",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 5000.0,
+          "currency": "EUR",
+          "formattedValue": "5.000,00"
+        },
+        "investmentId": "5c580d732c94de7ca49a4115",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Kunst & Sammlerstücke > Schmuck",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5c580d162c94de7ca49a36ce"
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60bdf911ec34dd3da443e71a",
+    "currency": "EUR",
+    "name": "Demo | Silber",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Silver/Euro FX Cross Rate",
+    "key": "Ticker: XAGEUR=R",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 12933.83,
+          "currency": "EUR",
+          "formattedValue": "12.933,83"
+        },
+        "investmentId": "60a659322c94dd5094dc49b9",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Rohstoffe > Physische Rohstoffe",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "5c9b8ea02c94de0e545581d0",
+    "currency": "EUR",
+    "name": "Demo | Sodexo SA",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "SODEXO ORD",
+    "key": "ISIN: FR0000121220",
+    "commentCount": 0,
+    "unassignedDocumentCount": 2,
+    "totalDocumentCount": 2,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 767200.0,
+          "currency": "EUR",
+          "formattedValue": "767.200,00"
+        },
+        "investmentId": "60c0b3e22c94dd594c0b1926",
+        "custodianName": "MM | VBANK | 9.841.750.00",
+        "custodianId": "5c7e4b442c94de3a1cda9f78",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "60900f71ec34ddd668fda091",
+    "currency": "EUR",
+    "name": "Demo | Sonnenberg Forst (DE)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der Sonnenbergforst liegt im Ostallgäu (Bayern) nördlich des Sonnenbergs. Der Wald besteht aus einem Mix aus Fichten, Buchen, sonstigen Nadelbäumen und sonstigen Laubbäumen. Hauptsächlich wird das Holz zu Sägeholz weiterverarbeitet.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 6023000.0,
+          "currency": "EUR",
+          "formattedValue": "6.023.000,00"
+        },
+        "investmentId": "5c90bcc92c94de35383eff99",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Agrar- und Forstwirtschaft > Forstwirtschaft",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5c90b8ea2c94de35383eba45"
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "60900edeec34ddd668fd90e2",
+    "currency": "USD",
+    "name": "Demo | Texas Hill Forrest (USA)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der Texas Hill Forrest liegt im Süden des Bundesstaats Texas in den USA. Der Wald besteht aus einem Mix aus Fichten, Buchen, sonstigen Nadelbäumen und sonstigen Laubbäumen. Hauptsächlich wird das Holz zu Sägeholz weiterverarbeitet.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 8349602.5,
+          "currency": "USD",
+          "formattedValue": "8.349.602,50"
+        },
+        "investmentId": "60901162ec34daeacc900ab3",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Agrar- und Forstwirtschaft > Forstwirtschaft",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": "6090147fec34ddd668007338"
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "6086a6aeec34dd729c389c21",
+    "currency": "EUR",
+    "name": "Demo | Transitkonto - EUR",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 48016.9,
+          "currency": "EUR",
+          "formattedValue": "48.016,90"
+        },
+        "investmentId": "5a5339712c94de8d5c8219ff",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Transferkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "BankAccount",
+    "moreEntities": 0,
+    "id": "6086a6c3ec34dd729c389ea0",
+    "currency": "GBP",
+    "name": "Demo | Transitkonto - GBP",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "GBP",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "5bcdbd882c94de27f43b8c06",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Liquidität > Transferkonten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60bf9331ec34dda7c0b3a739",
+    "currency": "EUR",
+    "name": "Demo | Unilever PLC (EUR)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "UNILEVER ORD",
+    "key": "ISIN: GB00B10RZP78",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "6005c5b02c94dd5f083e9de9",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60ee9459ec34ddd7c4b12478",
+    "currency": "USD",
+    "name": "Demo | United States Treasury (UST    3.375 11/15/48)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "UST    3.375 11/15/48",
+    "key": "ISIN: US912810SE91",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 2,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 3324432.07,
+          "currency": "USD",
+          "formattedValue": "3.324.432,07"
+        },
+        "investmentId": "5c9b92822c94de0e546b375d",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Renten > Renten Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60925ee2ec34ddf3101113ed",
+    "currency": "EUR",
+    "name": "Demo | US Tech Fund",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": "ISIN: LU0159053015",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Aktienfonds",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60bf6c4aec34dda7c0a849dd",
+    "currency": "EUR",
+    "name": "Demo | VanEck ETP AG (VANECK VECTORS ETHEREUM ETN)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "VANECK VECTORS ETHEREUM ETN",
+    "key": "ISIN: DE000A3GPSP7",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Noch nicht spezifiziert",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Closed-endFund",
+    "moreEntities": 0,
+    "id": "60c23752ec34dd3d58be133d",
+    "currency": "EUR",
+    "name": "Demo | VC Equity Fund I",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der VC Equity Fund I ist ein Fonds, der in Minderheitsbeteiligungen an Start-up-Unternehmen investiert. Das Hauptaugenmerk liegt hierbei auf Bio- und Gesundheitstechnologie. Das regionale Exposure des Fonds beschränkt sich hauptsächlich auf den europäischen Raum.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [],
+    "classification": "Illiquides Vermögen > Private Equity > Venture",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Closed-endFund",
+    "moreEntities": 0,
+    "id": "60c23802ec34dd3d58be360e",
+    "currency": "EUR",
+    "name": "Demo | VC Equity Fund II",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "VC Equity Fund II beinhaltet Beteiligungen an wachstumsstarken Unternehmen aus dem Bereich der Internet- und Kommunikationstechnik. Der Fonds ist regional stark diversifiziert.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 60000.0,
+          "currency": "EUR",
+          "formattedValue": "60.000,00"
+        },
+        "investmentId": "5c9e34752c94de15b421bbeb",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Private Equity > Venture",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Closed-endFund",
+    "moreEntities": 0,
+    "id": "5c9b6a022c94de0e54c8f1f4",
+    "currency": "EUR",
+    "name": "Demo | VC Fund CAPITAL B-I",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Der VC-Fonds CAPITAL B-I ist ein Frühphasenfonds, der in Minderheitsbeteiligungen an Startup-Unternehmen investiert, hauptsächlich in wachstumsstarken Sektoren wie Internet- und Verbrauchertechnologie, Biotechnologie und Gesundheitstechnologie sowie Energie. Der Fonds hat keinen dominierenden geografischen Schwerpunkt.",
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 279000.0,
+          "currency": "EUR",
+          "formattedValue": "279.000,00"
+        },
+        "investmentId": "5a1c11cd2c94de48c4d1bade",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Private Equity > Venture",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": "5a1c15432c94de48c4d2f8d5"
+  },
+  {
+    "type": "RealEstate",
+    "moreEntities": 0,
+    "id": "60d203e5ec34dd64c4ac6438",
+    "currency": "EUR",
+    "name": "Demo | Villa Sonnenstraße",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "Hochwertige Apartments in bester Lage.",
+    "key": "Address: Sonnenstraße 800, 80331 München",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 16000000.0,
+          "currency": "EUR",
+          "formattedValue": "16.000.000,00"
+        },
+        "investmentId": "60a66a98ec34dda1ac86d42f",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Illiquides Vermögen > Immobilien > Vermietete Immobilien",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": "60a66a43ec34dda1ac86cfab"
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "60c073b5ec34dddb1cb49b18",
+    "currency": "GBP",
+    "name": "Demo | Vodafone Group PLC",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "VODAFONE GROUP ORD",
+    "key": "ISIN: GB00BH4HKS39",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 110140.0,
+          "currency": "GBP",
+          "formattedValue": "110.140,00"
+        },
+        "investmentId": "60c0aac52c94dd5bbcf5cf7a",
+        "custodianName": "MM | DAB | 5.043.210.00",
+        "custodianId": "5a05a1622c94dee914d24503",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Liquides Vermögen > Aktien > Aktien Einzeltitel",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "5c9b6a192c94de0e54c8f99c",
+    "currency": "EUR",
+    "name": "Kostenträger | Depotgebühren",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo", "Kostenträger"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "5c617bac2c94de888c8ec346",
+        "custodianName": "MM | DAB | 3.041.250.00",
+        "custodianId": "5c7e4ab92c94de3a1cda8e88",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": true
+      }
+    ],
+    "classification": "Allgemeines > Kosten > Depotgebühren",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "5c9b6a3b2c94de0e54c9190b",
+    "currency": "EUR",
+    "name": "Kostenträger | Sonstige Gebühren",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo", "Kostenträger"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "5c8b696e2c94de5238afae37",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Allgemeines > Kosten > Sonstige Kosten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "5c9b6a612c94de0e54c9d97e",
+    "currency": "EUR",
+    "name": "Kostenträger | Steuern",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo", "Kostenträger"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "5c8b69842c94de5238afc453",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Allgemeines > Steuern > Sonstige Steuern",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "5c9b6a752c94de0e54c9ddca",
+    "currency": "EUR",
+    "name": "Kostenträger | Transaktionskostenpauschale",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo", "Kostenträger"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "5c8b69982c94de5238afdd11",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Allgemeines > Kosten > Transaktionskosten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Generic",
+    "moreEntities": 0,
+    "id": "5c9b6a912c94de0e54c9fe7b",
+    "currency": "EUR",
+    "name": "Kostenträger | Vermögensverwaltungsgebühren",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": null,
+    "key": null,
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": ["Demo", "Kostenträger"],
+    "investments": [
+      {
+        "legalEntity": "Maximilian Schneider",
+        "currentNAV": {
+          "value": 0.0,
+          "currency": "EUR",
+          "formattedValue": "0,00"
+        },
+        "investmentId": "5c617b272c94de888c8c9868",
+        "custodianName": null,
+        "custodianId": "000000000000000000000000",
+        "legalEntityId": "59fc36692c94deb008877387",
+        "isAggregatedInvestment": false
+      }
+    ],
+    "classification": "Allgemeines > Kosten > Verwaltungskosten",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": true,
+    "defaultImageId": null
+  },
+  {
+    "type": "Equity",
+    "moreEntities": 0,
+    "id": "6123c371a358320fbdb75be5",
+    "currency": "EUR",
+    "name": "VANGUARD GROUP (IRELAND) LIMITED (FTSE Dev Europe UCITS ETF)",
+    "namePrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "description": "FTSE Dev Europe UCITS ETF",
+    "key": "ISIN: IE00B945VV12",
+    "commentCount": 0,
+    "unassignedDocumentCount": 0,
+    "totalDocumentCount": 0,
+    "tags": [],
+    "investments": [],
+    "classification": "Liquides Vermögen > Aktien > Noch nicht spezifiziert",
+    "classificationPrivatisationState": {
+      "isOverride": false,
+      "overridingClients": []
+    },
+    "isPrivate": false,
+    "defaultImageId": null
+  }
 ]

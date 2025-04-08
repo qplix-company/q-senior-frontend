@@ -1,3 +1,7 @@
-.security-list-wrapper {
-  padding: 30px;
+:host {
+  display: block;
+
+  .security-list-wrapper {
+    padding: 30px;
+  }
 }
