@@ -5,11 +5,11 @@ import {
   MatColumnDef,
   MatHeaderCell,
   MatHeaderCellDef,
+  MatHeaderRow,
   MatHeaderRowDef,
   MatNoDataRow,
   MatRow,
   MatRowDef,
-  MatTable,
 } from '@angular/material/table';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { indicate } from '../../utils';
@@ -29,6 +29,7 @@ import { AsyncPipe } from '@angular/common';
     MatHeaderCellDef,
     MatCell,
     MatCellDef,
+    MatHeaderRow,
     MatHeaderRowDef,
     MatNoDataRow,
     MatRowDef,
