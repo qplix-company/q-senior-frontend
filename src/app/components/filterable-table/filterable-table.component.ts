@@ -8,7 +8,8 @@ import {
   Input,
   QueryList,
   ViewChild,
-  OnDestroy,
+  inject,
+  DestroyRef,
 } from '@angular/core';
 import {
   MatColumnDef,
@@ -18,7 +19,7 @@ import {
   MatTable,
 } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
-import { BehaviorSubject, Observable, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
@@ -27,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButton } from '@angular/material/button';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { FormInput } from '../../models/form';
 import { FormGeneratorComponent } from '../form-generator/form-generator.component';
@@ -51,15 +53,17 @@ import { FormGeneratorComponent } from '../form-generator/form-generator.compone
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterableTableComponent<T>
-  implements AfterContentInit, AfterViewInit, OnDestroy
+  implements AfterContentInit, AfterViewInit
 {
-  @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
-  @ViewChild(FormGeneratorComponent) formGen!: FormGeneratorComponent;
+  private readonly destroyRef = inject(DestroyRef);
 
   @ContentChildren(MatHeaderRowDef) headerRowDefs?: QueryList<MatHeaderRowDef>;
   @ContentChildren(MatRowDef) rowDefs?: QueryList<MatRowDef<T>>;
   @ContentChildren(MatColumnDef) columnDefs?: QueryList<MatColumnDef>;
   @ContentChild(MatNoDataRow) noDataRow?: MatNoDataRow;
+
+  @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
+  @ViewChild(FormGeneratorComponent) formGen!: FormGeneratorComponent;
 
   @Input() columns: string[] = [];
   @Input() dataSource:
@@ -71,8 +75,6 @@ export class FilterableTableComponent<T>
   @Input() fields: FormInput[] = [];
 
   readonly filters$ = new BehaviorSubject<Record<string, any>>({});
-  private readonly _destroy$ = new Subject<void>();
-
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -83,7 +85,7 @@ export class FilterableTableComponent<T>
     this.filters$.subscribe(console.log);
 
     this.formGen.filters$
-      .pipe(takeUntil(this._destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((filters) => {
         this.filters$.next(filters);
       });
@@ -106,10 +108,5 @@ export class FilterableTableComponent<T>
 
     this.form.reset();
     this.filters$.next({});
-  }
-
-  ngOnDestroy(): void {
-    this._destroy$.next();
-    this._destroy$.complete();
   }
 }

@@ -1,10 +1,10 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  inject,
-  OnDestroy,
+  DestroyRef,
   ViewChild,
-  AfterViewInit,
+  inject,
 } from '@angular/core';
 import {
   MatColumnDef,
@@ -19,22 +19,23 @@ import {
   MatNoDataRow,
 } from '@angular/material/table';
 import {
-  Observable,
   BehaviorSubject,
+  Observable,
   combineLatest,
   switchMap,
   tap,
   map,
-  Subject,
-  takeUntil,
 } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
 import { indicate } from '../../utils';
 import { Security } from '../../models/security';
 import { SecurityService } from '../../services/security.service';
 import { FilterableTableComponent } from '../filterable-table/filterable-table.component';
 import { AsyncPipe } from '@angular/common';
 import { FormInput } from '../../models/form';
-import { InputComponentsEnum } from '../../constants/form';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { InputComponentsEnum, PAGE_SIZE } from '../../constants/form';
 import { createTrigger } from '../../helpers/sequritiesListHelper';
 
 @Component({
@@ -43,6 +44,7 @@ import { createTrigger } from '../../helpers/sequritiesListHelper';
   imports: [
     FilterableTableComponent,
     AsyncPipe,
+    MatPaginatorModule,
     MatColumnDef,
     MatHeaderCell,
     MatHeaderCellDef,
@@ -58,8 +60,8 @@ import { createTrigger } from '../../helpers/sequritiesListHelper';
   styleUrl: './securities-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SecuritiesListComponent implements AfterViewInit, OnDestroy {
-  private readonly _destroy$ = new Subject<void>();
+export class SecuritiesListComponent implements AfterViewInit {
+  private readonly destroyRef = inject(DestroyRef);
   private readonly _securityService = inject(SecurityService);
 
   @ViewChild(FilterableTableComponent)
@@ -70,21 +72,30 @@ export class SecuritiesListComponent implements AfterViewInit, OnDestroy {
   readonly totalResults$ = new BehaviorSubject<number>(0);
 
   private readonly _filters$ = new BehaviorSubject<Record<string, any>>({});
+  private readonly _pagination$ = new BehaviorSubject({
+    pageIndex: 0,
+    pageSize: PAGE_SIZE,
+  });
 
-  private readonly _trigger$ = createTrigger(combineLatest([this._filters$]));
+  private readonly _trigger$ = createTrigger(
+    combineLatest([this._filters$, this._pagination$])
+  );
 
   readonly securities$: Observable<Security[]> = this._trigger$.pipe(
-    switchMap(([filters]) =>
+    switchMap(([filters, pagination]) =>
       this._securityService
         .getSecurities({
           ...filters,
+          skip: pagination.pageIndex * pagination.pageSize,
+          limit: pagination.pageSize,
         })
         .pipe(
           indicate(this.loadingSecurities$),
-          map((res) => res)
+          tap((res) => this.totalResults$.next(res.total)),
+          map((res) => res.data)
         )
     ),
-    takeUntil(this._destroy$)
+    takeUntilDestroyed(this.destroyRef)
   );
 
   readonly filterFields: FormInput[] = [
@@ -122,14 +133,20 @@ export class SecuritiesListComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.tableComponent.filters$
-      .pipe(takeUntil(this._destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((filters: Record<string, any>) => {
         this._filters$.next(filters);
+        this._pagination$.next({
+          ...this._pagination$.value,
+          pageIndex: 0,
+        });
       });
   }
 
-  ngOnDestroy(): void {
-    this._destroy$.next();
-    this._destroy$.complete();
+  onPageChange(event: PageEvent) {
+    this._pagination$.next({
+      pageIndex: event.pageIndex,
+      pageSize: event.pageSize,
+    });
   }
 }
