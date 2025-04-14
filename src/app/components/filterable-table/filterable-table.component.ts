@@ -4,7 +4,9 @@ import {
   Component,
   ContentChild,
   ContentChildren,
+  EventEmitter,
   Input,
+  Output,
   QueryList,
   ViewChild,
 } from '@angular/core';
@@ -18,11 +20,29 @@ import {
 } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CommonModule } from '@angular/common';
+import { FormInput } from '../../models/form';
+import { FormGeneratorComponent } from '../form-generator/form-generator.component';
 
 @Component({
   selector: 'filterable-table',
   standalone: true,
-  imports: [MatProgressSpinner, MatTable],
+  imports: [
+    CommonModule,
+    MatProgressSpinner,
+    MatTable,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    FormGeneratorComponent,
+  ],
   templateUrl: './filterable-table.component.html',
   styleUrl: './filterable-table.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -36,13 +56,39 @@ export class FilterableTableComponent<T> implements AfterContentInit {
   @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
 
   @Input() columns: string[] = [];
-
   @Input() dataSource:
     | readonly T[]
     | DataSource<T>
     | Observable<readonly T[]>
     | null = null;
   @Input() isLoading: boolean | null = false;
+  @Input() fields: FormInput[] = [];
+
+  @Output() filterChanged = new EventEmitter<Record<string, any>>();
+
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({});
+  }
+
+  onFilterChange(value: Record<string, any>) {
+    this.filterChanged.emit(this._cleanEmpty(value));
+  }
+
+  private _cleanEmpty(value: Record<string, any>) {
+    return Object.entries(value).reduce((acc, [key, val]) => {
+      if (
+        val !== null &&
+        val !== undefined &&
+        !(Array.isArray(val) && val.length === 0) &&
+        val !== ''
+      ) {
+        acc[key] = val;
+      }
+      return acc;
+    }, {} as Record<string, any>);
+  }
 
   public ngAfterContentInit(): void {
     this.columnDefs?.forEach((columnDef) =>

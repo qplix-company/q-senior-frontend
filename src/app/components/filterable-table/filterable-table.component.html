@@ -1,6 +1,8 @@
-<!-- Feel free to replace this placeholder with your filterbar -->
 <fieldset class="filter-bar-placeholder">
-  <legend>Filter bar should go here</legend>
+  <form-generator
+    [inputs]="fields"
+    (onChangeInput)="onFilterChange($event)"
+  ></form-generator>
 </fieldset>
 
 <div class="table-wrapper">
