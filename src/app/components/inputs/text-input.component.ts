@@ -1,8 +1,9 @@
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
 @Component({
   selector: 'text-input',
   standalone: true,
@@ -18,16 +19,17 @@ import { MatInputModule } from '@angular/material/input';
       <input
         matInput
         [formControl]="control"
-        [disabled]="disabled"
         [placeholder]="placeholder"
+        [disabled]="disabled"
       />
     </mat-form-field>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextInputComponent {
   @Input() control!: FormControl;
-  @Input() label!: string;
-  @Input() disabled: boolean = false;
+  @Input() label: string = '';
   @Input() placeholder: string = '';
+  @Input() disabled: boolean = false;
   @Input() className?: string;
 }

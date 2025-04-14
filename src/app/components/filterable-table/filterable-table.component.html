@@ -1,8 +1,16 @@
 <fieldset class="filter-bar-placeholder">
-  <form-generator
-    [inputs]="fields"
-    (onChangeInput)="onFilterChange($event)"
-  ></form-generator>
+  <div class="filter-bar">
+    <form-generator
+      [inputs]="fields"
+      [debouncedFields]="['name', 'type']"
+    ></form-generator>
+
+    <div class="filter-actions">
+      <button mat-raised-button color="primary" (click)="resetFilters()">
+        Clear Filters
+      </button>
+    </div>
+  </div>
 </fieldset>
 
 <div class="table-wrapper">
@@ -10,7 +18,6 @@
   <div class="loading-indicator">
     <mat-spinner></mat-spinner>
   </div>
-
   }
 
   <table mat-table [dataSource]="dataSource ?? []" class="mat-elevation-z8">

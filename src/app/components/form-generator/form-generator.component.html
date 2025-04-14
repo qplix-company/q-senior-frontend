@@ -4,7 +4,7 @@
       <div class="form-col" [ngClass]="'col' + (input.columns || 12)">
         <ng-container
           *ngComponentOutlet="
-            getInputComponent(input.type);
+            getInputComponent(input.component);
             inputs: createInputs(input)
           "
         ></ng-container>

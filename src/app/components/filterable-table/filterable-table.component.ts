@@ -1,16 +1,15 @@
 import {
   AfterContentInit,
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
   ContentChildren,
-  EventEmitter,
   Input,
-  Output,
   QueryList,
   ViewChild,
+  OnDestroy,
 } from '@angular/core';
-import { Observable } from 'rxjs';
 import {
   MatColumnDef,
   MatHeaderRowDef,
@@ -19,13 +18,16 @@ import {
   MatTable,
 } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
-import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { BehaviorSubject, Observable, Subject, takeUntil } from 'rxjs';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { CommonModule } from '@angular/common';
+import { MatButton } from '@angular/material/button';
+
 import { FormInput } from '../../models/form';
 import { FormGeneratorComponent } from '../form-generator/form-generator.component';
 
@@ -34,26 +36,30 @@ import { FormGeneratorComponent } from '../form-generator/form-generator.compone
   standalone: true,
   imports: [
     CommonModule,
-    MatProgressSpinner,
-    MatTable,
     ReactiveFormsModule,
+    MatTable,
+    MatProgressSpinner,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatButton,
     FormGeneratorComponent,
   ],
   templateUrl: './filterable-table.component.html',
-  styleUrl: './filterable-table.component.scss',
+  styleUrls: ['./filterable-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterableTableComponent<T> implements AfterContentInit {
+export class FilterableTableComponent<T>
+  implements AfterContentInit, AfterViewInit, OnDestroy
+{
+  @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
+  @ViewChild(FormGeneratorComponent) formGen!: FormGeneratorComponent;
+
   @ContentChildren(MatHeaderRowDef) headerRowDefs?: QueryList<MatHeaderRowDef>;
   @ContentChildren(MatRowDef) rowDefs?: QueryList<MatRowDef<T>>;
   @ContentChildren(MatColumnDef) columnDefs?: QueryList<MatColumnDef>;
   @ContentChild(MatNoDataRow) noDataRow?: MatNoDataRow;
-
-  @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
 
   @Input() columns: string[] = [];
   @Input() dataSource:
@@ -64,7 +70,8 @@ export class FilterableTableComponent<T> implements AfterContentInit {
   @Input() isLoading: boolean | null = false;
   @Input() fields: FormInput[] = [];
 
-  @Output() filterChanged = new EventEmitter<Record<string, any>>();
+  readonly filters$ = new BehaviorSubject<Record<string, any>>({});
+  private readonly _destroy$ = new Subject<void>();
 
   form: FormGroup;
 
@@ -72,32 +79,37 @@ export class FilterableTableComponent<T> implements AfterContentInit {
     this.form = this.fb.group({});
   }
 
-  onFilterChange(value: Record<string, any>) {
-    this.filterChanged.emit(this._cleanEmpty(value));
+  ngAfterViewInit(): void {
+    this.filters$.subscribe(console.log);
+
+    this.formGen.filters$
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((filters) => {
+        this.filters$.next(filters);
+      });
+
+    const readyForm = this.formGen.formReady$.getValue();
+    if (readyForm) {
+      this.form = readyForm;
+    }
   }
 
-  private _cleanEmpty(value: Record<string, any>) {
-    return Object.entries(value).reduce((acc, [key, val]) => {
-      if (
-        val !== null &&
-        val !== undefined &&
-        !(Array.isArray(val) && val.length === 0) &&
-        val !== ''
-      ) {
-        acc[key] = val;
-      }
-      return acc;
-    }, {} as Record<string, any>);
-  }
-
-  public ngAfterContentInit(): void {
-    this.columnDefs?.forEach((columnDef) =>
-      this.table?.addColumnDef(columnDef)
-    );
-    this.rowDefs?.forEach((rowDef) => this.table?.addRowDef(rowDef));
-    this.headerRowDefs?.forEach((headerRowDef) =>
-      this.table?.addHeaderRowDef(headerRowDef)
-    );
+  ngAfterContentInit(): void {
+    this.columnDefs?.forEach((def) => this.table?.addColumnDef(def));
+    this.rowDefs?.forEach((def) => this.table?.addRowDef(def));
+    this.headerRowDefs?.forEach((def) => this.table?.addHeaderRowDef(def));
     this.table?.setNoDataRow(this.noDataRow ?? null);
+  }
+
+  resetFilters(): void {
+    if (!this.form) return;
+
+    this.form.reset();
+    this.filters$.next({});
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
+    this._destroy$.complete();
   }
 }

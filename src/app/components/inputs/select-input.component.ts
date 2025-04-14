@@ -16,7 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
   template: `
     <mat-form-field appearance="fill">
       <mat-label>{{ label }}</mat-label>
-      <mat-select [formControl]="control" multiple>
+      <mat-select [formControl]="control" [multiple]="multiple">
         <mat-option *ngFor="let opt of options" [value]="opt">
           {{ opt }}
         </mat-option>
@@ -28,4 +28,5 @@ export class SelectInputComponent {
   @Input() control!: FormControl;
   @Input() label!: string;
   @Input() options: string[] = [];
+  @Input() multiple: boolean = false;
 }

@@ -1,10 +1,9 @@
-import { InputComponentsEnum } from '../components/inputs/input-components.enum';
+import { InputComponentsEnum } from '../constants/form';
 
 export interface FormInput {
   name: string;
   label: string;
-  type: InputComponentsEnum;
-  options?: string[];
-  props?: Record<string, any>;
+  component: InputComponentsEnum;
   columns?: number;
+  props?: Record<string, any>;
 }
