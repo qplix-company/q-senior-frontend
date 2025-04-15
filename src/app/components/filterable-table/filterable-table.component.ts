@@ -50,16 +50,13 @@ import { FormGeneratorComponent } from '../form-generator/form-generator.compone
   styleUrls: ['./filterable-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterableTableComponent<
-  T,
-  F extends Record<string, any> = Record<string, any>
-> implements AfterContentInit, AfterViewInit
+export class FilterableTableComponent<T>
+  implements AfterContentInit, AfterViewInit
 {
   private readonly destroyRef = inject(DestroyRef);
 
   @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
-  @ViewChild(FormGeneratorComponent)
-  formGen!: FormGeneratorComponent<F>;
+  @ViewChild(FormGeneratorComponent) formGen!: FormGeneratorComponent;
 
   @ContentChildren(MatHeaderRowDef) headerRowDefs?: QueryList<MatHeaderRowDef>;
   @ContentChildren(MatRowDef) rowDefs?: QueryList<MatRowDef<T>>;
@@ -75,13 +72,13 @@ export class FilterableTableComponent<
   @Input() isLoading: boolean | null = false;
   @Input() fields: FormInput[] = [];
 
-  readonly filters$ = new BehaviorSubject<F>({} as F);
+  readonly filters$ = new BehaviorSubject<Record<string, any>>({});
 
   ngAfterViewInit(): void {
     this.formGen.filters$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((filters) => {
-        this.filters$.next(filters as F);
+        this.filters$.next(filters);
       });
   }
 
@@ -97,6 +94,6 @@ export class FilterableTableComponent<
     if (!form) return;
 
     form.reset();
-    this.filters$.next({} as F);
+    this.filters$.next({});
   }
 }

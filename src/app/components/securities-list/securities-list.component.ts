@@ -65,7 +65,7 @@ export class SecuritiesListComponent implements AfterViewInit {
   private readonly destroyRef = inject(DestroyRef);
 
   @ViewChild(FilterableTableComponent)
-  tableComponent!: FilterableTableComponent<Security, SecuritiesFilter>;
+  tableComponent!: FilterableTableComponent<Security>;
 
   readonly displayedColumns: string[] = ['name', 'type', 'currency'];
   readonly loadingSecurities$ = new BehaviorSubject<boolean>(false);
@@ -111,7 +111,6 @@ export class SecuritiesListComponent implements AfterViewInit {
       label: 'Type',
       component: InputComponentsEnum.Select,
       columns: 2,
-      debounced: true,
       props: {
         options: ['Equity', 'Closed-endFund', 'BankAccount', 'Loan', 'Generic'],
         multiple: true,
@@ -122,7 +121,6 @@ export class SecuritiesListComponent implements AfterViewInit {
       label: 'Currency',
       component: InputComponentsEnum.Select,
       columns: 2,
-      debounced: true,
       props: { options: ['USD', 'EUR', 'GBP'], multiple: true },
     },
     {

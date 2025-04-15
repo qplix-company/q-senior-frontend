@@ -31,15 +31,12 @@ import { InputComponentsEnum } from '../../constants/form';
   styleUrls: ['./form-generator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormGeneratorComponent<
-  F extends Record<string, any> = Record<string, any>
-> implements OnInit
-{
+export class FormGeneratorComponent implements OnInit {
   private readonly destroyRef = inject(DestroyRef);
 
   @Input() inputs: FormInput[] = [];
 
-  readonly filters$ = new BehaviorSubject<F>({} as F);
+  readonly filters$ = new BehaviorSubject<Record<string, any>>({});
   readonly formReady$ = new BehaviorSubject<FormGroup | null>(null);
 
   form!: FormGroup;
@@ -76,7 +73,7 @@ export class FormGeneratorComponent<
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         const cleaned = this.cleanEmpty(this.form.getRawValue());
-        this.filters$.next(cleaned as F);
+        this.filters$.next(cleaned);
       });
   }
 
@@ -90,11 +87,11 @@ export class FormGeneratorComponent<
     );
   }
 
-  private cleanEmpty(value: Record<string, any>): Partial<F> {
+  private cleanEmpty(value: Record<string, any>): Record<string, any> {
     return Object.entries(value).reduce((acc, [key, val]) => {
-      if (!this.isEmpty(val)) acc[key as keyof F] = val;
+      if (!this.isEmpty(val)) acc[key] = val;
       return acc;
-    }, {} as Partial<F>);
+    }, {} as Record<string, any>);
   }
 
   getInputComponent(type?: InputComponentsEnum) {
