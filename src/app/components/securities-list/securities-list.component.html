@@ -1,8 +1,8 @@
 <filterable-table
-  class="security-list"
+  [fields]="filterFields"
   [dataSource]="securities$ | async"
   [isLoading]="loadingSecurities$ | async"
-  [fields]="filterFields"
+  #tableComponent
 >
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>

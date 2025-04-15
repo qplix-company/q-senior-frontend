@@ -3,6 +3,8 @@ import {
   Input,
   ChangeDetectionStrategy,
   OnInit,
+  inject,
+  DestroyRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -12,6 +14,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { BehaviorSubject, merge } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { FormInput } from '../../models/form';
 import {
@@ -28,11 +31,15 @@ import { InputComponentsEnum } from '../../constants/form';
   styleUrls: ['./form-generator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormGeneratorComponent implements OnInit {
-  @Input() inputs: FormInput[] = [];
-  @Input() debouncedFields: string[] = [];
+export class FormGeneratorComponent<
+  F extends Record<string, any> = Record<string, any>
+> implements OnInit
+{
+  private readonly destroyRef = inject(DestroyRef);
 
-  readonly filters$ = new BehaviorSubject<Record<string, any>>({});
+  @Input() inputs: FormInput[] = [];
+
+  readonly filters$ = new BehaviorSubject<F>({} as F);
   readonly formReady$ = new BehaviorSubject<FormGroup | null>(null);
 
   form!: FormGroup;
@@ -54,15 +61,27 @@ export class FormGeneratorComponent implements OnInit {
   }
 
   private initWatchers(): void {
+    const debouncedFields = this.inputs
+      .filter(
+        (i) => i.debounced === true || i.component === InputComponentsEnum.Text
+      )
+      .map((i) => i.name);
+
     const { debounced$, immediate$ } = createFieldStreams(
       this.form.controls,
-      this.debouncedFields
+      debouncedFields
     );
 
-    merge(...debounced$, ...immediate$).subscribe(() => {
-      const cleaned = this.cleanEmpty(this.form.getRawValue());
-      this.filters$.next(cleaned);
-    });
+    merge(...debounced$, ...immediate$)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        const cleaned = this.cleanEmpty(this.form.getRawValue());
+        this.filters$.next(cleaned as F);
+      });
+  }
+
+  getForm(): FormGroup | null {
+    return this.formReady$.getValue();
   }
 
   private isEmpty(val: any): boolean {
@@ -71,11 +90,11 @@ export class FormGeneratorComponent implements OnInit {
     );
   }
 
-  private cleanEmpty(value: Record<string, any>): Record<string, any> {
+  private cleanEmpty(value: Record<string, any>): Partial<F> {
     return Object.entries(value).reduce((acc, [key, val]) => {
-      if (!this.isEmpty(val)) acc[key] = val;
+      if (!this.isEmpty(val)) acc[key as keyof F] = val;
       return acc;
-    }, {} as Record<string, any>);
+    }, {} as Partial<F>);
   }
 
   getInputComponent(type?: InputComponentsEnum) {
