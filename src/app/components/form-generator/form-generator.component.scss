@@ -1,20 +1,21 @@
 :host {
   display: block;
 
+  .filter-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
   .form-generator {
     width: 100%;
   }
 
   .form-row {
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(12, 1fr);
-    align-items: center;
     width: 100%;
-  }
-
-  .form-col {
-    width: 100%;
-    padding-right: 25px;
   }
 
   .col1 {

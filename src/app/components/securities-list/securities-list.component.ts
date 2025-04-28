@@ -25,6 +25,9 @@ import {
   tap,
   map,
   distinctUntilChanged,
+  shareReplay,
+  catchError,
+  of,
 } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -37,6 +40,7 @@ import { FormInput } from '../../models/form';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { InputComponentsEnum, PAGE_SIZE } from '../../constants/form';
 import { PagingFilter, SecuritiesFilter } from '../../models/securities-filter';
+import { filtersContext } from '../../contexts/filtersContext';
 
 @Component({
   selector: 'securities-list',
@@ -64,12 +68,8 @@ export class SecuritiesListComponent implements AfterViewInit {
   private readonly _securityService = inject(SecurityService);
   private readonly destroyRef = inject(DestroyRef);
 
-  @ViewChild(FilterableTableComponent)
-  tableComponent!: FilterableTableComponent<Security>;
-
   readonly displayedColumns: string[] = ['name', 'type', 'currency'];
   readonly loadingSecurities$ = new BehaviorSubject<boolean>(false);
-  readonly totalResults$ = new BehaviorSubject<number>(0);
 
   private readonly _params$ = new BehaviorSubject<{
     filters: SecuritiesFilter;
@@ -79,7 +79,7 @@ export class SecuritiesListComponent implements AfterViewInit {
     pagination: { skip: 0, limit: PAGE_SIZE },
   });
 
-  readonly securities$: Observable<Security[]> = this._params$.pipe(
+  private readonly _securitiesResult$ = this._params$.pipe(
     distinctUntilChanged(paramsEqual),
     switchMap(({ filters, pagination }) =>
       this._securityService
@@ -90,11 +90,20 @@ export class SecuritiesListComponent implements AfterViewInit {
         })
         .pipe(
           indicate(this.loadingSecurities$),
-          tap((res) => this.totalResults$.next(res.total)),
-          map((res) => res.data)
+          catchError((error) => {
+            console.error('Failed to load securities:', error);
+            return of({ data: [], total: 0 });
+          })
         )
     ),
+    shareReplay({ bufferSize: 1, refCount: true }),
     takeUntilDestroyed(this.destroyRef)
+  );
+
+  readonly securities$ = this._securitiesResult$.pipe(map((res) => res.data));
+
+  readonly totalResults$ = this._securitiesResult$.pipe(
+    map((res) => res.total)
   );
 
   readonly filterFields: FormInput[] = [
@@ -132,13 +141,15 @@ export class SecuritiesListComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit(): void {
-    this.tableComponent.filters$
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((filters) => this.updateFilters(filters));
+    filtersContext.subscribe((filters) => this.updateFilters(filters));
   }
 
-  updateFilters(newFilters: SecuritiesFilter) {
+  updateFilters(newFiltersPure: SecuritiesFilter) {
     const { pagination } = this._params$.value;
+    const newFilters = Object.fromEntries(
+      Object.entries(newFiltersPure).filter(([_, value]) => value !== null)
+    );
+
     this._params$.next({
       filters: newFilters,
       pagination: { ...pagination, skip: 0 },

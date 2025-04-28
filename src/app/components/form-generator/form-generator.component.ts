@@ -3,8 +3,6 @@ import {
   Input,
   ChangeDetectionStrategy,
   OnInit,
-  inject,
-  DestroyRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -13,8 +11,6 @@ import {
   FormControl,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { BehaviorSubject, merge } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { FormInput } from '../../models/form';
 import {
@@ -22,39 +18,49 @@ import {
   getInputComponent,
 } from '../../helpers/formHelper';
 import { InputComponentsEnum } from '../../constants/form';
+import { merge } from 'rxjs';
+import { filtersContext } from '../../contexts/filtersContext';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'form-generator',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButton],
   templateUrl: './form-generator.component.html',
   styleUrls: ['./form-generator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormGeneratorComponent implements OnInit {
-  private readonly destroyRef = inject(DestroyRef);
-
   @Input() inputs: FormInput[] = [];
-
-  readonly filters$ = new BehaviorSubject<Record<string, any>>({});
-  readonly formReady$ = new BehaviorSubject<FormGroup | null>(null);
+  @Input() values: any = {};
 
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
     this.initWatchers();
-    this.formReady$.next(this.form);
   }
 
   private initForm(): void {
-    const controls = this.inputs.reduce((acc, input) => {
-      acc[input.name] = new FormControl(null);
+    const controls = this.inputs.reduce((acc: any, input) => {
+      acc[input.name] = new FormControl(this.values[input.name]);
       return acc;
-    }, {} as Record<string, FormControl>);
-    this.form = this.fb.group(controls);
+    }, {});
+    this.form = this.formBuilder.group(controls);
+  }
+
+  getInputComponent(type?: InputComponentsEnum) {
+    return getInputComponent(type);
+  }
+
+  getInputComponentProps(input: FormInput): Record<string, any> {
+    return {
+      control: this.form.get(input.name),
+      label: input.label,
+      ...(input.props || {}),
+    };
   }
 
   private initWatchers(): void {
@@ -69,40 +75,14 @@ export class FormGeneratorComponent implements OnInit {
       debouncedFields
     );
 
-    merge(...debounced$, ...immediate$)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(() => {
-        const cleaned = this.cleanEmpty(this.form.getRawValue());
-        this.filters$.next(cleaned);
-      });
+    merge(...debounced$, ...immediate$).subscribe(() => {
+      filtersContext.next(this.form.getRawValue());
+    });
   }
+  resetFilters(): void {
+    const form = this.form;
+    if (!form) return;
 
-  getForm(): FormGroup | null {
-    return this.formReady$.getValue();
-  }
-
-  private isEmpty(val: any): boolean {
-    return (
-      val === null || val === '' || (Array.isArray(val) && val.length === 0)
-    );
-  }
-
-  private cleanEmpty(value: Record<string, any>): Record<string, any> {
-    return Object.entries(value).reduce((acc, [key, val]) => {
-      if (!this.isEmpty(val)) acc[key] = val;
-      return acc;
-    }, {} as Record<string, any>);
-  }
-
-  getInputComponent(type?: InputComponentsEnum) {
-    return getInputComponent(type);
-  }
-
-  createInputs(input: FormInput): Record<string, any> {
-    return {
-      control: this.form.get(input.name),
-      label: input.label,
-      ...(input.props || {}),
-    };
+    form.reset();
   }
 }

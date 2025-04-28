@@ -45,8 +45,10 @@ export class SecurityService {
       (s) =>
         (!securityFilter.name || s.name.includes(securityFilter.name)) &&
         (!securityFilter.types ||
+          securityFilter.types.length === 0 ||
           securityFilter.types.some((type) => s.type === type)) &&
         (!securityFilter.currencies ||
+          securityFilter.currencies.length === 0 ||
           securityFilter.currencies.some(
             (currency) => s.currency == currency
           )) &&

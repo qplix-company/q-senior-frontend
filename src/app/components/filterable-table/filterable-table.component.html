@@ -1,13 +1,5 @@
 <fieldset class="filter-bar-placeholder">
-  <div class="filter-bar">
-    <form-generator [inputs]="fields"></form-generator>
-
-    <div class="filter-actions">
-      <button mat-raised-button color="primary" (click)="resetFilters()">
-        Clear Filters
-      </button>
-    </div>
-  </div>
+  <form-generator #formGeneratorRef [inputs]="fields" [values]="values" />
 </fieldset>
 
 <div class="table-wrapper">

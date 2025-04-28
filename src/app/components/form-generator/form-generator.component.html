@@ -1,14 +1,20 @@
-<form [formGroup]="form" class="form-generator">
-  <div class="form-row">
-    <ng-container *ngFor="let input of inputs">
-      <div class="form-col" [ngClass]="'col' + (input.columns || 12)">
-        <ng-container
-          *ngComponentOutlet="
-            getInputComponent(input.component);
-            inputs: createInputs(input)
-          "
-        ></ng-container>
-      </div>
-    </ng-container>
-  </div>
-</form>
+<div class="filter-bar">
+  <form [formGroup]="form" class="form-generator">
+    <div class="form-row">
+      <ng-container *ngFor="let input of inputs">
+        <div class="form-col" [ngClass]="'col' + (input.columns || 12)">
+          <ng-container
+            *ngComponentOutlet="
+              getInputComponent(input.component);
+              inputs: getInputComponentProps(input)
+            "
+          ></ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+
+  <button mat-raised-button color="primary" (click)="resetFilters()">
+    Reset
+  </button>
+</div>

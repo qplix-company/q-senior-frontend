@@ -3,7 +3,6 @@
     [fields]="filterFields"
     [dataSource]="securities$ | async"
     [isLoading]="loadingSecurities$ | async"
-    #tableComponent
   >
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
