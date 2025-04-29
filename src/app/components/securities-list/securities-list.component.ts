@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   DestroyRef,
-  ViewChild,
   inject,
 } from '@angular/core';
 import {
@@ -20,9 +19,7 @@ import {
 } from '@angular/material/table';
 import {
   BehaviorSubject,
-  Observable,
   switchMap,
-  tap,
   map,
   distinctUntilChanged,
   shareReplay,
@@ -32,14 +29,12 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { indicate, paramsEqual } from '../../utils';
-import { Security } from '../../models/security';
 import { SecurityService } from '../../services/security.service';
 import { FilterableTableComponent } from '../filterable-table/filterable-table.component';
 import { AsyncPipe } from '@angular/common';
 import { FormInput } from '../../models/form';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
-import { InputComponentsEnum, PAGE_SIZE } from '../../constants/form';
-import { PagingFilter, SecuritiesFilter } from '../../models/securities-filter';
+import { InputComponentsEnum } from '../../constants/form';
 import { filtersContext } from '../../contexts/filtersContext';
 
 @Component({
@@ -64,22 +59,14 @@ import { filtersContext } from '../../contexts/filtersContext';
   styleUrl: './securities-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SecuritiesListComponent implements AfterViewInit {
+export class SecuritiesListComponent {
   private readonly _securityService = inject(SecurityService);
   private readonly destroyRef = inject(DestroyRef);
 
   readonly displayedColumns: string[] = ['name', 'type', 'currency'];
   readonly loadingSecurities$ = new BehaviorSubject<boolean>(false);
 
-  private readonly _params$ = new BehaviorSubject<{
-    filters: SecuritiesFilter;
-    pagination: PagingFilter;
-  }>({
-    filters: {},
-    pagination: { skip: 0, limit: PAGE_SIZE },
-  });
-
-  private readonly _securitiesResult$ = this._params$.pipe(
+  private readonly _securitiesResult$ = filtersContext.pipe(
     distinctUntilChanged(paramsEqual),
     switchMap(({ filters, pagination }) =>
       this._securityService
@@ -140,35 +127,15 @@ export class SecuritiesListComponent implements AfterViewInit {
     },
   ];
 
-  ngAfterViewInit(): void {
-    filtersContext.subscribe((filters) => this.updateFilters(filters));
-  }
-
-  updateFilters(newFiltersPure: SecuritiesFilter) {
-    const { pagination } = this._params$.value;
-    const newFilters = Object.fromEntries(
-      Object.entries(newFiltersPure).filter(([_, value]) => value !== null)
-    );
-
-    this._params$.next({
-      filters: newFilters,
-      pagination: { ...pagination, skip: 0 },
-    });
-  }
-
   onPageChange(event: PageEvent) {
-    const { filters, pagination } = this._params$.value;
-    if (
-      pagination.skip !== event.pageIndex ||
-      pagination.limit !== event.pageSize
-    ) {
-      this._params$.next({
-        filters,
-        pagination: {
-          skip: event.pageIndex,
-          limit: event.pageSize,
-        },
-      });
-    }
+    const current = filtersContext.value;
+
+    filtersContext.next({
+      filters: current.filters,
+      pagination: {
+        skip: event.pageIndex,
+        limit: event.pageSize,
+      },
+    });
   }
 }

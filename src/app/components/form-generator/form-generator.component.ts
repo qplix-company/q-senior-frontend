@@ -76,7 +76,18 @@ export class FormGeneratorComponent implements OnInit {
     );
 
     merge(...debounced$, ...immediate$).subscribe(() => {
-      filtersContext.next(this.form.getRawValue());
+      const current = filtersContext.value;
+      const newFilters = Object.fromEntries(
+        Object.entries(this.form.getRawValue()).filter(
+          ([_, value]) => value !== null
+        )
+      );
+
+      filtersContext.next({
+        ...current,
+        filters: newFilters,
+        pagination: { ...current.pagination, skip: 0 }, // reset page
+      });
     });
   }
   resetFilters(): void {

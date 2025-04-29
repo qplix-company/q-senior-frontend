@@ -17,23 +17,28 @@ export class SecurityService {
     securityFilter?: SecuritiesFilter
   ): Observable<{ data: Security[]; total: number }> {
     const cacheKey = this._createCacheKey(securityFilter);
-    const cached = getLocalCache<Security[]>(cacheKey);
+    const cached = getLocalCache<{ data: Security[]; total: number }>(cacheKey);
 
     const skip = securityFilter?.skip ?? 0;
     const limit = securityFilter?.limit ?? 100;
 
     if (cached) {
-      const filteredSecurities = cached.slice(skip, skip + limit);
-      return of({ data: filteredSecurities, total: cached.length });
+      return of(cached).pipe(delay(1000));
     }
 
     const filtered = this._filterSecurities(securityFilter);
-    setLocalCache(cacheKey, filtered, { timeToLiveMs: CACHE_TIME_TO_LIVE_MS });
-
     const filteredSecurities = filtered.slice(skip, skip + limit);
-    return of({ data: filteredSecurities, total: filtered.length }).pipe(
-      delay(1000)
-    );
+
+    const cacheValue = {
+      data: filteredSecurities,
+      total: filtered.length,
+    };
+
+    setLocalCache(cacheKey, cacheValue, {
+      timeToLiveMs: CACHE_TIME_TO_LIVE_MS,
+    });
+
+    return of(cacheValue).pipe(delay(1000));
   }
 
   private _filterSecurities(
@@ -58,10 +63,15 @@ export class SecurityService {
   }
 
   private _createCacheKey(filter?: SecuritiesFilter): string {
+    if (!filter) return CACHE_KEY_PREFIX + 'default';
+
     const cleaned = { ...filter };
+    const { skip, limit } = cleaned;
     delete cleaned.skip;
     delete cleaned.limit;
 
-    return CACHE_KEY_PREFIX + JSON.stringify(cleaned);
+    return `${CACHE_KEY_PREFIX}${JSON.stringify(cleaned)}:skip=${
+      skip ?? 0
+    }:limit=${limit ?? 100}`;
   }
 }
