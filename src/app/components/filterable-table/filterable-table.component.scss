@@ -1,13 +1,10 @@
 :host {
   display: block;
 
-  table {
-    width: 100%;
-  }
-
   .filter-bar-placeholder {
-    height: 100px;
     margin-bottom: 20px;
+    border: none;
+    padding: 0;
   }
 
   .table-wrapper {

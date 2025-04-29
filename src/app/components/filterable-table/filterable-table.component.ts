@@ -8,7 +8,6 @@ import {
   QueryList,
   ViewChild,
 } from '@angular/core';
-import { Observable } from 'rxjs';
 import {
   MatColumnDef,
   MatHeaderRowDef,
@@ -17,41 +16,57 @@ import {
   MatTable,
 } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+import { FormInput } from '../../models/form';
+import { FormGeneratorComponent } from '../form-generator/form-generator.component';
 
 @Component({
   selector: 'filterable-table',
   standalone: true,
-  imports: [MatProgressSpinner, MatTable],
+  imports: [
+    CommonModule,
+    MatTable,
+    MatProgressSpinner,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    FormGeneratorComponent,
+  ],
   templateUrl: './filterable-table.component.html',
-  styleUrl: './filterable-table.component.scss',
+  styleUrls: ['./filterable-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterableTableComponent<T> implements AfterContentInit {
+  @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
+
   @ContentChildren(MatHeaderRowDef) headerRowDefs?: QueryList<MatHeaderRowDef>;
   @ContentChildren(MatRowDef) rowDefs?: QueryList<MatRowDef<T>>;
   @ContentChildren(MatColumnDef) columnDefs?: QueryList<MatColumnDef>;
   @ContentChild(MatNoDataRow) noDataRow?: MatNoDataRow;
 
-  @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
-
   @Input() columns: string[] = [];
-
   @Input() dataSource:
     | readonly T[]
     | DataSource<T>
     | Observable<readonly T[]>
     | null = null;
   @Input() isLoading: boolean | null = false;
+  @Input() fields: FormInput[] = [];
 
-  public ngAfterContentInit(): void {
-    this.columnDefs?.forEach((columnDef) =>
-      this.table?.addColumnDef(columnDef)
-    );
-    this.rowDefs?.forEach((rowDef) => this.table?.addRowDef(rowDef));
-    this.headerRowDefs?.forEach((headerRowDef) =>
-      this.table?.addHeaderRowDef(headerRowDef)
-    );
+  values: Record<string, any> = {};
+
+  ngAfterContentInit(): void {
+    this.columnDefs?.forEach((def) => this.table?.addColumnDef(def));
+    this.rowDefs?.forEach((def) => this.table?.addRowDef(def));
+    this.headerRowDefs?.forEach((def) => this.table?.addHeaderRowDef(def));
     this.table?.setNoDataRow(this.noDataRow ?? null);
   }
 }
