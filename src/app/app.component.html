@@ -1,3 +1,20 @@
-<div class="security-list-wrapper">
-  <securities-list></securities-list>
-</div>
+<mat-nav-list aria-label="Navigation">
+  <ul>
+    <li>
+      <a mat-list-item routerLink="task1" routerLinkActive="active">Task 1</a>
+    </li>
+    <li>
+      <a mat-list-item routerLink="task2" routerLinkActive="active">Task 2</a>
+    </li>
+    <li>
+      <a mat-list-item routerLink="task3" routerLinkActive="active">Task 3</a>
+    </li>
+  </ul>
+</mat-nav-list>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>Description: {{ title() }}</mat-expansion-panel-header>
+  <div [innerHTML]="description()"></div>
+</mat-expansion-panel>
+
+<router-outlet></router-outlet>

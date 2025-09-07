@@ -1,7 +1,20 @@
 :host {
-  display: block;
+  .mat-mdc-nav-list {
+    border-bottom: 1px solid gray
+  }
 
-  .security-list-wrapper {
-    padding: 30px;
+  .mat-expansion-panel {
+    margin: 8px;
+  }
+
+  ul {
+    list-style: unset;
+    padding: 0 16px;
+    margin: 0;
+    display: flex;
+
+    a.active {
+      background: lightblue;
+    }
   }
 }
