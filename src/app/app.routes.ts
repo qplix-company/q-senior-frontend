@@ -13,59 +13,47 @@ export const routes: Routes = [
       <p>
         At QPLIX we work on increasingly large and complex data sets. Very often
         we have the use case that we present this data to the user in tabular
-        form. One example is security or asset data in which an investor may be
-        invested. In addition to investment types such as shares and bonds,
+        form. One example is security or asset data which an investor may be
+        invested in. In addition to investment types such as shares and bonds,
         there are many other asset classes, which can also include countless
         securities.
       </p>
       <h6>Goal</h6>
       <p>
-        Your task is to build a generic filter bar which, among other things,
-        can be used to filter the <kbd>FilterableTableComponent</kbd>. The
-        <kbd>FilterableTableComponent</kbd> is used by the
-        <kbd>SecuritiesListComponent</kbd> in our example. The
-        <kbd>SecuritiesListComponent</kbd> is a list of assets in which an
-        investor may be invested.The data which is requested via the
-        <kbd>SecurityService</kbd>
-        on the server is then presented to the user. No further processing takes
-        place in the front end. Filtering should also take place on the server
-        side. To do this, your filter bar must be able to handle the
-        <kbd>SecuritiesFilter</kbd> interface with which the
-        <kbd>SecurityService</kbd> requests the data. <br/><em>
-        Note: In this example, the server request is mocked.</em
-      >
+        Your task is to build a generic filter bar which supports all filter inputs that are needed to compose the <kbd>SecuritiesFilter</kbd> interface.
       </p>
       <p>
-        Find a way to handle various filter inputs dynamically in the filter
-        bar. The user input in the filter bar should lead directly to the
-        security list being filtered accordingly.
+        Find a way to make the filter bar easily extensible, e.g. when the <kbd>SecuritiesFilter</kbd> interface changes in the future.
       </p>
       <h6>Task</h6>
       <ul>
         <li>
-          The filter bar can be used to filter the table on the server side via
-          a service. It therefore only provides the filter object and does not
-          filter the table on the client side itself.
+          The filter bar returns a filter object which can be used for server-side filtering. The filter bar
+          does not filter the table on the client side itself.
         </li>
         <li>
-          It should also be possible to integrate the filter bar in other
-          components. It should therefore have
-          <em>no direct dependencies</em> to either the
+          It should also be possible to use the filter bar in other
+          components and for other pages with different filter interfaces. It should therefore have
+          <b>no direct dependencies</b> to either the
           <kbd>FilterableTableComponent</kbd> or the
           <kbd>SecuritiesFilter</kbd> interface.
         </li>
         <li>
           The filter bar should be able to serve the entire
-          <kbd>SecuritiesFilter</kbd> interface. Accordingly, there must be
-          different filter types:
-          <pre><code>
-          export interface SecuritiesFilter extends PagingFilter {{ '{' }}
+          <kbd>SecuritiesFilter</kbd> interface.
+          <pre>
+          <code>
+          export interface SecuritiesFilter extends PagingFilter {
             name?: string;
             types?: string[];
             currencies?: string[];
             isPrivate?: boolean;
-            {{ '}' }}
-          </code></pre>
+          }
+          </code>
+          </pre>
+        </li>
+        <li>
+          Changing the filter should lead to the table being filtered via the <kbd>SecurityService.getSecurities(filter)</kbd> backend call.
         </li>
         <li>
           Also consider a solution for paging the table. We have provided the
@@ -101,6 +89,9 @@ export const routes: Routes = [
         </li>
         <li>
         The checkbox states should stay the same after clicking "Recreate data".
+        </li>
+        <li>
+        Since this might be a tricky one: If you don't find a solution try to bring us some of the insights you gathered and how you approached this challenge. :)
         </li>
       </ul>
       `
