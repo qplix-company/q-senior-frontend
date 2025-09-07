@@ -1,0 +1,10 @@
+<div class="toolbar">
+  <button mat-button (click)="selectAll()">Select all</button>
+  <button mat-button (click)="deselectAll()">Deselect all</button>
+</div>
+<cdk-virtual-scroll-viewport itemSize="40">
+  <div class="row" *cdkVirtualFor="let row of rows()">
+    <mat-checkbox [checked]="selectionModel.isSelected(row)"></mat-checkbox>
+    <span>{{ row.title }}</span>
+  </div>
+</cdk-virtual-scroll-viewport>

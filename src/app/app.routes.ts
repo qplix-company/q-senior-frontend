@@ -1,3 +1,149 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
+import {Task1Component} from './tasks/task1/task1.component';
+import {Task2Component} from './tasks/task2/task2.component';
+import {Task3Component} from './tasks/task3/task3.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: "task1",
+    component: Task1Component,
+    data: {
+      title: "Create a generic filter bar",
+      description: `<h6>Introduction</h6>
+      <p>
+        At QPLIX we work on increasingly large and complex data sets. Very often
+        we have the use case that we present this data to the user in tabular
+        form. One example is security or asset data in which an investor may be
+        invested. In addition to investment types such as shares and bonds,
+        there are many other asset classes, which can also include countless
+        securities.
+      </p>
+      <h6>Goal</h6>
+      <p>
+        Your task is to build a generic filter bar which, among other things,
+        can be used to filter the <kbd>FilterableTableComponent</kbd>. The
+        <kbd>FilterableTableComponent</kbd> is used by the
+        <kbd>SecuritiesListComponent</kbd> in our example. The
+        <kbd>SecuritiesListComponent</kbd> is a list of assets in which an
+        investor may be invested.The data which is requested via the
+        <kbd>SecurityService</kbd>
+        on the server is then presented to the user. No further processing takes
+        place in the front end. Filtering should also take place on the server
+        side. To do this, your filter bar must be able to handle the
+        <kbd>SecuritiesFilter</kbd> interface with which the
+        <kbd>SecurityService</kbd> requests the data. <br/><em>
+        Note: In this example, the server request is mocked.</em
+      >
+      </p>
+      <p>
+        Find a way to handle various filter inputs dynamically in the filter
+        bar. The user input in the filter bar should lead directly to the
+        security list being filtered accordingly.
+      </p>
+      <h6>Task</h6>
+      <ul>
+        <li>
+          The filter bar can be used to filter the table on the server side via
+          a service. It therefore only provides the filter object and does not
+          filter the table on the client side itself.
+        </li>
+        <li>
+          It should also be possible to integrate the filter bar in other
+          components. It should therefore have
+          <em>no direct dependencies</em> to either the
+          <kbd>FilterableTableComponent</kbd> or the
+          <kbd>SecuritiesFilter</kbd> interface.
+        </li>
+        <li>
+          The filter bar should be able to serve the entire
+          <kbd>SecuritiesFilter</kbd> interface. Accordingly, there must be
+          different filter types:
+          <pre><code>
+          export interface SecuritiesFilter extends PagingFilter {{ '{' }}
+            name?: string;
+            types?: string[];
+            currencies?: string[];
+            isPrivate?: boolean;
+            {{ '}' }}
+          </code></pre>
+        </li>
+        <li>
+          Also consider a solution for paging the table. We have provided the
+          <kbd>PagingFilter</kbd> interface for this.
+        </li>
+      </ul>
+      <p>
+        Feel free to use additional libraries if you think that they will make
+        your work easier and contribute to the solution.
+      </p>`
+    }
+  },
+  {
+    path: "task2",
+    component: Task2Component,
+    data: {
+      title: "Improve selection performance",
+      description: ``
+    }
+  },
+  {
+    path: "task3",
+    component: Task3Component,
+    data: {
+      title: "Create a collectible asset dashboard",
+      description: `      <h6>Introduction</h6>
+      <p>
+        At QPLIX we often want to present asset-specific information in a
+        suitable format. Especially for our end-user-related products, we create
+        visually appealing detail pages that are specifically tailored to the
+        asset class.
+      </p>
+      <h6>Goal</h6>
+      <p>
+        The objective is to design and build a single-page dashboard for a
+        high-value collectible asset, such as a vintage car or a rare painting.
+      </p>
+      <h6>Task</h6>
+      <p>
+        Choose one specific asset and then create a dashboard that tells its
+        story through data and design. The dashboard should be divided into
+        several key sections, each focusing on a different aspect of the asset.
+        You have full creative freedom on the layout, but the following sections
+        must be included:
+      </p>
+      <ul>
+        <li>
+          <strong>Header</strong>: A clean, professional header that includes
+          the asset's name (e.g., "1964 Aston Martin DB5"), a high-quality image
+          or carousel of the asset, and a clear, prominent current estimated
+          value.
+        </li>
+        <li>
+          <strong>Asset Details</strong>: A section that provides key, static
+          information about the asset. This should be visually scannable and may
+          include: Acquisition Date & Cost, Serial Number / VIN, Provenance /
+          History (e.g., "owned by a famous celebrity," "displayed at a renowned
+          museum"), Condition Report (e.g., "Pristine," "Restored")
+        </li>
+        <li>
+          <strong>Performance Analytics</strong>: This is the core of the
+          dashboard and where data visualization skills will be on full display.
+          This section should use charts and graphs to illustrate the asset's
+          value over time.
+        </li>
+        <li>
+          <strong>Transaction History</strong>: A clean, easy-to-read table or
+          list of recent sales or appraisals of similar assets. This section
+          adds context to the performance data and should include columns like
+          Date, Sale Price, and Location.
+        </li>
+      </ul>
+      <p>
+        For this task, you do not need to implement any interaction or other
+        functionality; focus on providing an appealing and intuitive UI. Please
+        use test data that is easy to create; we do not place any importance on
+        accuracy for this task.
+      </p> `
+    }
+  }
+];
