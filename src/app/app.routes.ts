@@ -83,7 +83,27 @@ export const routes: Routes = [
     component: Task2Component,
     data: {
       title: "Improve selection performance",
-      description: ``
+      description: `
+      <h6>Introduction</h6>
+      <p>
+        When working on larger datasets in the frontend there might be times where performance issues arise.
+        While this example isn't particularly realistic in itself it show-cases a performance problem that did arise in our
+        software a while ago in a different scenario.
+      </p>
+      <h6>Goal</h6>
+      <p>
+        Find out why the "Select all" and "Deselect all" button feels laggy and fix the problem while keeping the same functionality and data size.
+      </p>
+      <h6>Task</h6>
+      <ul>
+        <li>
+        Clicking the "Select all" and "Deselect all" should feel instant.
+        </li>
+        <li>
+        The checkbox states should stay the same after clicking "Recreate data".
+        </li>
+      </ul>
+      `
     }
   },
   {
