@@ -1,8 +1,5 @@
-<filterable-table
-  class="security-list"
-  [dataSource]="securities$ | async"
-  [isLoading]="loadingSecurities$ | async"
->
+<filterable-table class="security-list" [dataSource]="securities$ | async" [isLoading]="loadingSecurities$ | async"
+  (filterEventChanged)="onFilterChanged($event)" (clearFilterChanged)="onFilterChanged($event)">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let security">{{ security.name }}</td>
@@ -24,6 +21,13 @@
 
   <!-- Row shown when there is no matching data that will be provided to the wrapper table. -->
   <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="3"><i>No data</i></td>
+    <td class="mat-cell" colspan="3"><i>No Results Found</i></td>
   </tr>
 </filterable-table>
+
+<!-- ng-if added for hiding pagination if no data present -->
+<ng-container *ngIf="securities$ | async as securities">
+  <app-pagination *ngIf="securities.length > 0" [length]="totalCount" [pageSize]="filter.limit || 5"
+    (pageChange)="onPageChange($event)" [pageIndex]="currentPageIndex" [pageSizeOptions]="pageSizeOptions">
+  </app-pagination>
+</ng-container>
