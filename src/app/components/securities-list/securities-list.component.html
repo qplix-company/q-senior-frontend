@@ -2,6 +2,8 @@
   class="security-list"
   [dataSource]="securities$ | async"
   [isLoading]="loadingSecurities$ | async"
+  (filterEventChanged)="onFilterChanged($event)"
+  (ClearFilter)="onFilterChanged($event)"
 >
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
@@ -27,3 +29,16 @@
     <td class="mat-cell" colspan="3"><i>No data</i></td>
   </tr>
 </filterable-table>
+
+<!-- show pagination only if the data is present -->
+<ng-container *ngIf="securities$ | async as securities">
+  <app-pagination-bar
+    *ngIf="securities.length > 0"
+    [length]="totalCount"
+    [pageSize]="filter.limit || 10"
+    (pageChange)="onPageChange($event)"
+    [pageIndex]="currentPageIndex"
+    [pageSizeOptions]="pageSizeOptions"
+  >
+  </app-pagination-bar>
+</ng-container>
