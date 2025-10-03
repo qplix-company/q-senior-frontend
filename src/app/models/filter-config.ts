@@ -1,13 +1,14 @@
-export type FilterFieldType =
+export type FilterControlType =
   | 'text'
   | 'select'
   | 'multiselect'
   | 'checkbox'
   | 'radio';
 
-export interface FilterField<T = any> {
+export interface FilterConfig<T = any> {
   key: string;
   label: string;
-  type: FilterFieldType;
+  type: FilterControlType;
   options?: { label: string; value: any }[]; // for select/multiselect
+  defaultValue?: any;
 }

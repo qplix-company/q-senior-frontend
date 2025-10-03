@@ -58,36 +58,45 @@ export class SecuritiesListComponent {
     .getSecurities({})
     .pipe(indicate(this.loadingSecurities$));
 
-  @ViewChild(PaginationBarComponent) paginator!: PaginationBarComponent;
+  @ViewChild(PaginationBarComponent) pagination!: PaginationBarComponent;
 
   protected totalCount: number = 0;
   protected pageSizeOptions: number[] = [10, 20, 50, 100];
   protected filter: any = { skip: 0, limit: 10 };
 
   ngOnInit() {
-    this.getSecuritiesList({ ...this.filter, isPrivate: true });
+    this.getSecuritiesList(this.filter);
   }
   onFilterChanged(event: any) {
-    //reset to 1st after every filter change
-    this.filter.skip = 0;
-    this.filter.limit = 10;
-    this.filter = { ...this.filter, ...event };
-    if (this.paginator) {
-      this.paginator.pageIndex = 0;
+    if (!event || Object.keys(event).length === 0) {
+      this.filter = { skip: 0, limit: 10 };
+    } else {
+      this.filter.skip = 0;
+      this.filter = { ...this.filter, ...event };
+    }
+    if (this.pagination) {
+      this.pagination.pageIndex = 0;
     }
     this.getSecuritiesList(this.filter);
   }
 
   onPageChange(event: { skip: number; limit: number }) {
-    this.filter.skip = event?.skip;
-    this.filter.limit = event?.limit;
-    this.getSecuritiesList({
-      ...this.filter,
-      isPrivate:
-        this.filter?.isPrivate == undefined || this.filter?.isPrivate
-          ? true
-          : false,
-    });
+    if (!event || !this.filter) {
+      return;
+    }
+
+    this.filter.skip = event.skip;
+    this.filter.limit = event.limit;
+
+    if (event.skip >= this.totalCount) {
+      // Reset paginator to last valid page
+      if (this.pagination) {
+        this.pagination.pageIndex = Math.floor(event.skip / event.limit);
+      }
+      return;
+    }
+
+    this.getSecuritiesList(this.filter);
   }
   getSecuritiesList(filterData: any) {
     const activeFilter = { ...filterData };
@@ -109,12 +118,12 @@ export class SecuritiesListComponent {
         this.totalCount = data?.length;
         this.pageSizeOptions = this.buildPageSizeOptions();
         // Reset paginator if total items less than current page
-        if (this.paginator) {
+        if (this.pagination) {
           const maxPageIndex = Math.floor(
             (this.totalCount - 1) / this.filter?.limit
           );
-          if (this.paginator?.pageIndex > maxPageIndex) {
-            this.paginator.pageIndex = 0;
+          if (this.pagination?.pageIndex > maxPageIndex) {
+            this.pagination.pageIndex = 0;
             this.filter.skip = 0;
             this.getSecuritiesList(this.filter);
           }

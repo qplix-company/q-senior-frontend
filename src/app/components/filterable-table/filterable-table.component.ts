@@ -24,7 +24,7 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { FilterBarComponent } from '../filter-bar/filter-bar.component';
 import { SECURITIES } from '../../mocks/securities-mocks';
 import { Security } from '../../models/security';
-import { FilterField } from '../../models/filter-config';
+import { FilterConfig } from '../../models/filter-config';
 import { FilterationService } from '../../services/filteration.service';
 
 @Component({
@@ -54,12 +54,15 @@ export class FilterableTableComponent<T> implements AfterContentInit {
 
   @Output() filterEventChanged = new EventEmitter<Partial<any>>();
   @Output() ClearFilter = new EventEmitter<Partial<any>>();
-  filter: any = { skip: 0, limit: 5 };
-  fields: FilterField[] = [];
+  filter: any = { skip: 0, limit: 10 };
+  fields: FilterConfig[] = [];
   securities: Security[] = SECURITIES;
   private _filterService = inject(FilterationService);
 
+  originalSecurities = [...this.securities];
+
   ngOnInit() {
+    console.log(this.securities);
     this.fields = this._filterService.buildFilterFieldsFromSecurities(
       this.securities
     );
@@ -80,6 +83,7 @@ export class FilterableTableComponent<T> implements AfterContentInit {
     this.filterEventChanged.emit(event);
   }
   onClearFilter(event: any) {
+    this.securities = this.originalSecurities;
     this.ClearFilter.emit(event);
   }
 }

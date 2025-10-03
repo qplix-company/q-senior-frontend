@@ -4,9 +4,10 @@ import {
   EventEmitter,
   Input,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { FilterField } from '../../models/filter-config';
+import { FilterConfig } from '../../models/filter-config';
 import { CommonModule } from '@angular/common';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -15,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelect } from '@angular/material/select';
 import { MatInput } from '@angular/material/input';
 import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
+import { skip } from 'rxjs';
 
 @Component({
   selector: 'app-filter-bar',
@@ -38,8 +40,10 @@ import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterBarComponent {
-  @Input() fields: FilterField<any>[] = [];
   @Input() initialValue: Partial<any> | null = null;
+
+  @Input() configs: FilterConfig[] = [];
+  // @Input() initialValue: Record<string, any> = {};
   @Output() filterChanged = new EventEmitter<any>();
   @Output() ClearFilter = new EventEmitter<any>();
   form: FormGroup;
@@ -50,24 +54,20 @@ export class FilterBarComponent {
 
   ngOnInit() {
     const group: any = {};
-    this.fields.forEach((f) => {
-      group[f.key] = [f.type === 'checkbox' ? true : null]; // default values
+    this.configs.forEach((f) => {
+      group[f.key] = [f.type === 'checkbox' ? false : null]; // default values
     });
     this.form = this.fb.group(group);
+    this.form.valueChanges.pipe(skip(1)).subscribe((value) => {
+      this.filterChanged.emit(value);
+    });
   }
-  onApply() {
-    let data = this.form.value;
-    this.filterChanged.emit(data);
+  onApply(): void {
+    this.filterChanged.emit(this.form.value);
   }
-  onClear() {
-    const resetValue = {
-      name: '',
-      types: [],
-      currencies: [],
-      isPrivate: false,
-    };
-
-    this.form.reset(resetValue);
-    this.filterChanged.emit(resetValue);
+  onClear(): void {
+    this.form.reset();
+    this.filterChanged.emit({});
+    this.ClearFilter.emit();
   }
 }

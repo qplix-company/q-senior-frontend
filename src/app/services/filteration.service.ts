@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilterField } from '../models/filter-config';
+import { FilterConfig } from '../models/filter-config';
 import { Security } from '../models/security';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Security } from '../models/security';
 export class FilterationService {
   constructor() {}
 
-  buildFilterFieldsFromSecurities(securities: Security[]): FilterField<any>[] {
+  buildFilterFieldsFromSecurities(securities: Security[]): FilterConfig<any>[] {
     const uniqueTypes = Array.from(new Set(securities.map((s) => s.type))).map(
       (t) => ({ label: t, value: t })
     );

@@ -1,7 +1,7 @@
 <!-- filter-bar.component.html -->
 <div class="filter-bar">
   <form [formGroup]="form">
-    <ng-container *ngFor="let field of fields">
+    <ng-container *ngFor="let field of configs">
       <ng-container [ngSwitch]="field.type">
         <mat-form-field
           *ngSwitchCase="'text'"
@@ -54,7 +54,7 @@
     </ng-container>
   </form>
   <div class="filter-actions">
-    <button mat-raised-button (click)="onApply()">Apply</button>
-    <button mat-raised-button (click)="onClear()">Clear</button>
+    <button mat-raised-button title="Apply" (click)="onApply()">Apply</button>
+    <button mat-raised-button title="Clear" (click)="onClear()">Clear</button>
   </div>
 </div>
