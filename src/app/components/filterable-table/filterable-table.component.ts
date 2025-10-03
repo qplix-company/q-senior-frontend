@@ -63,9 +63,7 @@ export class FilterableTableComponent<T> implements AfterContentInit {
 
   ngOnInit() {
     console.log(this.securities);
-    this.fields = this._filterService.buildFilterFieldsFromSecurities(
-      this.securities
-    );
+    this.fields = this._filterService.getDynamicFilterConfig(this.securities);
   }
 
   public ngAfterContentInit(): void {

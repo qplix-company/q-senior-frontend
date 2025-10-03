@@ -32,8 +32,10 @@ export class SecurityService {
         (!securityFilter.name ||
           s.name.toLowerCase().includes(securityFilter.name.toLowerCase())) &&
         (!securityFilter.types ||
+          securityFilter.types.length === 0 ||
           securityFilter.types.some((type) => s.type === type)) &&
         (!securityFilter.currencies ||
+          securityFilter.currencies.length === 0 ||
           securityFilter.currencies.some(
             (currency) => s.currency == currency
           )) &&

@@ -6,9 +6,7 @@ import { Security } from '../models/security';
   providedIn: 'root',
 })
 export class FilterationService {
-  constructor() {}
-
-  buildFilterFieldsFromSecurities(securities: Security[]): FilterConfig<any>[] {
+  getDynamicFilterConfig(securities: Security[]): FilterConfig<any>[] {
     const types = Array.from(new Set(securities.map((s) => s.type))).map(
       (t) => ({ label: t, value: t })
     );
