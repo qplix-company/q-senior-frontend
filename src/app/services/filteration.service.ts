@@ -9,26 +9,34 @@ export class FilterationService {
   constructor() {}
 
   buildFilterFieldsFromSecurities(securities: Security[]): FilterConfig<any>[] {
-    const uniqueTypes = Array.from(new Set(securities.map((s) => s.type))).map(
+    const types = Array.from(new Set(securities.map((s) => s.type))).map(
       (t) => ({ label: t, value: t })
     );
-    const uniqueCurrencies = Array.from(
+    const currencies = Array.from(
       new Set(securities.map((s) => s.currency))
     ).map((c) => ({ label: c, value: c }));
 
     return [
-      { key: 'name', label: 'Name', type: 'text' },
+      {
+        key: 'name',
+        label: 'Name',
+        type: 'text',
+        placeholder: 'Enter name',
+        defaultValue: '',
+      },
       {
         key: 'types',
         label: 'Types',
         type: 'multiselect',
-        options: uniqueTypes,
+        options: types,
+        defaultValue: [],
       },
       {
         key: 'currencies',
         label: 'Currencies',
         type: 'multiselect',
-        options: uniqueCurrencies,
+        options: currencies,
+        defaultValue: [],
       },
       { key: 'isPrivate', label: 'Private', type: 'checkbox' },
     ];

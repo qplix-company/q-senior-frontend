@@ -17,15 +17,23 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationBarComponent {
-  @Input() length = 0; // total items
-  @Input() pageSize = 10; // items per page
-  @Input() pageSizeOptions = [10, 20, 50, 100]; // page size dropdown
+  @Input() length = 0;
   @Input() pageIndex = 0;
+  @Input() pageSize = 10;
+  @Input() pageSizeOptions = [10, 20, 50, 100];
   @Output() pageChange = new EventEmitter<{ skip: number; limit: number }>();
 
   onPageChanged(event: PageEvent) {
+    const newSkip = event.pageIndex * event.pageSize;
+    if (newSkip >= this.length) {
+      this.pageIndex = Math.max(
+        0,
+        Math.floor((this.length - 1) / event.pageSize)
+      );
+      return;
+    }
     this.pageIndex = event.pageIndex;
-    const skip = event.pageIndex * event.pageSize;
+    const skip = newSkip;
     const limit = event.pageSize;
     this.pageChange.emit({ skip, limit });
   }

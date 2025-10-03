@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   ViewChild,
 } from '@angular/core';
@@ -67,6 +68,11 @@ export class SecuritiesListComponent {
   ngOnInit() {
     this.getSecuritiesList(this.filter);
   }
+
+  get currentPageIndex(): number {
+    return Math.floor(this.filter?.skip / this.filter?.limit);
+  }
+
   onFilterChanged(event: any) {
     if (!event || Object.keys(event).length === 0) {
       this.filter = { skip: 0, limit: 10 };
@@ -81,23 +87,20 @@ export class SecuritiesListComponent {
   }
 
   onPageChange(event: { skip: number; limit: number }) {
-    if (!event || !this.filter) {
+    if (event.skip >= this.totalCount) {
+      if (this.pagination) {
+        this.pagination.pageIndex = Math.floor(
+          (this.totalCount - 1) / event.limit
+        );
+      }
       return;
     }
 
     this.filter.skip = event.skip;
     this.filter.limit = event.limit;
-
-    if (event.skip >= this.totalCount) {
-      // Reset paginator to last valid page
-      if (this.pagination) {
-        this.pagination.pageIndex = Math.floor(event.skip / event.limit);
-      }
-      return;
-    }
-
     this.getSecuritiesList(this.filter);
   }
+
   getSecuritiesList(filterData: any) {
     const activeFilter = { ...filterData };
     this.securities$ = this._securityService
@@ -105,11 +108,8 @@ export class SecuritiesListComponent {
       .pipe(indicate(this.loadingSecurities$));
     this.getTotalCount(activeFilter);
   }
-  get currentPageIndex(): number {
-    return Math.floor(this.filter?.skip / this.filter?.limit);
-  }
+
   getTotalCount(activeFilter: any) {
-    // This logic is not needed if total count sent by server
     const { skip, limit, ...countFilter } = activeFilter;
     this._securityService
       .getSecurities(countFilter)
@@ -117,7 +117,6 @@ export class SecuritiesListComponent {
       .subscribe((data) => {
         this.totalCount = data?.length;
         this.pageSizeOptions = this.buildPageSizeOptions();
-        // Reset paginator if total items less than current page
         if (this.pagination) {
           const maxPageIndex = Math.floor(
             (this.totalCount - 1) / this.filter?.limit

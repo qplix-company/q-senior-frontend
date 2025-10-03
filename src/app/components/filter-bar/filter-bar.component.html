@@ -1,4 +1,3 @@
-<!-- filter-bar.component.html -->
 <div class="filter-bar">
   <form [formGroup]="form">
     <ng-container *ngFor="let field of configs">
@@ -12,8 +11,6 @@
           <input matInput [formControlName]="field.key" />
         </mat-form-field>
 
-        <!-- Single Select -->
-
         <mat-form-field
           *ngSwitchCase="'select'"
           appearance="outline"
@@ -22,13 +19,15 @@
           <mat-label>{{ field.label }}</mat-label>
           <mat-select [formControlName]="field.key">
             <mat-option [value]="null"> {{ field.label }} </mat-option>
-            <mat-option *ngFor="let opt of field.options" [value]="opt.value">
-              {{ opt.label }}
+            <mat-option
+              *ngFor="let option of field.options"
+              [value]="option.value"
+            >
+              {{ option.label }}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <!-- Multi Select -->
         <mat-form-field
           *ngSwitchCase="'multiselect'"
           appearance="outline"
@@ -36,13 +35,15 @@
         >
           <mat-label>{{ field.label }}</mat-label>
           <mat-select [formControlName]="field.key" multiple>
-            <mat-option *ngFor="let opt of field.options" [value]="opt.value">
-              {{ opt.label }}
+            <mat-option
+              *ngFor="let option of field.options"
+              [value]="option.value"
+            >
+              {{ option.label }}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <!-- Checkbox -->
         <mat-checkbox
           *ngSwitchCase="'checkbox'"
           [formControlName]="field.key"

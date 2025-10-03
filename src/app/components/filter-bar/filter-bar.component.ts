@@ -3,8 +3,8 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FilterConfig } from '../../models/filter-config';
@@ -39,11 +39,9 @@ import { skip } from 'rxjs';
   styleUrl: './filter-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterBarComponent {
+export class FilterBarComponent implements OnInit {
   @Input() initialValue: Partial<any> | null = null;
-
   @Input() configs: FilterConfig[] = [];
-  // @Input() initialValue: Record<string, any> = {};
   @Output() filterChanged = new EventEmitter<any>();
   @Output() ClearFilter = new EventEmitter<any>();
   form: FormGroup;
@@ -54,17 +52,19 @@ export class FilterBarComponent {
 
   ngOnInit() {
     const group: any = {};
-    this.configs.forEach((f) => {
-      group[f.key] = [f.type === 'checkbox' ? false : null]; // default values
+    this.configs.forEach((field) => {
+      group[field.key] = [field.type === 'checkbox' ? false : null];
     });
     this.form = this.fb.group(group);
     this.form.valueChanges.pipe(skip(1)).subscribe((value) => {
       this.filterChanged.emit(value);
     });
   }
+
   onApply(): void {
     this.filterChanged.emit(this.form.value);
   }
+
   onClear(): void {
     this.form.reset();
     this.filterChanged.emit({});

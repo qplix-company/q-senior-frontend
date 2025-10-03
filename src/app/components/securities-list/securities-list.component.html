@@ -30,10 +30,9 @@
   </tr>
 </filterable-table>
 
-<!-- show pagination only if the data is present -->
+<!-- Pagination -->
 <ng-container *ngIf="securities$ | async as securities">
   <app-pagination-bar
-    *ngIf="securities.length > 0"
     [length]="totalCount"
     [pageSize]="filter.limit || 10"
     (pageChange)="onPageChange($event)"

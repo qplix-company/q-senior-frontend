@@ -12,9 +12,11 @@ export class SecurityService {
    * Get Securities server request mock
    * */
   getSecurities(securityFilter?: SecuritiesFilter): Observable<Security[]> {
+    const skip = securityFilter?.skip ?? 0;
+    const limit = securityFilter?.limit ?? 100;
     const filteredSecurities = this._filterSecurities(securityFilter).slice(
-      securityFilter?.skip ?? 0,
-      securityFilter?.limit ?? 100
+      skip,
+      skip + limit
     );
 
     return of(filteredSecurities).pipe(delay(1000));
