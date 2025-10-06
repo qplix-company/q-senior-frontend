@@ -4,7 +4,10 @@ import {
   Component,
   ContentChild,
   ContentChildren,
+  EventEmitter,
+  inject,
   Input,
+  Output,
   QueryList,
   ViewChild,
 } from '@angular/core';
@@ -18,11 +21,16 @@ import {
 } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { FilterBarComponent } from '../filter-bar/filter-bar.component';
+import { SECURITIES } from '../../mocks/securities-mocks';
+import { Security } from '../../models/security';
+import { FilterConfig } from '../../models/filter-config';
+import { FilterationService } from '../../services/filteration.service';
 
 @Component({
   selector: 'filterable-table',
   standalone: true,
-  imports: [MatProgressSpinner, MatTable],
+  imports: [MatProgressSpinner, MatTable, FilterBarComponent],
   templateUrl: './filterable-table.component.html',
   styleUrl: './filterable-table.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -44,6 +52,20 @@ export class FilterableTableComponent<T> implements AfterContentInit {
     | null = null;
   @Input() isLoading: boolean | null = false;
 
+  @Output() filterEventChanged = new EventEmitter<Partial<any>>();
+  @Output() ClearFilter = new EventEmitter<Partial<any>>();
+  filter: any = { skip: 0, limit: 10 };
+  fields: FilterConfig[] = [];
+  securities: Security[] = SECURITIES;
+  private _filterService = inject(FilterationService);
+
+  originalSecurities = [...this.securities];
+
+  ngOnInit() {
+    console.log(this.securities);
+    this.fields = this._filterService.getDynamicFilterConfig(this.securities);
+  }
+
   public ngAfterContentInit(): void {
     this.columnDefs?.forEach((columnDef) =>
       this.table?.addColumnDef(columnDef)
@@ -53,5 +75,13 @@ export class FilterableTableComponent<T> implements AfterContentInit {
       this.table?.addHeaderRowDef(headerRowDef)
     );
     this.table?.setNoDataRow(this.noDataRow ?? null);
+  }
+
+  onFilterChanged(event: any) {
+    this.filterEventChanged.emit(event);
+  }
+  onClearFilter(event: any) {
+    this.securities = this.originalSecurities;
+    this.ClearFilter.emit(event);
   }
 }
