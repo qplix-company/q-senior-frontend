@@ -1,1 +1,272 @@
-<img src="monet.png" height="auto" width="100%"/>
+<section class="container-fluid py-5 task3">
+  <!-- Header -->
+  <div class="card border-0 shadow-lg mb-4 task3-header overflow-hidden">
+    <div class="card-body p-4 p-lg-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <p class="text-uppercase text-muted small mb-2 fw-semibold">
+            {{ asset.category }}
+          </p>
+          <h1 class="h2 fw-bold mb-2">{{ asset.name }}</h1>
+          <p class="text-secondary mb-4">
+            {{ asset.medium }} &middot; {{ asset.origin }}
+          </p>
+
+          <div class="rounded-4 p-3 mb-4 task3-valuation">
+            <div
+              class="d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-between"
+            >
+              <div>
+                <p class="text-uppercase text-muted small mb-1">
+                  Estimated value
+                </p>
+                <p class="display-6 fs-3 fw-semibold mb-0">
+                  {{
+                    asset.estimatedValue
+                      | currency : asset.currency : "symbol-narrow"
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-3 g-3 task3-header__facts">
+            <div
+              class="col"
+              *ngFor="
+                let fact of [
+                  {
+                    label: 'Last appraisal',
+                    value: (asset.lastAppraisal | date : 'MMMM y')
+                  },
+                  { label: 'Current location', value: asset.location },
+                  { label: 'Chassis no.', value: asset.serialNumber }
+                ]
+              "
+            >
+              <div
+                class="border rounded-4 p-3 h-100 bg-body-tertiary task3-fact-card gradient-card"
+              >
+                <p class="text-uppercase small text-muted mb-1">
+                  {{ fact.label }}
+                </p>
+                <p class="fw-semibold mb-0">{{ fact.value }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div
+            class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm task3-header__image"
+          >
+            <img
+              [src]="asset.image"
+              [alt]="asset.name"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asset details -->
+  <div class="card border-0 shadow-sm mb-4 task3-section">
+    <div class="card-body p-4">
+      <h2 class="h5 fw-bold mb-4 text-primary-emphasis">Asset Details</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+        <div class="col">
+          <div
+            class="h-100 border rounded-4 p-3 bg-body-tertiary detail-tile gradient-card"
+          >
+            <p class="text-uppercase small text-muted mb-1">Acquisition date</p>
+            <p class="fw-semibold mb-1">
+              {{ asset.acquisitionDate | date : "longDate" }}
+            </p>
+            <p class="text-muted mb-0">
+              Cost &middot;
+              {{
+                asset.acquisitionCost
+                  | currency : asset.currency : "symbol-narrow"
+              }}
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="h-100 border rounded-4 p-3 bg-body-tertiary detail-tile gradient-card"
+          >
+            <p class="text-uppercase small text-muted mb-1">
+              Serial number / VIN
+            </p>
+            <p class="fw-semibold mb-1">{{ asset.serialNumber }}</p>
+            <p class="text-muted mb-0">Verified chassis identification</p>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="h-100 border rounded-4 p-3 bg-body-tertiary detail-tile gradient-card"
+          >
+            <p class="text-uppercase small text-muted mb-1">
+              Provenance / History
+            </p>
+            <p class="fw-semibold mb-0">{{ asset.provenance }}</p>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="h-100 border rounded-4 p-3 bg-body-tertiary detail-tile gradient-card"
+          >
+            <p class="text-uppercase small text-muted mb-1">Condition report</p>
+            <p class="fw-semibold mb-1">{{ asset.condition }}</p>
+            <p class="text-muted mb-0">Independent concours inspection</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance Analytics -->
+  <div class="card border-0 shadow-sm mb-4 task3-section">
+    <div class="card-body p-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3"
+      >
+        <div>
+          <h2 class="h5 fw-bold mb-1 text-primary-emphasis">
+            Performance Analytics
+          </h2>
+          <p class="text-muted mb-0">
+            Value trajectory &amp; momentum across the collection horizon.
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 g-3 flex-grow-1 ms-md-4">
+          <div class="col">
+            <div
+              class="border rounded-4 p-3 h-100 bg-body-tertiary metric-card gradient-card gradient-card--teal"
+            >
+              <p class="text-uppercase small text-muted mb-1">Net change</p>
+              <p class="h4 fw-bold mb-0">
+                {{ netChange | number : "1.0-1" }}M USD
+              </p>
+              <p class="text-muted small mb-0">
+                {{ growthPct | number : "1.0-1" }}% vs acquisition
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="border rounded-4 p-3 h-100 bg-body-tertiary metric-card gradient-card gradient-card--amber"
+            >
+              <p class="text-uppercase small text-muted mb-1">CAGR</p>
+              <p class="h4 fw-bold mb-0">{{ cagr | number : "1.0-1" }}%</p>
+              <p class="text-muted small mb-0">
+                Annualized since {{ startLabel ?? '—' }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="border rounded-4 p-3 bg-body-tertiary h-100 chart-panel">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div>
+                <p class="text-uppercase small text-muted mb-0">
+                  Latest valuation
+                </p>
+                <p class="h4 fw-bold mb-0">
+                  {{ endingValue | number : "1.0-1" }}M USD
+                </p>
+              </div>
+              <div class="text-muted small">
+                {{ startLabel ?? '—' }} &rarr;
+                {{ endLabel ?? '—' }}
+              </div>
+            </div>
+
+            <div class="chart-area">
+              <canvas
+                baseChart
+                class="chart-canvas"
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="'line'"
+              >
+              </canvas>
+            </div>
+            <div class="d-flex justify-content-between text-muted small mt-2">
+              <span>Value over time</span>
+              <span>USD (millions)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-1 g-3">
+            <div class="col">
+              <div
+                class="border rounded-4 p-3 h-100 summary-tile gradient-card"
+              >
+                <p class="text-uppercase small text-muted mb-1">
+                  Starting value
+                </p>
+                <p class="h4 fw-bold mb-0">
+                  {{ startingValue | number : "1.0-1" }}M USD
+                </p>
+                <p class="text-muted small mb-0">{{ startLabel ?? '—' }}</p>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="border rounded-4 p-3 h-100 summary-tile gradient-card"
+              >
+                <p class="text-uppercase small text-muted mb-1">
+                  Best performing year
+                </p>
+                <p class="h4 fw-bold mb-0">
+                  {{ bestYear?.value | number : "1.0-1" }}M USD
+                </p>
+                <p class="text-muted small mb-0">
+                  Peak in {{ bestYear?.year }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transaction History -->
+  <div class="card border-0 shadow-sm task3-section task3-history">
+    <div class="card-body p-4">
+      <h2 class="h5 fw-bold mb-2 text-primary-emphasis">Transaction History</h2>
+      <p class="text-muted mb-4">
+        Recent appraisals and comparable sales that contextualize the asset's
+        market performance.
+      </p>
+      <div class="table-responsive rounded-4 border task3-history__table">
+        <table class="table align-middle mb-0">
+          <thead class="text-uppercase small">
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Sale Price</th>
+              <th scope="col">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tx of transactions">
+              <td>{{ tx.date | date : "mediumDate" }}</td>
+              <td class="fw-semibold">
+                {{ tx.price | currency : asset.currency : "symbol-narrow" }}
+              </td>
+              <td>{{ tx.location }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

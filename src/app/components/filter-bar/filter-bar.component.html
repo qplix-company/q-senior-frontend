@@ -1,0 +1,81 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="filter-bar">
+  <div
+    *ngFor="let field of fields"
+    class="field"
+    style="display: inline-block; margin-right: 12px"
+  >
+    <ng-container [ngSwitch]="field.type">
+      <!-- Text input -->
+      <mat-form-field *ngSwitchCase="'text'" appearance="outline">
+        <mat-label>{{ field.label }}</mat-label>
+        <input
+          matInput
+          [placeholder]="field.placeholder || ''"
+          [formControlName]="field.key"
+        />
+      </mat-form-field>
+
+      <!-- Single select -->
+      <mat-form-field *ngSwitchCase="'select'" appearance="outline">
+        <mat-label>{{ field.label }}</mat-label>
+        <mat-select [formControlName]="field.key">
+          <mat-option [value]="null">Any</mat-option>
+          <mat-option
+            *ngFor="let opt of field.options || []"
+            [value]="getOptionValue(opt)"
+          >
+            {{ getOptionLabel(opt) }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Multi select -->
+      <mat-form-field *ngSwitchCase="'multiselect'" appearance="outline">
+        <mat-label>{{ field.label }}</mat-label>
+        <mat-select [formControlName]="field.key" multiple>
+          <mat-option
+            *ngFor="let opt of field.options || []"
+            [value]="getOptionValue(opt)"
+          >
+            {{ getOptionLabel(opt) }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Checkbox / boolean -->
+      <mat-checkbox
+        *ngSwitchCase="'boolean'"
+        [formControlName]="field.key"
+        [attr.aria-label]="field.label"
+      >
+        {{ field.label }}
+      </mat-checkbox>
+      <mat-checkbox
+        *ngSwitchCase="'checkbox'"
+        [formControlName]="field.key"
+        [attr.aria-label]="field.label"
+      >
+        {{ field.label }}
+      </mat-checkbox>
+    </ng-container>
+  </div>
+
+  <div class="actions">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="filter-btn filter-btn--standard"
+    >
+      Apply
+    </button>
+    <button
+      mat-button
+      type="button"
+      (click)="onReset()"
+      class="filter-btn filter-btn--standard"
+    >
+      Reset
+    </button>
+  </div>
+</form>

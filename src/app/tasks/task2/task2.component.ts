@@ -1,8 +1,7 @@
-import {Component, signal, TrackByFunction} from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal, TrackByFunction} from '@angular/core';
 import {CdkFixedSizeVirtualScroll, CdkVirtualForOf, CdkVirtualScrollViewport} from '@angular/cdk/scrolling';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatButton} from '@angular/material/button';
-import {SelectionModel} from '@angular/cdk/collections';
 
 interface Row {
   id: number;
@@ -25,11 +24,11 @@ function createRows(): Row[] {
   standalone: true,
   templateUrl: './task2.component.html',
   styleUrls: ['./task2.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Task2Component {
   rows = signal<Row[]>(createRows())
-
-  selectionModel = new SelectionModel<Row>(true, undefined, undefined, (o1, o2) => o1.id === o2.id)
+  private selectedIds = new Set<number>();
   trackBy: TrackByFunction<Row> | undefined = (index, item) => item.id;
 
   recreateData() {
@@ -37,10 +36,24 @@ export class Task2Component {
   }
 
   selectAll() {
-    this.selectionModel.select(...this.rows())
+    const next = new Set<number>();
+    for (const r of this.rows()) next.add(r.id);
+    this.selectedIds = next;
   }
 
   deselectAll() {
-    this.selectionModel.deselect(...this.rows())
+    this.selectedIds = new Set<number>();
+  }
+
+  isSelected(row: Row): boolean {
+    return this.selectedIds.has(row.id);
+  }
+
+  toggle(row: Row) {
+    if (this.selectedIds.has(row.id)) {
+      this.selectedIds.delete(row.id);
+    } else {
+      this.selectedIds.add(row.id);
+    }
   }
 }

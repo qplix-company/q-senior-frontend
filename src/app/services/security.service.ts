@@ -12,9 +12,12 @@ export class SecurityService {
    * Get Securities server request mock
    * */
   getSecurities(securityFilter?: SecuritiesFilter): Observable<Security[]> {
+    const skip = securityFilter?.skip ?? 0;
+    const limit = securityFilter?.limit ?? 100;
+    const end = skip + limit;
     const filteredSecurities = this._filterSecurities(securityFilter).slice(
-      securityFilter?.skip ?? 0,
-      securityFilter?.limit ?? 100
+      skip,
+      end
     );
 
     return of(filteredSecurities).pipe(delay(1000));
@@ -27,7 +30,8 @@ export class SecurityService {
 
     return SECURITIES.filter(
       (s) =>
-        (!securityFilter.name || s.name.includes(securityFilter.name)) &&
+        (!securityFilter.name ||
+          s.name.toLowerCase().includes(securityFilter.name.toLowerCase())) &&
         (!securityFilter.types ||
           securityFilter.types.some((type) => s.type === type)) &&
         (!securityFilter.currencies ||
@@ -37,5 +41,10 @@ export class SecurityService {
         (securityFilter.isPrivate === undefined ||
           securityFilter.isPrivate === s.isPrivate)
     );
+  }
+
+  countSecurities(securityFilter?: SecuritiesFilter): Observable<number> {
+    const count = this._filterSecurities(securityFilter).length;
+    return of(count).pipe(delay(300));
   }
 }

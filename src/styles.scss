@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 
 html,
@@ -6,7 +8,9 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Inter", Roboto, "Helvetica Neue", sans-serif;
+  background: #f5f7fb;
+  color: #1c2434;
 }
 
 app-task1,
@@ -15,4 +19,41 @@ app-task3 {
   display: block;
   padding: 32px;
   overflow: hidden;
+}
+
+:root {
+  --color-bg: #f5f7fb;
+  --color-surface: rgba(255, 255, 255, 0.97);
+  --color-surface-muted: #f0f4ff;
+  --color-primary: #1b469b;
+  --color-primary-accent: #5a7eea;
+  --color-secondary: #ff8b5d;
+  --color-success: #2bb673;
+  --color-text: #142033;
+  --color-text-muted: #6b7b94;
+  --gradient-header: linear-gradient(135deg, #eff4ff 0%, #dfe7ff 40%, #f9f1ff 100%);
+  --gradient-card-blue: radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(90, 126, 234, 0.25));
+  --gradient-card-coral: radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.9), rgba(255, 139, 93, 0.25));
+  --gradient-card-teal: radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), rgba(43, 182, 115, 0.26));
+  --gradient-card-amber: radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.9), rgba(255, 205, 106, 0.3));
+  --shadow-soft: 0 18px 40px rgba(14, 25, 44, 0.15);
+}
+
+.no-data-row td {
+  text-align: center;
+  font-style: italic;
+  color: rgba(20, 32, 51, 0.6);
+  padding: 32px 16px;
+}
+
+.security-list ::ng-deep table.mat-mdc-table tbody tr:nth-child(odd) {
+  background: rgba(20, 32, 51, 0.02);
+}
+
+.security-list ::ng-deep table.mat-mdc-table tbody tr:nth-child(even) {
+  background: rgba(20, 32, 51, 0.06);
+}
+
+.security-list ::ng-deep table.mat-mdc-table tbody tr:hover {
+  background: rgba(90, 126, 234, 0.12);
 }

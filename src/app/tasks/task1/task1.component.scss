@@ -1,6 +1,29 @@
 :host {
-  .security-list-wrapper {
-    height: 100%;
-    overflow: auto;
+  display: block;
+  padding: 32px;
+  background: radial-gradient(circle at top, #ffffff 0%, var(--color-bg) 55%, #e4ecff 100%);
+  min-height: 100%;
+}
+
+.security-list-wrapper {
+  height: 100%;
+  min-height: 520px;
+  border-radius: 24px;
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  background: var(--color-surface-muted);
+  box-shadow: var(--shadow-soft);
+  padding: 16px;
+  overflow: auto;
+
+  ::ng-deep table.mat-mdc-table tbody tr:nth-child(odd) {
+    background: rgba(91, 141, 239, 0.08);
+  }
+
+  ::ng-deep table.mat-mdc-table tbody tr:nth-child(even) {
+    background: rgba(91, 141, 239, 0.16);
+  }
+
+  ::ng-deep table.mat-mdc-table tbody tr:hover {
+    background: rgba(91, 141, 239, 0.3);
   }
 }

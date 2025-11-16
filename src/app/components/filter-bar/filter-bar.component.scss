@@ -1,0 +1,92 @@
+:host {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+form.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 260px;
+  min-width: 180px;
+  box-sizing: border-box;
+}
+
+.field mat-form-field {
+  width: 100%;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.field mat-form-field[appearance] mat-select[multiple],
+.field mat-form-field mat-select[multiple] {
+  max-width: 420px;
+}
+
+.field mat-checkbox {
+  margin: 2px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.actions button {
+  white-space: nowrap;
+}
+
+.filter-btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 6px 20px;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &--standard {
+    background: transparent;
+    border: 1px solid rgba(20, 32, 51, 0.2);
+    color: var(--color-text);
+
+    &:hover {
+      background: rgba(20, 32, 51, 0.05);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  form.filter-bar {
+    gap: 10px;
+  }
+
+  .field {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+
+  .actions button {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
