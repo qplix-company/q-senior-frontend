@@ -1,8 +1,10 @@
-<filterable-table
-  class="security-list"
-  [dataSource]="securities$ | async"
-  [isLoading]="loadingSecurities$ | async"
->
+<app-filter-bar [fields]="filterFields" (filterChange)="onFilterChange($event)"></app-filter-bar>
+
+@if (securitiesState$ | async; as securitiesState) {
+<filterable-table class="security-list" [dataSource]="securitiesState.status === 'success' ? securitiesState.data : []"
+  [isLoading]="securitiesState.status === 'loading'" [totalCount]="totalCount$ | async"
+  [pageIndex]="(pageIndex$ | async) ?? 0" [pageSize]="(pageSize$ | async) ?? 25" [pageSizeOptions]="pageSizeOptions"
+  (page)="onPageChange($event)">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let security">{{ security.name }}</td>
@@ -18,12 +20,29 @@
     <td mat-cell *matCellDef="let security">{{ security.currency }}</td>
   </ng-container>
 
-  <!-- Custom row definitions to be provided to the wrapper table. -->
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
-  <!-- Row shown when there is no matching data that will be provided to the wrapper table. -->
   <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="3"><i>No data</i></td>
+    <td class="mat-cell" colspan="3">
+      @switch (securitiesState.status) {
+      @case ('loading') {
+      <div class="securities-status securities-status--loading">
+        <mat-spinner></mat-spinner>
+        <p>Loading securities...</p>
+      </div>
+      }
+      @case ('error') {
+      <div class="securities-status securities-status--error">
+        <p>Could not load securities</p>
+        <p class="securities-status__detail">{{ securitiesState.message }}</p>
+      </div>
+      }
+      @default {
+      <span>No data matching the filter</span>
+      }
+      }
+    </td>
   </tr>
 </filterable-table>
+}

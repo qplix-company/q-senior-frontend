@@ -1,0 +1,47 @@
+<form [formGroup]="form" class="filter-bar">
+  <div class="filter-bar__fields">
+    @for (field of fields; track field.key) {
+      <mat-form-field appearance="outline" class="filter-bar__field">
+        <mat-label>{{ field.label }}</mat-label>
+
+        @switch (field.type) {
+          @case ('text') {
+            <input matInput [formControlName]="field.key" [placeholder]="field.placeholder ?? ''" />
+          }
+          @case ('multi-select') {
+            <mat-select [formControlName]="field.key" multiple>
+              @for (option of field.options; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-select>
+          }
+          @case ('boolean') {
+            <mat-select [formControlName]="field.key">
+              <mat-option [value]="null">Any</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          }
+        }
+
+        @if (hasValue(field)) {
+          <button
+            matSuffix
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="'Clear ' + field.label"
+            (click)="clearField(field)"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    }
+  </div>
+
+  <div class="filter-bar__actions">
+    <button mat-stroked-button type="button" class="filter-bar__clear-all" (click)="clearAll()">
+      Clear All
+    </button>
+  </div>
+</form>

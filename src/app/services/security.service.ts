@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { Security } from '../models/security';
-import { SECURITIES } from '../mocks/securities-mocks';
+import {
+  SECURITIES,
+  SECURITY_CURRENCIES,
+  SECURITY_TYPES,
+} from '../mocks/securities-mocks';
 import { SecuritiesFilter } from '../models/securities-filter';
 
 @Injectable({
@@ -12,12 +16,27 @@ export class SecurityService {
    * Get Securities server request mock
    * */
   getSecurities(securityFilter?: SecuritiesFilter): Observable<Security[]> {
+    const skip = securityFilter?.skip ?? 0;
+    const limit = securityFilter?.limit ?? 100;
     const filteredSecurities = this._filterSecurities(securityFilter).slice(
-      securityFilter?.skip ?? 0,
-      securityFilter?.limit ?? 100
+      skip,
+      skip + limit
     );
 
     return of(filteredSecurities).pipe(delay(1000));
+  }
+
+  /** Total count of securities matching `securityFilter`, ignoring paging (`skip`/`limit`). */
+  getSecuritiesCount(securityFilter?: SecuritiesFilter): Observable<number> {
+    return of(this._filterSecurities(securityFilter).length).pipe(delay(1000));
+  }
+
+  getCurrencies(): Observable<string[]> {
+    return of([...SECURITY_CURRENCIES]);
+  }
+
+  getSecurityTypes(): Observable<string[]> {
+    return of([...SECURITY_TYPES]);
   }
 
   private _filterSecurities(
@@ -25,9 +44,11 @@ export class SecurityService {
   ): Security[] {
     if (!securityFilter) return SECURITIES;
 
+    const name = securityFilter.name?.toLowerCase();
+
     return SECURITIES.filter(
       (s) =>
-        (!securityFilter.name || s.name.includes(securityFilter.name)) &&
+        (!name || s.name.toLowerCase().includes(name)) &&
         (!securityFilter.types ||
           securityFilter.types.some((type) => s.type === type)) &&
         (!securityFilter.currencies ||
