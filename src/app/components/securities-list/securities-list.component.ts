@@ -26,7 +26,7 @@ import { FilterFieldConfig, FilterFieldOption, FilterValue } from '../../shared/
 const NAME_MIN_LENGTH = 3;
 const DEFAULT_PAGE_SIZE = 25;
 
-/** Filter fields for the securities list. Add a new entry here to expose another server-side filter. */
+// add an entry here to expose another server-side filter in the filter bar
 const SECURITIES_FILTER_FIELDS: FilterFieldConfig[] = [
   {
     key: 'name',
@@ -57,7 +57,7 @@ interface PageState {
   pageSize: number;
 }
 
-/** The three states the securities fetch can be in, driving the table row message switch. */
+// loading/success/error - drives the no-data row switch in the template
 export type SecuritiesState =
   | { status: 'loading' }
   | { status: 'error'; message: string }
@@ -94,7 +94,27 @@ export class SecuritiesListComponent implements OnInit {
   private readonly securityService = inject(SecurityService);
   private readonly destroyRef = inject(DestroyRef);
 
+  private readonly filter$ = new BehaviorSubject<FilterValue>({});
+  private readonly page$ = new BehaviorSubject<PageState>({
+    pageIndex: 0,
+    pageSize: DEFAULT_PAGE_SIZE,
+  });
+
+  protected pageIndex$ = this.page$.pipe(map((page) => page.pageIndex));
+  protected pageSize$ = this.page$.pipe(map((page) => page.pageSize));
+
+  // feeds the paginator's length
+  protected totalCount$: Observable<number> = this.filter$.pipe(
+    switchMap((filter) => this.securityService.getSecuritiesCount(filter))
+  );
+
+  protected securitiesState$: Observable<SecuritiesState> = combineLatest([this.filter$, this.page$]).pipe(
+    map(([filter, page]) => this.composeSecurityFilter(filter, page)),
+    switchMap((requestFilter) => this.loadSecurities(requestFilter))
+  );
+
   ngOnInit(): void {
+    // types/currencies come from the backend, so the multi-select options aren't known up front
     const typeField = this.filterFields.find((field) => field.key === 'types');
     const currencyField = this.filterFields.find((field) => field.key === 'currencies');
 
@@ -117,31 +137,6 @@ export class SecuritiesListComponent implements OnInit {
       });
   }
 
-  private toOptions(values: string[]): FilterFieldOption[] {
-    return values.map((value) => ({ label: value, value }));
-  }
-
-  private readonly filter$ = new BehaviorSubject<FilterValue>({});
-  private readonly page$ = new BehaviorSubject<PageState>({
-    pageIndex: 0,
-    pageSize: DEFAULT_PAGE_SIZE,
-  });
-
-  protected pageIndex$ = this.page$.pipe(map((page) => page.pageIndex));
-  protected pageSize$ = this.page$.pipe(map((page) => page.pageSize));
-
-  protected securitiesState$: Observable<SecuritiesState> = combineLatest([this.filter$, this.page$]).pipe(
-    map(([filter, page]) => this.composeSecurityFilter(filter, page)),
-    switchMap((requestFilter) => this.loadSecurities(requestFilter))
-  );
-
-  /**
-   * Total match count from the backend, used to drive the Material paginator.
-   */
-  protected totalCount$: Observable<number> = this.filter$.pipe(
-    switchMap((filter) => this.securityService.getSecuritiesCount(filter))
-  );
-
   protected onFilterChange(filter: FilterValue): void {
     this.filter$.next(filter);
     this.page$.next({ pageIndex: 0, pageSize: this.page$.value.pageSize });
@@ -149,6 +144,10 @@ export class SecuritiesListComponent implements OnInit {
 
   protected onPageChange(event: PageEvent): void {
     this.page$.next({ pageIndex: event.pageIndex, pageSize: event.pageSize });
+  }
+
+  private toOptions(values: string[]): FilterFieldOption[] {
+    return values.map((value) => ({ label: value, value }));
   }
 
   private composeSecurityFilter(filter: FilterValue, page: PageState): SecuritiesFilter {
@@ -160,9 +159,11 @@ export class SecuritiesListComponent implements OnInit {
   }
 
   private loadSecurities(filter: SecuritiesFilter): Observable<SecuritiesState> {
+    const loading: SecuritiesState = { status: 'loading' };
+
     return this.securityService.getSecurities(filter).pipe(
-      map((data): SecuritiesState => ({ status: 'success', data })),
-      startWith<SecuritiesState>({ status: 'loading' }),
+      map((data) => ({ status: 'success', data }) as SecuritiesState),
+      startWith(loading),
       catchError((error: unknown) => of(this.errorState(error)))
     );
   }

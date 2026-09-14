@@ -1,6 +1,6 @@
 <form [formGroup]="form" class="filter-bar">
   <div class="filter-bar__fields">
-    @for (field of fields; track field.key) {
+    @for (field of fields(); track field.key) {
       <mat-form-field appearance="outline" class="filter-bar__field">
         <mat-label>{{ field.label }}</mat-label>
 

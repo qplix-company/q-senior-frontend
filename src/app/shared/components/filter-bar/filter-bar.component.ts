@@ -1,14 +1,13 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
+  DestroyRef,
   inject,
-  Input,
+  input,
   OnChanges,
-  OnDestroy,
-  Output,
-  SimpleChanges,
+  output,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,7 +19,7 @@ import { FilterFieldConfig, FilterValue } from '../../models/filter-field';
 
 const FILTER_DEBOUNCE_MS = 300;
 
-/** Renders a reactive form from field config and emits a plain FilterValue on change. */
+// renders a reactive form from field config and emits a plain FilterValue on change
 @Component({
   selector: 'app-filter-bar',
   standalone: true,
@@ -36,22 +35,35 @@ const FILTER_DEBOUNCE_MS = 300;
   styleUrl: './filter-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterBarComponent implements OnChanges, OnDestroy {
-  @Input({ required: true }) fields: FilterFieldConfig[] = [];
-  @Output() filterChange = new EventEmitter<FilterValue>();
+export class FilterBarComponent implements OnChanges {
+  readonly fields = input.required<FilterFieldConfig[]>();
+  readonly filterChange = output<FilterValue>();
 
   private readonly formBuilder = inject(FormBuilder);
+  private readonly destroyRef = inject(DestroyRef);
+
   protected form: FormGroup = this.formBuilder.group({});
   private valueChangesSubscription?: Subscription;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['fields']) {
-      this.rebuildForm();
-    }
-  }
+  ngOnChanges(): void {
+    this.valueChangesSubscription?.unsubscribe();
 
-  ngOnDestroy(): void {
-    this.unsubscribeFromValueChanges();
+    const fields = this.fields();
+    this.form = this.formBuilder.group(this.createDefaultsMap(fields));
+
+    this.valueChangesSubscription = this.form.valueChanges
+      .pipe(
+        debounceTime(FILTER_DEBOUNCE_MS),
+        distinctUntilChanged((previous, current) => JSON.stringify(previous) === JSON.stringify(current)),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe((rawValue) => {
+        if (this.hasTextBelowMinLength(rawValue, fields)) {
+          return;
+        }
+
+        this.filterChange.emit(this.toFilterValue(rawValue, fields));
+      });
   }
 
   protected hasValue(field: FilterFieldConfig): boolean {
@@ -78,31 +90,11 @@ export class FilterBarComponent implements OnChanges, OnDestroy {
   }
 
   protected clearAll(): void {
-    this.form.reset(this.createDefaultsMap());
+    this.form.reset(this.createDefaultsMap(this.fields()));
   }
 
-  private rebuildForm(): void {
-    this.unsubscribeFromValueChanges();
-
-    this.form = this.formBuilder.group(this.createDefaultsMap());
-
-    this.valueChangesSubscription = this.form.valueChanges
-      .pipe(
-        debounceTime(FILTER_DEBOUNCE_MS),
-        distinctUntilChanged((previous, current) => JSON.stringify(previous) === JSON.stringify(current))
-      )
-      .subscribe((rawValue) => {
-        if (this.hasTextBelowMinLength(rawValue)) {
-          return;
-        }
-
-        const emittedFilter = this.toFilterValue(rawValue);
-        this.filterChange.emit(emittedFilter);
-      });
-  }
-
-  private hasTextBelowMinLength(rawValue: Record<string, unknown>): boolean {
-    for (const field of this.fields) {
+  private hasTextBelowMinLength(rawValue: Record<string, unknown>, fields: FilterFieldConfig[]): boolean {
+    for (const field of fields) {
       if (field.type !== 'text' || field.minLength === undefined) {
         continue;
       }
@@ -121,14 +113,10 @@ export class FilterBarComponent implements OnChanges, OnDestroy {
     return false;
   }
 
-  private unsubscribeFromValueChanges(): void {
-    this.valueChangesSubscription?.unsubscribe();
-  }
-
-  private createDefaultsMap(): Record<string, unknown> {
+  private createDefaultsMap(fields: FilterFieldConfig[]): Record<string, unknown> {
     const defaults: Record<string, unknown> = {};
 
-    for (const field of this.fields) {
+    for (const field of fields) {
       defaults[field.key] = this.defaultValueFor(field);
     }
 
@@ -148,10 +136,10 @@ export class FilterBarComponent implements OnChanges, OnDestroy {
   }
 
   /** Drops fields that are empty or below the configured text minimum, so the backend only sees meaningful values. */
-  private toFilterValue(rawValue: Record<string, unknown>): FilterValue {
+  private toFilterValue(rawValue: Record<string, unknown>, fields: FilterFieldConfig[]): FilterValue {
     const result: FilterValue = {};
 
-    for (const field of this.fields) {
+    for (const field of fields) {
       const value = rawValue[field.key];
 
       if (value === null || value === undefined) {

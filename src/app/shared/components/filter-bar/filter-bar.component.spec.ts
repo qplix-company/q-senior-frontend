@@ -58,11 +58,18 @@ describe('FilterBarComponent', () => {
     filterBar = fixture.debugElement.query(By.directive(FilterBarComponent)).componentInstance;
   });
 
-  it('builds the configured form controls without learning field meaning', () => {
+  it('builds one control per configured field', () => {
     expect(Object.keys(formOf(filterBar).controls)).toEqual(['search', 'types', 'currencies', 'active']);
   });
 
-  it('emits the normalized filter object only after the debounce window finishes', fakeAsync(() => {
+  it('rebuilds the controls when the field list changes', () => {
+    host.fields = [{ key: 'unrelatedKey', label: 'Unrelated', type: 'text' }];
+    fixture.detectChanges();
+
+    expect(Object.keys(formOf(filterBar).controls)).toEqual(['unrelatedKey']);
+  });
+
+  it('debounces emissions by 300ms', fakeAsync(() => {
     formOf(filterBar).get('search')!.setValue('AAPL');
 
     tick(299);
@@ -72,21 +79,7 @@ describe('FilterBarComponent', () => {
     expect(host.emitted).toEqual([{ search: 'AAPL' }]);
   }));
 
-  it('removes empty strings, empty arrays and null values before sending the payload', fakeAsync(() => {
-    formOf(filterBar).setValue({ search: '  ', types: [], currencies: [], active: null });
-    tick(300);
-
-    expect(host.emitted).toEqual([{}]);
-  }));
-
-  it('retains an explicit boolean false in the emitted payload', fakeAsync(() => {
-    formOf(filterBar).get('active')!.setValue(false);
-    tick(300);
-
-    expect(host.emitted).toEqual([{ active: false }]);
-  }));
-
-  it('skips a duplicate emission when the form value does not meaningfully change', fakeAsync(() => {
+  it('skips a change if the value did not actually change', fakeAsync(() => {
     formOf(filterBar).get('types')!.setValue(['Equity']);
     tick(300);
     formOf(filterBar).get('types')!.setValue(['Equity']);
@@ -95,14 +88,14 @@ describe('FilterBarComponent', () => {
     expect(host.emitted.length).toBe(1);
   }));
 
-  it('rebuilds the control set when the field configuration changes', () => {
-    host.fields = [{ key: 'unrelatedKey', label: 'Unrelated', type: 'text' }];
-    fixture.detectChanges();
+  it('strips empty and null values but keeps an explicit false', fakeAsync(() => {
+    formOf(filterBar).setValue({ search: '  ', types: [], currencies: [], active: false });
+    tick(300);
 
-    expect(Object.keys(formOf(filterBar).controls)).toEqual(['unrelatedKey']);
-  });
+    expect(host.emitted).toEqual([{ active: false }]);
+  }));
 
-  it('withholds a text payload until the configured minimum length is reached', fakeAsync(() => {
+  it('withholds text below the configured minimum length', fakeAsync(() => {
     formOf(filterBar).get('search')!.setValue('AA');
     tick(300);
     expect(host.emitted).toEqual([]);
@@ -112,16 +105,14 @@ describe('FilterBarComponent', () => {
     expect(host.emitted).toEqual([{ search: 'AAP' }]);
   }));
 
-  it('shows a per-field clear icon only after the field has visible content', fakeAsync(() => {
-    const clearButton = () =>
-      fixture.debugElement.query(By.css('button[aria-label="Clear Search"]'));
+  it('shows the clear icon once a field has a value, and clears it on click', fakeAsync(() => {
+    const clearButton = () => fixture.debugElement.query(By.css('button[aria-label="Clear Search"]'));
 
     expect(clearButton()).toBeNull();
 
     formOf(filterBar).get('search')!.setValue('AAPL');
     fixture.detectChanges();
     tick(300);
-
     expect(clearButton()).not.toBeNull();
 
     clearButton().nativeElement.click();
@@ -129,10 +120,10 @@ describe('FilterBarComponent', () => {
     tick(300);
 
     expect(formOf(filterBar).get('search')!.value).toBe('');
-    expect(host.emitted[host.emitted.length - 1]).toEqual({});
+    expect(host.emitted.at(-1)).toEqual({});
   }));
 
-  it('clears every control in one action and emits the empty filter object', fakeAsync(() => {
+  it('clears every control and emits an empty filter', fakeAsync(() => {
     formOf(filterBar).get('search')!.setValue('AAPL');
     formOf(filterBar).get('types')!.setValue(['Equity']);
     tick(300);
@@ -141,6 +132,6 @@ describe('FilterBarComponent', () => {
     tick(300);
 
     expect(formOf(filterBar).value).toEqual({ search: '', types: [], currencies: [], active: null });
-    expect(host.emitted[host.emitted.length - 1]).toEqual({});
+    expect(host.emitted.at(-1)).toEqual({});
   }));
 });
