@@ -8,4 +8,8 @@
   .table-wrapper {
     overflow-x: hidden;
   }
+
+  mat-paginator {
+    border-top: 1px solid var(--border, rgba(0, 0, 0, 0.12));
+  }
 }

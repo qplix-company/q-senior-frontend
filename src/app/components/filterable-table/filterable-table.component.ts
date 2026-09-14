@@ -42,8 +42,6 @@ export class FilterableTableComponent<T> implements AfterContentInit {
     | Observable<readonly T[]>
     | null = null;
 
-  @Input() isLoading: boolean | null = false;
-
   @Input() totalCount: number | null = null;
 
   @Input() pageIndex = 0;

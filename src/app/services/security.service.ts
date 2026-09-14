@@ -18,7 +18,7 @@ export class SecurityService {
   getSecurities(securityFilter?: SecuritiesFilter): Observable<Security[]> {
     const skip = securityFilter?.skip ?? 0;
     const limit = securityFilter?.limit ?? 100;
-    const filteredSecurities = this._filterSecurities(securityFilter).slice(
+    const filteredSecurities = this.filterSecurities(securityFilter).slice(
       skip,
       skip + limit
     );
@@ -28,7 +28,7 @@ export class SecurityService {
 
   /** Total count of securities matching `securityFilter`, ignoring paging (`skip`/`limit`). */
   getSecuritiesCount(securityFilter?: SecuritiesFilter): Observable<number> {
-    return of(this._filterSecurities(securityFilter).length).pipe(delay(1000));
+    return of(this.filterSecurities(securityFilter).length).pipe(delay(1000));
   }
 
   getCurrencies(): Observable<string[]> {
@@ -39,7 +39,7 @@ export class SecurityService {
     return of([...SECURITY_TYPES]);
   }
 
-  private _filterSecurities(
+  private filterSecurities(
     securityFilter: SecuritiesFilter | undefined
   ): Security[] {
     if (!securityFilter) return SECURITIES;
@@ -53,7 +53,7 @@ export class SecurityService {
           securityFilter.types.some((type) => s.type === type)) &&
         (!securityFilter.currencies ||
           securityFilter.currencies.some(
-            (currency) => s.currency == currency
+            (currency) => s.currency === currency
           )) &&
         (securityFilter.isPrivate === undefined ||
           securityFilter.isPrivate === s.isPrivate)

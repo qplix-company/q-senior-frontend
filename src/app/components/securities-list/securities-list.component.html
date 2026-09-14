@@ -2,7 +2,7 @@
 
 @if (securitiesState$ | async; as securitiesState) {
 <filterable-table class="security-list" [dataSource]="securitiesState.status === 'success' ? securitiesState.data : []"
-  [isLoading]="securitiesState.status === 'loading'" [totalCount]="totalCount$ | async"
+  [totalCount]="totalCount$ | async"
   [pageIndex]="(pageIndex$ | async) ?? 0" [pageSize]="(pageSize$ | async) ?? 25" [pageSizeOptions]="pageSizeOptions"
   (page)="onPageChange($event)">
   <ng-container matColumnDef="name">

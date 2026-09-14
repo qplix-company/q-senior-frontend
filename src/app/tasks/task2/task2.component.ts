@@ -30,7 +30,7 @@ export class Task2Component {
   rows = signal<Row[]>(createRows());
   selectedIds = signal<Set<number>>(new Set<number>());
 
-  trackBy: TrackByFunction<Row> | undefined = (index, item) => item.id;
+  trackBy: TrackByFunction<Row> = (_index, item) => item.id;
 
   recreateData(): void {
     this.rows.set(createRows());

@@ -1,5 +1,5 @@
 import { CurrencyPipe, DatePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { ChartConfiguration, ChartData } from 'chart.js';
@@ -36,22 +36,28 @@ const CHART_PALETTE = {
   styleUrl: './task3.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Task3Component implements OnChanges {
-  @Input() asset: Asset = ASSET;
-  @Input() config: AssetDashboardConfig = DASHBOARD_CONFIG;
-  @Input() priceSeries: PricePoint[] = PRICE_SERIES;
-  @Input() transactions: Transaction[] = TRANSACTIONS;
-  @Input() galleryImages: string[] = GALLERY_IMAGES;
+export class Task3Component {
+  readonly asset = input<Asset>(ASSET);
+  readonly config = input<AssetDashboardConfig>(DASHBOARD_CONFIG);
+  readonly priceSeries = input<PricePoint[]>(PRICE_SERIES);
+  readonly transactions = input<Transaction[]>(TRANSACTIONS);
+  readonly galleryImages = input<string[]>(GALLERY_IMAGES);
 
   private readonly currencyPipe = new CurrencyPipe('en-US');
   private readonly datePipe = new DatePipe('en-US');
 
   protected readonly displayedColumns = ['date', 'assetName', 'condition', 'salePrice', 'location'];
 
-  protected galleryIndex = 0;
-  protected assetDetails: AssetDetail[] = [];
-  protected metrics: PerformanceMetric[] = [];
-  protected chartData: ChartData<'line'> = { labels: [], datasets: [] };
+  protected readonly galleryIndex = signal(0);
+
+  protected readonly galleryImage = computed(() => {
+    const images = this.galleryImages();
+    return images[this.galleryIndex()] ?? this.asset().image;
+  });
+
+  protected readonly assetDetails = computed(() => this.buildAssetDetails(this.asset()));
+  protected readonly metrics = computed(() => this.buildMetrics(this.priceSeries()));
+  protected readonly chartData = computed(() => this.buildChartData(this.priceSeries()));
 
   protected readonly chartOptions: ChartConfiguration<'line'>['options'] = {
     responsive: true,
@@ -82,55 +88,37 @@ export class Task3Component implements OnChanges {
     },
   };
 
-  constructor() {
-    this.rebuildViewModel();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['asset'] || changes['priceSeries'] || changes['config']) {
-      this.rebuildViewModel();
-    }
-  }
-
-  protected get galleryImage(): string {
-    return this.galleryImages[this.galleryIndex] ?? this.asset.image;
-  }
-
   protected nextImage(): void {
-    if (!this.galleryImages.length) return;
-    this.galleryIndex = (this.galleryIndex + 1) % this.galleryImages.length;
+    const length = this.galleryImages().length;
+    if (!length) return;
+    this.galleryIndex.update((index) => (index + 1) % length);
   }
 
   protected previousImage(): void {
-    if (!this.galleryImages.length) return;
-    this.galleryIndex = (this.galleryIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+    const length = this.galleryImages().length;
+    if (!length) return;
+    this.galleryIndex.update((index) => (index - 1 + length) % length);
   }
 
-  private rebuildViewModel(): void {
-    this.assetDetails = this.buildAssetDetails();
-    this.metrics = this.buildMetrics();
-    this.chartData = this.buildChartData();
-  }
-
-  private buildAssetDetails(): AssetDetail[] {
+  private buildAssetDetails(asset: Asset): AssetDetail[] {
     return [
-      { label: 'Acquisition Date', value: this.formatDate(this.asset.acquisitionDate), icon: 'event' },
-      { label: 'Acquisition Cost', value: this.formatCurrency(this.asset.acquisitionCost), icon: 'payments' },
-      { label: 'Serial / Reference', value: this.asset.serialNumber, icon: 'tag' },
-      { label: 'Condition', value: this.asset.condition, icon: 'verified', emphasis: 'condition' },
-      { label: 'Provenance', value: this.asset.provenance, icon: 'history_edu', emphasis: 'provenance' },
-      { label: 'Origin', value: this.asset.origin, icon: 'public' },
-      { label: 'Location', value: this.asset.location, icon: 'location_on' },
+      { label: 'Acquisition Date', value: this.formatDate(asset.acquisitionDate), icon: 'event' },
+      { label: 'Acquisition Cost', value: this.formatCurrency(asset.acquisitionCost), icon: 'payments' },
+      { label: 'Serial / Reference', value: asset.serialNumber, icon: 'tag' },
+      { label: 'Condition', value: asset.condition, icon: 'verified', emphasis: 'condition' },
+      { label: 'Provenance', value: asset.provenance, icon: 'history_edu', emphasis: 'provenance' },
+      { label: 'Origin', value: asset.origin, icon: 'public' },
+      { label: 'Location', value: asset.location, icon: 'location_on' },
     ];
   }
 
-  private buildMetrics(): PerformanceMetric[] {
-    const firstValue = this.priceSeries.at(0)?.value ?? 0;
-    const lastValue = this.priceSeries.at(-1)?.value ?? 0;
+  private buildMetrics(priceSeries: PricePoint[]): PerformanceMetric[] {
+    const firstValue = priceSeries.at(0)?.value ?? 0;
+    const lastValue = priceSeries.at(-1)?.value ?? 0;
     const gain = lastValue - firstValue;
     const returnPercentage = firstValue > 0 ? (gain / firstValue) * 100 : 0;
 
-    const periods = this.priceSeries.length - 1;
+    const periods = priceSeries.length - 1;
     const cagr =
       firstValue > 0 && periods > 0 ? (Math.pow(lastValue / firstValue, 1 / periods) - 1) * 100 : 0;
 
@@ -141,12 +129,12 @@ export class Task3Component implements OnChanges {
     ];
   }
 
-  private buildChartData(): ChartData<'line'> {
+  private buildChartData(priceSeries: PricePoint[]): ChartData<'line'> {
     return {
-      labels: this.priceSeries.map((point) => point.year),
+      labels: priceSeries.map((point) => point.year),
       datasets: [
         {
-          data: this.priceSeries.map((point) => point.value),
+          data: priceSeries.map((point) => point.value),
           borderColor: CHART_PALETTE.chart,
           backgroundColor: CHART_PALETTE.fill,
           borderWidth: 2,
@@ -163,11 +151,11 @@ export class Task3Component implements OnChanges {
   }
 
   private formatCurrency(value: number): string {
-    return this.currencyPipe.transform(value, this.asset.currency, 'symbol', '1.0-0') ?? '';
+    return this.currencyPipe.transform(value, this.asset().currency, 'symbol', '1.0-0') ?? '';
   }
 
   private formatCompactCurrency(value: number): string {
-    return this.currencyPipe.transform(value, this.asset.currency, 'symbol', '1.0-1') ?? '';
+    return this.currencyPipe.transform(value, this.asset().currency, 'symbol', '1.0-1') ?? '';
   }
 
   private formatDate(value: string): string {

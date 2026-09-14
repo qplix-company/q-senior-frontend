@@ -20,13 +20,7 @@ import { FilterFieldConfig, FilterValue } from '../../models/filter-field';
 
 const FILTER_DEBOUNCE_MS = 300;
 
-/**
- * Generic filter bar that renders a `FormGroup` from the field configuration.
- *
- * It has no direct dependency on the security model or the table wrapper. A
- * parent page supplies the field metadata and receives a plain `FilterValue`
- * payload whenever the form changes.
- */
+/** Renders a reactive form from field config and emits a plain FilterValue on change. */
 @Component({
   selector: 'app-filter-bar',
   standalone: true,
@@ -60,10 +54,6 @@ export class FilterBarComponent implements OnChanges, OnDestroy {
     this.unsubscribeFromValueChanges();
   }
 
-  /**
-   * Returns true when a field has a visible user-entered value.
-   * This is used by the template to decide whether to render the per-field clear icon.
-   */
   protected hasValue(field: FilterFieldConfig): boolean {
     const controlValue = this.form.get(field.key)?.value;
 
@@ -82,17 +72,11 @@ export class FilterBarComponent implements OnChanges, OnDestroy {
     return true;
   }
 
-  /**
-   * Reset one field to the default value defined by its type.
-   */
   protected clearField(field: FilterFieldConfig): void {
     const defaultValue = this.defaultValueFor(field);
     this.form.get(field.key)?.setValue(defaultValue);
   }
 
-  /**
-   * Reset every field to its default value and keep the form still reusable.
-   */
   protected clearAll(): void {
     this.form.reset(this.createDefaultsMap());
   }
@@ -163,11 +147,7 @@ export class FilterBarComponent implements OnChanges, OnDestroy {
     }
   }
 
-  /**
-   * Remove fields that are empty or below the configured text minimum.
-   * This keeps the output object small and ensures the backend request only sees
-   * meaningful value entries.
-   */
+  /** Drops fields that are empty or below the configured text minimum, so the backend only sees meaningful values. */
   private toFilterValue(rawValue: Record<string, unknown>): FilterValue {
     const result: FilterValue = {};
 

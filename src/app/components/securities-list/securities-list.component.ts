@@ -26,13 +26,7 @@ import { FilterFieldConfig, FilterFieldOption, FilterValue } from '../../shared/
 const NAME_MIN_LENGTH = 3;
 const DEFAULT_PAGE_SIZE = 25;
 
-/**
- * Field configuration for the securities example page.
- *
- * Extending the server-side filter model is just a matter of adding a new field
- * configuration here. The filter bar remains generic because it only consumes an
- * array of `FilterFieldConfig` records and knows nothing about the concrete filter.
- */
+/** Filter fields for the securities list. Add a new entry here to expose another server-side filter. */
 const SECURITIES_FILTER_FIELDS: FilterFieldConfig[] = [
   {
     key: 'name',

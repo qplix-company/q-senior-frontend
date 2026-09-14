@@ -2,21 +2,21 @@
   <header class="asset-dashboard">
     <div class="asset-dashboard__header-grid">
       <section class="asset-dashboard__content">
-        <p class="asset-dashboard__eyebrow">{{ config.assetEyebrow }}</p>
-        <h1 class="asset-dashboard__title">{{ asset.name }}</h1>
-        <p class="asset-dashboard__subtitle">{{ config.assetSubtitle }}</p>
+        <p class="asset-dashboard__eyebrow">{{ config().assetEyebrow }}</p>
+        <h1 class="asset-dashboard__title">{{ asset().name }}</h1>
+        <p class="asset-dashboard__subtitle">{{ config().assetSubtitle }}</p>
 
-        <section class="value-card" [attr.aria-label]="config.assetValueLabel">
-          <span class="value-card__label">{{ config.assetValueLabel }}</span>
+        <section class="value-card" [attr.aria-label]="config().assetValueLabel">
+          <span class="value-card__label">{{ config().assetValueLabel }}</span>
           <strong class="value-card__value">
             {{
-              asset.estimatedValue
-                | currency: asset.currency : "symbol" : "1.0-0"
+              asset().estimatedValue
+                | currency: asset().currency : "symbol" : "1.0-0"
             }}
           </strong>
           <div class="value-card__trend">
             <mat-icon>trending_up</mat-icon>
-            <strong>+{{ config.assetAppraisalChange }}%</strong>
+            <strong>+{{ config().assetAppraisalChange }}%</strong>
             <span>since last appraisal</span>
           </div>
         </section>
@@ -26,8 +26,8 @@
         <div class="asset-dashboard__image-wrap">
           <img
             class="asset-dashboard__image"
-            [src]="galleryImage"
-            [alt]="asset.name"
+            [src]="galleryImage()"
+            [alt]="asset().name"
           />
         </div>
 
@@ -58,11 +58,11 @@
       <article class="card details-card">
         <header class="card__header">
           <mat-icon class="card__icon">description</mat-icon>
-          <h2>{{ config.assetDetailsTitle }}</h2>
+          <h2>{{ config().assetDetailsTitle }}</h2>
         </header>
 
         <dl class="details-list">
-          @for (detail of assetDetails; track detail.label) {
+          @for (detail of assetDetails(); track detail.label) {
             <div class="detail-row">
               <dt>
                 <mat-icon>{{ detail.icon }}</mat-icon>
@@ -84,20 +84,20 @@
       <article class="card analytics-card">
         <header class="card__header">
           <mat-icon class="card__icon">analytics</mat-icon>
-          <h2>{{ config.assetValueOverTimeTitle }}</h2>
+          <h2>{{ config().assetValueOverTimeTitle }}</h2>
         </header>
 
         <div class="chart-container">
           <canvas
             baseChart
             [type]="'line'"
-            [data]="chartData"
+            [data]="chartData()"
             [options]="chartOptions"
           ></canvas>
         </div>
 
         <div class="metrics">
-          @for (metric of metrics; track metric.label) {
+          @for (metric of metrics(); track metric.label) {
             <div class="metric">
               <mat-icon class="metric__icon">{{ metric.icon }}</mat-icon>
               <strong class="metric__value">{{ metric.value }}</strong>
@@ -112,13 +112,13 @@
       <header class="card__header">
         <mat-icon class="card__icon">receipt_long</mat-icon>
         <div>
-          <h2>{{ config.transactionHistoryTitle }}</h2>
-          <p>{{ config.transactionHistorySubtitle }}</p>
+          <h2>{{ config().transactionHistoryTitle }}</h2>
+          <p>{{ config().transactionHistorySubtitle }}</p>
         </div>
       </header>
 
       <div class="table-wrapper">
-        <table mat-table [dataSource]="transactions" class="transaction-table">
+        <table mat-table [dataSource]="transactions()" class="transaction-table">
           <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef>Date</th>
             <td mat-cell *matCellDef="let transaction">
@@ -149,7 +149,7 @@
             >
               {{
                 transaction.salePrice
-                  | currency: asset.currency : "symbol" : "1.0-0"
+                  | currency: asset().currency : "symbol" : "1.0-0"
               }}
             </td>
           </ng-container>
@@ -169,11 +169,11 @@
   </main>
 
   <footer class="dashboard-footer">
-    <strong>{{ config.footerBrand }}</strong>
+    <strong>{{ config().footerBrand }}</strong>
     <span class="dashboard-footer__divider"></span>
-    <span>{{ config.footerTagline }}</span>
-    @if (config.footerEstablished) {
-      <span class="dashboard-footer__year">{{ config.footerEstablished }}</span>
+    <span>{{ config().footerTagline }}</span>
+    @if (config().footerEstablished) {
+      <span class="dashboard-footer__year">{{ config().footerEstablished }}</span>
     }
   </footer>
 </section>
