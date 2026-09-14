@@ -1,14 +1,14 @@
-import {Routes} from '@angular/router';
-import {Task1Component} from './tasks/task1/task1.component';
-import {Task2Component} from './tasks/task2/task2.component';
-import {Task3Component} from './tasks/task3/task3.component';
+import { Routes } from '@angular/router';
+import { Task1Component } from './tasks/task1/task1.component';
+import { Task2Component } from './tasks/task2/task2.component';
+import { Task3Component } from './tasks/task3/task3.component';
 
 export const routes: Routes = [
   {
-    path: "task1",
+    path: 'task1',
     component: Task1Component,
     data: {
-      title: "Create a generic filter bar",
+      title: 'Create a generic filter bar',
       description: `<h6>Introduction</h6>
       <p>
         At QPLIX we work on increasingly large and complex data sets. Very often
@@ -63,14 +63,14 @@ export const routes: Routes = [
       <p>
         Feel free to use additional libraries if you think that they will make
         your work easier and contribute to the solution.
-      </p>`
-    }
+      </p>`,
+    },
   },
   {
-    path: "task2",
+    path: 'task2',
     component: Task2Component,
     data: {
-      title: "Improve selection performance",
+      title: 'Improve selection performance',
       description: `
       <h6>Introduction</h6>
       <p>
@@ -94,14 +94,14 @@ export const routes: Routes = [
         Since this might be a tricky one: If you don't find a solution try to bring us some of the insights you gathered and how you approached this challenge. :)
         </li>
       </ul>
-      `
-    }
+      `,
+    },
   },
   {
-    path: "task3",
+    path: 'task3',
     component: Task3Component,
     data: {
-      title: "Create a collectible asset dashboard",
+      title: 'Create a collectible asset dashboard',
       description: `      <h6>Introduction</h6>
       <p>
         At QPLIX we often want to present asset-specific information in a
@@ -154,7 +154,7 @@ export const routes: Routes = [
         functionality; focus on providing an appealing and intuitive UI. Please
         use test data that is easy to create; we do not place any importance on
         accuracy for this task.
-      </p> `
-    }
-  }
+      </p> `,
+    },
+  },
 ];

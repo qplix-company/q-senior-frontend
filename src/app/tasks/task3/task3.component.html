@@ -1,1 +1,158 @@
-<img src="monet.png" height="auto" width="100%"/>
+<section class="dashboard">
+  <header class="asset-dashboard">
+    <div class="asset-dashboard__header-grid">
+      <section class="asset-dashboard__content">
+        <p class="asset-dashboard__eyebrow">{{ config().assetEyebrow }}</p>
+        <h1 class="asset-dashboard__title">{{ asset().name }}</h1>
+        <p class="asset-dashboard__subtitle">{{ config().assetSubtitle }}</p>
+
+        <section class="value-card" [attr.aria-label]="config().assetValueLabel">
+          <span class="value-card__label">{{ config().assetValueLabel }}</span>
+          <strong class="value-card__value">
+            {{ asset().estimatedValue | currency: asset().currency : 'symbol' : '1.0-0' }}
+          </strong>
+          <div class="value-card__trend">
+            <mat-icon>trending_up</mat-icon>
+            <strong>+{{ config().assetAppraisalChange }}%</strong>
+            <span>since last appraisal</span>
+          </div>
+        </section>
+      </section>
+
+      <section class="asset-dashboard__image-panel">
+        <div class="asset-dashboard__image-wrap">
+          <img class="asset-dashboard__image" [src]="galleryImage()" [alt]="asset().name" />
+        </div>
+
+        <div class="asset-dashboard__controls">
+          <button
+            type="button"
+            class="asset-dashboard__arrow"
+            aria-label="Previous asset image"
+            (click)="previousImage()"
+          >
+            <mat-icon>chevron_left</mat-icon>
+          </button>
+          <button
+            type="button"
+            class="asset-dashboard__arrow"
+            aria-label="Next asset image"
+            (click)="nextImage()"
+          >
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="dashboard__content">
+    <section class="dashboard-grid">
+      <article class="card details-card">
+        <header class="card__header">
+          <mat-icon class="card__icon">description</mat-icon>
+          <h2>{{ config().assetDetailsTitle }}</h2>
+        </header>
+
+        <dl class="details-list">
+          @for (detail of assetDetails(); track detail.label) {
+            <div class="detail-row">
+              <dt>
+                <mat-icon>{{ detail.icon }}</mat-icon>
+                <span>{{ detail.label }}</span>
+              </dt>
+              <dd
+                [class.detail-row__condition]="detail.emphasis === 'condition'"
+                [class.detail-row__provenance]="detail.emphasis === 'provenance'"
+              >
+                {{ detail.value }}
+              </dd>
+            </div>
+          }
+        </dl>
+      </article>
+
+      <article class="card analytics-card">
+        <header class="card__header">
+          <mat-icon class="card__icon">analytics</mat-icon>
+          <h2>{{ config().assetValueOverTimeTitle }}</h2>
+        </header>
+
+        <div class="chart-container">
+          <canvas baseChart [type]="'line'" [data]="chartData()" [options]="chartOptions"></canvas>
+        </div>
+
+        <div class="metrics">
+          @for (metric of metrics(); track metric.label) {
+            <div class="metric">
+              <mat-icon class="metric__icon">{{ metric.icon }}</mat-icon>
+              <strong class="metric__value">{{ metric.value }}</strong>
+              <span class="metric__label">{{ metric.label }}</span>
+            </div>
+          }
+        </div>
+      </article>
+    </section>
+
+    <section class="card transaction-card">
+      <header class="card__header">
+        <mat-icon class="card__icon">receipt_long</mat-icon>
+        <div>
+          <h2>{{ config().transactionHistoryTitle }}</h2>
+          <p>{{ config().transactionHistorySubtitle }}</p>
+        </div>
+      </header>
+
+      <div class="table-wrapper">
+        <table mat-table [dataSource]="transactions()" class="transaction-table">
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.date | date: 'MMM d, y' }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="assetName">
+            <th mat-header-cell *matHeaderCellDef>Asset</th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.assetName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="condition">
+            <th mat-header-cell *matHeaderCellDef>Condition</th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.condition }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="salePrice">
+            <th mat-header-cell *matHeaderCellDef>Sale Price</th>
+            <td mat-cell *matCellDef="let transaction" class="transaction-table__price">
+              {{ transaction.salePrice | currency: asset().currency : 'symbol' : '1.0-0' }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef>Location</th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.location }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dashboard-footer">
+    <strong>{{ config().footerBrand }}</strong>
+    <span class="dashboard-footer__divider"></span>
+    <span>{{ config().footerTagline }}</span>
+    @if (config().footerEstablished) {
+      <span class="dashboard-footer__year">{{ config().footerEstablished }}</span>
+    }
+  </footer>
+</section>
