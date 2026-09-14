@@ -1,7 +1,6 @@
 :host {
   .security-list-wrapper {
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
   }
 }
