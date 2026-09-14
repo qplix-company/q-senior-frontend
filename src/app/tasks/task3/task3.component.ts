@@ -5,7 +5,13 @@ import { MatTableModule } from '@angular/material/table';
 import { ChartConfiguration, ChartData } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { Asset, AssetDashboardConfig, PricePoint, Transaction } from '../../models/task3.models';
-import { ASSET, DASHBOARD_CONFIG, GALLERY_IMAGES, PRICE_SERIES, TRANSACTIONS } from '../../mocks/task3-mocks';
+import {
+  ASSET,
+  DASHBOARD_CONFIG,
+  GALLERY_IMAGES,
+  PRICE_SERIES,
+  TRANSACTIONS,
+} from '../../mocks/task3-mocks';
 
 interface AssetDetail {
   label: string;
@@ -83,7 +89,10 @@ export class Task3Component {
       y: {
         border: { display: false },
         grid: { color: CHART_PALETTE.grid },
-        ticks: { color: CHART_PALETTE.axis, callback: (value) => this.formatCompactCurrency(Number(value)) },
+        ticks: {
+          color: CHART_PALETTE.axis,
+          callback: (value) => this.formatCompactCurrency(Number(value)),
+        },
       },
     },
   };
@@ -103,7 +112,11 @@ export class Task3Component {
   private buildAssetDetails(asset: Asset): AssetDetail[] {
     return [
       { label: 'Acquisition Date', value: this.formatDate(asset.acquisitionDate), icon: 'event' },
-      { label: 'Acquisition Cost', value: this.formatCurrency(asset.acquisitionCost), icon: 'payments' },
+      {
+        label: 'Acquisition Cost',
+        value: this.formatCurrency(asset.acquisitionCost),
+        icon: 'payments',
+      },
       { label: 'Serial / Reference', value: asset.serialNumber, icon: 'tag' },
       { label: 'Condition', value: asset.condition, icon: 'verified', emphasis: 'condition' },
       { label: 'Provenance', value: asset.provenance, icon: 'history_edu', emphasis: 'provenance' },

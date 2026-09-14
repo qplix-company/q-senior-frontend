@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+
+  format:
+    name: Format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run test:ci
+
+      - name: Publish test report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Karma/Jasmine test report
+          path: test-results/junit.xml
+          reporter: java-junit
+          fail-on-error: true
+
+      - name: Publish coverage summary
+        uses: romeovs/lcov-reporter-action@v0.4.0
+        if: success() || failure()
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lcov-file: coverage/q-senior-frontend/lcov.info
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: coverage-report
+          path: coverage/q-senior-frontend
+          retention-days: 14

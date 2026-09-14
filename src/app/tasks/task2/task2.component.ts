@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, signal, TrackByFunction } from '@angular/core';
-import { CdkFixedSizeVirtualScroll, CdkVirtualForOf, CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import {
+  CdkFixedSizeVirtualScroll,
+  CdkVirtualForOf,
+  CdkVirtualScrollViewport,
+} from '@angular/cdk/scrolling';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatButton } from '@angular/material/button';
 
@@ -9,7 +13,7 @@ interface Row {
 }
 
 function createRows(): Row[] {
-  return Array.from({ length: 50000 }, (_, i) => i).map(i => ({ id: i, title: `Item ${i}` }))
+  return Array.from({ length: 50000 }, (_, i) => i).map((i) => ({ id: i, title: `Item ${i}` }));
 }
 
 @Component({
@@ -19,7 +23,7 @@ function createRows(): Row[] {
     MatCheckbox,
     CdkVirtualForOf,
     CdkFixedSizeVirtualScroll,
-    MatButton
+    MatButton,
   ],
   standalone: true,
   templateUrl: './task2.component.html',

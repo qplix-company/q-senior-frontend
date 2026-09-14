@@ -22,7 +22,7 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
-  selector: 'filterable-table',
+  selector: 'app-filterable-table',
   standalone: true,
   imports: [MatTable, MatPaginator],
   templateUrl: './filterable-table.component.html',
@@ -36,11 +36,7 @@ export class FilterableTableComponent<T> implements AfterContentInit {
   @ContentChild(MatNoDataRow) noDataRow?: MatNoDataRow;
 
   @ViewChild(MatTable, { static: true }) table?: MatTable<T>;
-  @Input() dataSource:
-    | readonly T[]
-    | DataSource<T>
-    | Observable<readonly T[]>
-    | null = null;
+  @Input() dataSource: readonly T[] | DataSource<T> | Observable<readonly T[]> | null = null;
 
   @Input() totalCount: number | null = null;
 

@@ -15,13 +15,26 @@ import {
 } from '@angular/material/table';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { PageEvent } from '@angular/material/paginator';
-import { BehaviorSubject, catchError, combineLatest, map, Observable, of, startWith, switchMap } from 'rxjs';
+import {
+  BehaviorSubject,
+  catchError,
+  combineLatest,
+  map,
+  Observable,
+  of,
+  startWith,
+  switchMap,
+} from 'rxjs';
 import { Security } from '../../models/security';
 import { SecuritiesFilter } from '../../models/securities-filter';
 import { SecurityService } from '../../services/security.service';
 import { FilterableTableComponent } from '../filterable-table/filterable-table.component';
 import { FilterBarComponent } from '../../shared/components/filter-bar/filter-bar.component';
-import { FilterFieldConfig, FilterFieldOption, FilterValue } from '../../shared/models/filter-field';
+import {
+  FilterFieldConfig,
+  FilterFieldOption,
+  FilterValue,
+} from '../../shared/models/filter-field';
 
 const NAME_MIN_LENGTH = 3;
 const DEFAULT_PAGE_SIZE = 25;
@@ -64,7 +77,7 @@ export type SecuritiesState =
   | { status: 'success'; data: Security[] };
 
 @Component({
-  selector: 'securities-list',
+  selector: 'app-securities-list',
   standalone: true,
   imports: [
     FilterableTableComponent,
@@ -105,12 +118,15 @@ export class SecuritiesListComponent implements OnInit {
 
   // feeds the paginator's length
   protected totalCount$: Observable<number> = this.filter$.pipe(
-    switchMap((filter) => this.securityService.getSecuritiesCount(filter))
+    switchMap((filter) => this.securityService.getSecuritiesCount(filter)),
   );
 
-  protected securitiesState$: Observable<SecuritiesState> = combineLatest([this.filter$, this.page$]).pipe(
+  protected securitiesState$: Observable<SecuritiesState> = combineLatest([
+    this.filter$,
+    this.page$,
+  ]).pipe(
     map(([filter, page]) => this.composeSecurityFilter(filter, page)),
-    switchMap((requestFilter) => this.loadSecurities(requestFilter))
+    switchMap((requestFilter) => this.loadSecurities(requestFilter)),
   );
 
   ngOnInit(): void {
@@ -164,7 +180,7 @@ export class SecuritiesListComponent implements OnInit {
     return this.securityService.getSecurities(filter).pipe(
       map((data) => ({ status: 'success', data }) as SecuritiesState),
       startWith(loading),
-      catchError((error: unknown) => of(this.errorState(error)))
+      catchError((error: unknown) => of(this.errorState(error))),
     );
   }
 

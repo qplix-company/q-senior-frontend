@@ -1,9 +1,4 @@
-import {
-  Asset,
-  AssetDashboardConfig,
-  PricePoint,
-  Transaction,
-} from '../models/task3.models';
+import { Asset, AssetDashboardConfig, PricePoint, Transaction } from '../models/task3.models';
 
 export const ASSET: Asset = {
   name: '1964 Aston Martin DB5',
@@ -22,8 +17,7 @@ export const ASSET: Asset = {
 
 export const DASHBOARD_CONFIG: AssetDashboardConfig = {
   assetEyebrow: 'A British Icon',
-  assetSubtitle:
-    'More than a car — a symbol of elegance, innovation and cinematic history.',
+  assetSubtitle: 'More than a car — a symbol of elegance, innovation and cinematic history.',
   assetValueLabel: 'Current Estimated Value',
   assetAppraisalChange: 12,
   assetDetailsTitle: 'Asset Details',

@@ -73,9 +73,7 @@ describe('SecurityService', () => {
     const invertedCaseNeedle = Array.from(needle)
       .map((ch) => (ch === ch.toLowerCase() ? ch.toUpperCase() : ch.toLowerCase()))
       .join('');
-    const expected = SECURITIES.filter((s) =>
-      s.name.toLowerCase().includes(needle.toLowerCase())
-    );
+    const expected = SECURITIES.filter((s) => s.name.toLowerCase().includes(needle.toLowerCase()));
 
     let result: unknown[] = [];
     service

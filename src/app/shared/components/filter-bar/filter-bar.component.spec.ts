@@ -30,7 +30,10 @@ const FIELDS: FilterFieldConfig[] = [
 @Component({
   standalone: true,
   imports: [FilterBarComponent],
-  template: `<app-filter-bar [fields]="fields" (filterChange)="onFilterChange($event)"></app-filter-bar>`,
+  template: `<app-filter-bar
+    [fields]="fields"
+    (filterChange)="onFilterChange($event)"
+  ></app-filter-bar>`,
 })
 class HostComponent {
   fields: FilterFieldConfig[] = FIELDS;
@@ -59,7 +62,12 @@ describe('FilterBarComponent', () => {
   });
 
   it('builds one control per configured field', () => {
-    expect(Object.keys(formOf(filterBar).controls)).toEqual(['search', 'types', 'currencies', 'active']);
+    expect(Object.keys(formOf(filterBar).controls)).toEqual([
+      'search',
+      'types',
+      'currencies',
+      'active',
+    ]);
   });
 
   it('rebuilds the controls when the field list changes', () => {
@@ -106,7 +114,8 @@ describe('FilterBarComponent', () => {
   }));
 
   it('shows the clear icon once a field has a value, and clears it on click', fakeAsync(() => {
-    const clearButton = () => fixture.debugElement.query(By.css('button[aria-label="Clear Search"]'));
+    const clearButton = () =>
+      fixture.debugElement.query(By.css('button[aria-label="Clear Search"]'));
 
     expect(clearButton()).toBeNull();
 
@@ -131,7 +140,12 @@ describe('FilterBarComponent', () => {
     fixture.debugElement.query(By.css('.filter-bar__clear-all')).nativeElement.click();
     tick(300);
 
-    expect(formOf(filterBar).value).toEqual({ search: '', types: [], currencies: [], active: null });
+    expect(formOf(filterBar).value).toEqual({
+      search: '',
+      types: [],
+      currencies: [],
+      active: null,
+    });
     expect(host.emitted.at(-1)).toEqual({});
   }));
 });

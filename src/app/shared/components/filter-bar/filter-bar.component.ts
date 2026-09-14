@@ -54,8 +54,10 @@ export class FilterBarComponent implements OnChanges {
     this.valueChangesSubscription = this.form.valueChanges
       .pipe(
         debounceTime(FILTER_DEBOUNCE_MS),
-        distinctUntilChanged((previous, current) => JSON.stringify(previous) === JSON.stringify(current)),
-        takeUntilDestroyed(this.destroyRef)
+        distinctUntilChanged(
+          (previous, current) => JSON.stringify(previous) === JSON.stringify(current),
+        ),
+        takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((rawValue) => {
         if (this.hasTextBelowMinLength(rawValue, fields)) {
@@ -93,7 +95,10 @@ export class FilterBarComponent implements OnChanges {
     this.form.reset(this.createDefaultsMap(this.fields()));
   }
 
-  private hasTextBelowMinLength(rawValue: Record<string, unknown>, fields: FilterFieldConfig[]): boolean {
+  private hasTextBelowMinLength(
+    rawValue: Record<string, unknown>,
+    fields: FilterFieldConfig[],
+  ): boolean {
     for (const field of fields) {
       if (field.type !== 'text' || field.minLength === undefined) {
         continue;
@@ -136,7 +141,10 @@ export class FilterBarComponent implements OnChanges {
   }
 
   /** Drops fields that are empty or below the configured text minimum, so the backend only sees meaningful values. */
-  private toFilterValue(rawValue: Record<string, unknown>, fields: FilterFieldConfig[]): FilterValue {
+  private toFilterValue(
+    rawValue: Record<string, unknown>,
+    fields: FilterFieldConfig[],
+  ): FilterValue {
     const result: FilterValue = {};
 
     for (const field of fields) {
