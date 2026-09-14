@@ -1,4 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --green-950: #101a17;
+  --green-700: #315642;
+  --green-500: #64cf91;
+
+  --gold: #b78335;
+  --gold-light: #e8c78b;
+
+  --cream: #f6f3ec;
+  --surface: #fffdf8;
+  --paper-soft: #faf9f5;
+  --table-head: #f2f1ec;
+  --condition-bg: #dcecdf;
+  --condition-text: #235834;
+
+  --text: #1c2821;
+  --text-muted: #687169;
+
+  --border: #e3ddd0;
+  --white: #ffffff;
+  --black-soft: rgba(13, 26, 22, 0.72);
+  --shadow-soft: rgba(30, 40, 32, 0.05);
+  --shadow-heavy: rgba(0, 0, 0, 0.35);
+
+  --green-gradient-start: rgba(16, 26, 23, 0.96);
+  --green-gradient-end: rgba(49, 86, 66, 0.86);
+
+  --white-soft: rgba(255, 255, 255, 0.04);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-76: rgba(255, 255, 255, 0.76);
+  --white-88: rgba(255, 255, 255, 0.88);
+  --white-72: rgba(255, 255, 255, 0.72);
+  --white-66: rgba(255, 255, 255, 0.66);
+  --white-44: rgba(255, 255, 255, 0.44);
+  --white-22: rgba(255, 255, 255, 0.22);
+  --gray-chart-grid: rgba(40, 50, 42, 0.08);
+}
 
 html,
 body {
